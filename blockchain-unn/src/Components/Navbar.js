@@ -18,7 +18,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className={`${theme ? "bg-dark-mode shadow text-[#B2B2B2]" : "bg-white"} w-[95%] rounded-md px-4 sm:px-10 py-4 flex justify-between items-center`}>
+        <div className={`${theme ? "bg-dark-mode shadow text-[#B2B2B2]" : "bg-white"} w-[95%] rounded-md px-4 md:px-10 py-4 flex justify-between items-center`}>
             <div className="mt-2 h-8 w-36">
                 {theme ? (
                     <img src={LogoWhite} alt="Blockchainunn" className="w-full h-full object-cover" />
@@ -29,15 +29,15 @@ const Navbar = () => {
 
 
             {/* Mobile Menu Toggle Button */}
-            <div className="flex gap-4 items-center ">
+            <div className="flex gap-4 items-center md:hidden ">
                 <ThemeSwitch />
-                <div className="md:hidden" onClick={toggleMobileMenu}>
+                <div className="" onClick={toggleMobileMenu}>
                     {!isMobileMenuOpen && <FaBars size={28} className="cursor-pointer" />}
                 </div>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex gap-16 items-center w-[60%]">
+            <div className="hidden md:flex gap-16 items-center  w-[60%]">
                 <ul className="flex gap-8">
                     {navItems.map((item) => (
                         <li

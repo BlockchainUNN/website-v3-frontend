@@ -10,7 +10,7 @@ function ThemeSwitch() {
 
     return (
         <div className="flex items-center">
-            <label className="relative inline-block w-10 h-5 sm:w-14 md:h-7">
+            <label className="relative inline-block w-10 h-5 md:w-14 md:h-7">
                 <input 
                     type="checkbox" 
                     checked={theme === true} 
@@ -23,8 +23,8 @@ function ThemeSwitch() {
                     }`}
                 ></div>
                 <div 
-                    className={`dot absolute left-0 top-0 bg-white w-5 sm:w-7 h-5 sm:h-7 rounded-full transition-transform ${
-                        theme === true ? 'translate-x-5 sm:translate-x-7' : 'translate-x-0'
+                    className={`dot absolute left-0 top-0 bg-white w-5 md:w-7 h-5 md:h-7 rounded-full transition-transform ${
+                        theme === true ? 'translate-x-5 md:translate-x-7' : 'translate-x-0'
                     }`}
                 ></div>
             </label>

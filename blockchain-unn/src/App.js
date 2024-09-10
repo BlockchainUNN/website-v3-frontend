@@ -5,7 +5,8 @@ import Home from './Pages/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div className='flex flex-col items-center'>
+    <div className="App max-w-screen-2xl">
       <ThemeProvider>
         <Router>
           <Routes>
@@ -14,6 +15,7 @@ function App() {
           </Routes>
         </Router>
       </ThemeProvider>
+    </div>
     </div>
   );
 }
