@@ -15,11 +15,12 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               {/* Add more routes as needed */}
-              <Route path="events" element={<Events />}>
-                <Route path=":eventUid" element={<EventsDetails />}>
-                  <Route path="registration" element={<EventsRegistration />} />
-                </Route>
-              </Route>
+              <Route
+                path="events/:eventUid/registration"
+                element={<EventsRegistration />}
+              />
+              <Route path="events/:eventUid" element={<EventsDetails />} />
+              <Route path="events" element={<Events />} />
             </Routes>
           </Router>
         </ThemeProvider>
