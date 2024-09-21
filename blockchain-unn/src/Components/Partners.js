@@ -7,7 +7,7 @@ const Partner = ({ partnerImages }) => {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className={` ${theme ? "bg-darkmode" : "bg-transparent"} mb-12 border-t border-b border-gray-500 py-8 w-full`}>
+        <div className={` ${theme ? "bg-darkmode" : "bg-white"} mb-12 border-t border-b border-gray-500 py-8 w-full`}>
             <div className="flex flex-col items-center justify-center gap-2">
                 <p className={` ${theme ? "text-white" : "text-black"} text-[30px] md:text-[50px] font-medium`}>
                     Our Partners
