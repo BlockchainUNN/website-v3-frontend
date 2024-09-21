@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Events from "./Pages/events";
 import EventsDetails from "./Pages/events/EventDetails";
 import EventsRegistration from "./Pages/events/EventRegistration";
+import Blockathon from "./Pages/events/Blockathon";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/Blockathon" element={<Blockathon />} />
               {/* Add more routes as needed */}
               <Route
                 path="events/:eventUid/registration"

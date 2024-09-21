@@ -8,6 +8,8 @@ import Feedback from '../Components/Feedback';
 import UpcomingEvents from '../Components/UpcomingEvents';
 import PastEvents from '../Components/PastEvents';
 import Partners from '../Components/Partners';
+import Newsletter from '../Components/Newsletter';
+import Footer from '../Components/Footer';
 
 
 const Home = () => {
@@ -23,6 +25,8 @@ const Home = () => {
             <UpcomingEvents />
             <PastEvents />
             <Partners />
+            <Newsletter />
+            <Footer />
         </div>
     )
 }
