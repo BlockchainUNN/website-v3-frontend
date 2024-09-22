@@ -13,7 +13,7 @@ import { PiStudentFill } from "react-icons/pi";
 import { FaCode } from "react-icons/fa";
 import { MdLocationPin, MdOutlineWork } from "react-icons/md";
 import { FaPersonWalking } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
@@ -26,7 +26,7 @@ import { ReactSwal } from "../../utils/swal";
  */
 const EventsRegistration = () => {
   const BLOGATNON_ID = "d23893ee-b2b2-449d-bd03-f4a97f2e54eb"; // Todo: Make this dynamic
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
 
@@ -89,12 +89,12 @@ const EmailStep = ({ step, setStep, setUserDetails }) => {
         .unprotected()
         .get(API_ROUTES.users.getByEmail + email);
 
-      console.log(data);
-
       setUserDetails(data?.data);
       setStep(2);
       setLoading(false);
     } catch (error) {
+      console.log(error);
+
       // If status is 404, move to step 2
       if (error.status === 404) {
         setUserDetails({ email });
@@ -128,7 +128,7 @@ const EmailStep = ({ step, setStep, setUserDetails }) => {
           />
         </div>
 
-        <div className="flex max-sm-420:w-36 w-48 drop-shadow-2xl shadow-black shadow-2xl mx-auto">
+        <div className="flex max-sm-420:w-36 w-48 max-sm:-mt-6 drop-shadow-2xl shadow-black shadow-2xl mx-auto">
           <Button
             text={"Next"}
             icon={<IoIosArrowForward />}
@@ -229,7 +229,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
         .unprotected()
         .post(API_ROUTES.events.registration + eventId, registrationDetails);
       ReactSwal.fire({
-        showConfirmButton: false,
+        confirmButtonText: "Register for the Hackathon",
         html: (
           <div className="flex font-raleway text-black flex-col gap-2 justify-center px-6 py-6">
             <h1 className="text-black font-black mx-auto text-[1.5rem]">
@@ -247,7 +247,13 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             </div>
           </div>
         ),
-      }).finally(() => navigate(-1));
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/blockathon/hackathon/registration");
+        } else {
+          navigate("/blockathon");
+        }
+      });
       setLoading(false);
     } catch (error) {
       // Handle other errors
@@ -396,6 +402,14 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
 
         <div className="flex max-sm:w-36 w-48 max-sm:pt-6 pt-12 drop-shadow-2xl shadow-black shadow-2xl mx-auto">
           <Button text={"Register"} loading={loading} />
+        </div>
+        <div className="flex w-full">
+          <Link
+            className="mx-auto text-white underline max-sm:text-[0.875rem]"
+            to={"/blockathon/hackathon/registration"}
+          >
+            Want to participate in the Hackathon?
+          </Link>
         </div>
       </form>
     </div>

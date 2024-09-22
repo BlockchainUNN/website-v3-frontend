@@ -12,8 +12,8 @@ export function Input({
   disabled,
 }) {
   return (
-    <div className="flex gap-2 max-sm:p-2 p-4 w-full border border-white rounded max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[0.875rem] text-[1.2rem] text-white">
-      <div className="flex h-full">
+    <div className="flex gap-2 max-sm:p-2 p-4 w-full h-fit border border-white rounded-md max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[0.875rem] text-[1.2rem] text-white">
+      <div className="flex my-auto">
         <img
           className="max-sm-420:w-4 max-sm-420:h-4 w-5 h-5 my-auto"
           src={icon}
@@ -42,14 +42,15 @@ export function SelectInput({
   icon,
   iconComponent,
   options,
+  extraClasses,
 }) {
   const [showOptions, setShowOptions] = useState(false);
 
   return (
-    <div className="flex flex-col gap-0.5 w-full">
+    <div className={"flex flex-col gap-0.5 w-full " + extraClasses}>
       <div
         onClick={() => setShowOptions(!showOptions)}
-        className="flex gap-2 max-sm:p-2 p-4 w-full h-fit border border-white rounded max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[0.875rem] text-[1.2rem] text-white z-10"
+        className="flex gap-2 max-sm:p-2 p-4 w-full h-fit border border-white rounded-md max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[0.875rem] text-[1.2rem] text-white z-10"
       >
         <div className="flex h-full">
           {iconComponent ? (
@@ -76,7 +77,7 @@ export function SelectInput({
       <div
         className={
           (showOptions ? "h-full flex " : "h-0 hidden ") +
-          " flex-col gap-2 py-4 max-sm:px-8 px-12 capitalize transition-[height] duration-500 delay-75 border border-white rounded max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[0.875rem] text-[1.2rem] text-white w-full"
+          " flex-col gap-2 py-4 max-sm:px-8 px-12 capitalize transition-[height] duration-500 delay-75 border border-white rounded-md max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[0.875rem] text-[1.2rem] text-white w-full"
         }
       >
         {options.map((option, index) => (

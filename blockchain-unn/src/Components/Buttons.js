@@ -1,13 +1,18 @@
 import { ClipLoader } from "react-spinners";
 
-export function Button({ text, onclick, disable, icon, loading }) {
+export function Button({ text, onclick, disable, icon, loading, inverse }) {
   return (
     <button
       onClick={onclick}
       disabled={loading || disable}
-      className="flex w-full bg-white border-2 border-black rounded-md py-2 justify-center"
+      className={
+        (inverse
+          ? "border-white bg-gradient-to-b from-black to-[#1B1A1A] text-white max-sm:py-3 py-4 "
+          : "border-black bg-white text-black py-2 ") +
+        " flex w-full border-2 rounded-md justify-center"
+      }
     >
-      <span className="flex text-black mx-auto capitalize max-sm:text-[0.875rem] text-[1.2rem] font-medium flex gap-1">
+      <span className="flex mx-auto capitalize max-sm:text-[0.875rem] text-[1.2rem] font-medium flex gap-1">
         {loading ? (
           <ClipLoader size={20} />
         ) : (
