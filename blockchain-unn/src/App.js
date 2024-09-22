@@ -2,10 +2,9 @@ import "./App.css";
 import { ThemeProvider } from "./Components/Theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-import Events from "./Pages/events";
-import EventsDetails from "./Pages/events/EventDetails";
 import EventsRegistration from "./Pages/events/EventRegistration";
 import Blockathon from "./Pages/events/Blockathon";
+import HackathonRegistration from "./Pages/events/HackathonRegistration";
 
 function App() {
   return (
@@ -15,14 +14,16 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/Blockathon" element={<Blockathon />} />
+              <Route path="/blockathon" element={<Blockathon />} />
               {/* Add more routes as needed */}
               <Route
-                path="events/:eventUid/registration"
+                path="/blockathon/registration"
                 element={<EventsRegistration />}
               />
-              <Route path="events/:eventUid" element={<EventsDetails />} />
-              <Route path="events" element={<Events />} />
+              <Route
+                path="/blockathon/hackathon/registration"
+                element={<HackathonRegistration />}
+              />
             </Routes>
           </Router>
         </ThemeProvider>
