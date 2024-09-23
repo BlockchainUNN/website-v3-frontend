@@ -1,41 +1,43 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../Theme";
-import Hacker from '../../assets/blockathonc.png';
+import Hacker from "../../assets/blockathonc.png";
 import blockathon from "../../assets/blockathonlogo.png";
+import { useNavigate } from "react-router-dom";
 import map from "../../assets/map.png";
 import { FaCalendarAlt } from "react-icons/fa";
 
-
 const BlockathonHero = () => {
-    const { theme } = useContext(ThemeContext);
-    const calculateTimeLeft = () => {
-        const eventDate = new Date("2024-10-30T00:00:00");
-        const now = new Date();
-        const difference = eventDate.getTime() - now.getTime();
-        const totalSeconds = Math.floor(difference / 1000);
+  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
 
-        const days = Math.floor(totalSeconds / (3600 * 24));
-        const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = Math.floor(totalSeconds % 60);
+  const calculateTimeLeft = () => {
+    const eventDate = new Date("2024-10-30T00:00:00");
+    const now = new Date();
+    const difference = eventDate.getTime() - now.getTime();
+    const totalSeconds = Math.floor(difference / 1000);
 
-        return {
-            days,
-            hours,
-            minutes,
-            seconds
-        };
+    const days = Math.floor(totalSeconds / (3600 * 24));
+    const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = Math.floor(totalSeconds % 60);
+
+    return {
+      days,
+      hours,
+      minutes,
+      seconds,
     };
+  };
 
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-        return () => clearInterval(timer);
-    }, []);
+    return () => clearInterval(timer);
+  }, []);
 
     return (
         <div className={`w-full  ${theme ? "bg-black" : "bg-black"}`}>
@@ -75,7 +77,6 @@ const BlockathonHero = () => {
                     </div>
                 </div>
             </div>
-
             <div className={`bg-dark-mode flex flex-col md:flex-row md:px-8 py-4 items-center justify-center md:justify-evenly gap-2 md:gap-8 w-full h-[250px] md:h-[120px]`}>
                 <div className={`flex flex-col md:flex-row md:px-8 py-4 items-center justify-evenly gap-8 w-full md:w-[85%] h-full`}>
                     <div className="flex gap-4 md:items-center md:justify-center text-[0.9rem] md:text-[20px] text-center text-white">
@@ -143,7 +144,9 @@ const BlockathonHero = () => {
                 </div>
             </div>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default BlockathonHero;
