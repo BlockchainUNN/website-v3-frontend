@@ -5,6 +5,8 @@ import Home from "./Pages/Home";
 import EventsRegistration from "./Pages/events/EventRegistration";
 import Blockathon from "./Pages/events/Blockathon";
 import HackathonRegistration from "./Pages/events/HackathonRegistration";
+import About from "./Pages/About";
+import Community from "./Pages/community";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/community" element={<Community />} />
               <Route path="/blockathon" element={<Blockathon />} />
               {/* Add more routes as needed */}
               <Route

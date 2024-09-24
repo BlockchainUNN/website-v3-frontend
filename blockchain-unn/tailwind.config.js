@@ -6,6 +6,11 @@ module.exports = {
       fontFamily: {
         wallpoet: ["Wallpoet", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
+        "raleway-black": ["Raleway-Black", "sans-serif"],
+        "raleway-medium": ["Raleway-Medium", "sans-serif"],
+        "raleway-semibold": ["Raleway-Semibold", "sans-serif"],
+        "inter-semibold": ["Inter-Semibold", "sans-serif"],
+        "inter-extrabold": ["Inter-Extrabold", "sans-serif"],
       },
       keyframes: {
         scroll: {
@@ -26,6 +31,7 @@ module.exports = {
         "blockchain-green": "#02641C",
         "blockathon-green": "#2CE85E",
         "blockchain-white": "#CBD7CE",
+        grey: "#d8d8d8",
       },
       borderImage: {
         "custom-gradient":
