@@ -1,16 +1,21 @@
-import { useMemo, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import rawTeamData, { teamTags as tags } from "../../utils/teamData";
 import TeamCard from "./teamCards";
+import { ThemeContext } from "../Theme";
 
 export default function TheTeam() {
   const [currentTag, setCurrentTag] = useState("");
   const [teamData, teamTags] = useMemo(() => [rawTeamData, tags], []);
+  const { theme } = useContext(ThemeContext);
 
   const TagBtn = ({ tag, onclick }) => (
     <button
       className={
-        (currentTag === tag ? "bg-black text-white px-6 rounded-2xl " : "") +
-        " text-[1.2rem] font-raleway-semibold capitalize"
+        (currentTag === tag
+          ? `${
+              theme ? "bg-ash text-black " : "bg-black text-white "
+            } px-6 rounded-2xl `
+          : "") + " text-[1.2rem] font-raleway-semibold capitalize"
       }
       onClick={onclick}
     >
