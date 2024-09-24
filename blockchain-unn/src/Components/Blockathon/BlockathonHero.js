@@ -2,13 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../Theme";
 import Hacker from "../../assets/blockathonc.png";
 import blockathon from "../../assets/blockathonlogo.png";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import map from "../../assets/map.png";
+import cup from "../../assets/icons/smallcup.svg";
 import { FaCalendarAlt } from "react-icons/fa";
 
 const BlockathonHero = () => {
   const { theme } = useContext(ThemeContext);
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
   const calculateTimeLeft = () => {
     const eventDate = new Date("2024-10-30T00:00:00");
@@ -54,10 +55,10 @@ const BlockathonHero = () => {
 
                     <div className="flex flex-wrap md:flex-row gap-0 md:gap-4 w-[85%] justify-evenly items-center text-white mt-4 md:mt-12">
                         <div className="rounded-full  px-4 py-4 border border-white w-[300px] h-[75px] flex flex-col items-center justify-center scale-75 md:scale-100">
-                            <p className="w-full px-2 text-[16px] md:text-[18px]">
+                            <p className="w-full px-2 text-[16px] md:text-[18px] text-center md:text-start">
                                 3rd Edition, Enugu Nigeria
                             </p>
-                            <p className="flex gap-2 items-center justify-start w-full px-2 text-[18px]">
+                            <p className="flex gap-2 items-center justify-center md:justify-start w-full px-2 text-[18px] ">
                                 <FaCalendarAlt /> 21st-26th October
                             </p>
                         </div>
@@ -67,10 +68,10 @@ const BlockathonHero = () => {
                             </p>
                         </div>
                         <div className="rounded-full  px-4 py-4 border border-white w-[300px] h-[75px] flex flex-col items-center justify-center scale-75 md:scale-100">
-                            <p className="w-full px-2 text-[18px]">
-                                $3000
+                            <p className="w-full px-2 text-[18px] text-center md:text-start flex items-center gap-2 justify-center md:justify-start">
+                                $3000 <img src={cup} alt="cup" className="w-4 h-4" />
                             </p>
-                            <p className="flex gap-2 items-center justify-start w-full px-2 text-[18px]">
+                            <p className="w-full px-2 text-[18px] text-center md:text-start">
                                 Prize pool to be won.
                             </p>
                         </div>
@@ -144,8 +145,6 @@ const BlockathonHero = () => {
                 </div>
             </div>
         </div>
-      </div>
-    </div>
   );
 };
 
