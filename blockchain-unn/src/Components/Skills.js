@@ -43,7 +43,7 @@ const Skills = () => {
                             </p>
 
                             <div className="w-[186px] md:w-[65%] h-[100px] md:h-[210px] rounded-xl">
-                                <img src={Hacker} alt="hacker" className={`${theme ? "border-2 border-black" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
+                                <img src={Hacker} alt="hacker" className={`${theme ? "" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ const Skills = () => {
 
                     <div className="relative flex flex-col items-center md:items-end gap-4 w-[95%] md:w-[640px] h-[250px] md:h-[400px] bg-blockchain-white rounded-xl p-4 md:p-8">
                         <div className="relative -mt-4 flex w-[186px] md:hidden md:w-[65%] h-[100px] md:h-[210px] rounded-xl">
-                            <img src={Hacker} alt="hacker" className={`${theme ? "border-2 border-black" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
+                            <img src={Hacker} alt="hacker" className={`${theme ? "" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
                         </div>
                         <p className="font-bold md:font-semibold text-black text-center md:text-end md:mt-2 text-[18px] md:text-[24px]" >
                             Crypto Education
@@ -63,7 +63,7 @@ const Skills = () => {
                         </p>
                         <div className=" absolute bottom-5 md:bottom-0 w-[95%] left-0 flex flex-col md:flex-row items-center justify-between">
                             <div className="hidden w-[186px] md:flex md:w-[65%] h-[100px] md:h-[210px] rounded-xl">
-                                <img src={Hacker} alt="hacker" className={`${theme ? "border-2 border-black" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
+                                <img src={Hacker} alt="hacker" className={`${theme ? "" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
                             </div>
                             <p className="hidden md:flex gap-2 md:gap-4 text-black font-semibold items-center text-[8px] md:text-[14px]">
                                 Cryptocurrency
@@ -80,7 +80,7 @@ const Skills = () => {
                 <div className="flex md:flex-row flex-col-reverse items-center justify-center w-[95%] mt-12 md:mt-0 md:w-full gap-2 md:gap-8">
                     <div className="relative flex flex-col items-center md:items-start gap-4 w-full md:w-[640px] h-[250px] md:h-[400px] bg-blockchain-white rounded-xl p-4 md:p-8">
                         <div className="relative -mt-4 flex w-[186px] md:hidden md:w-[65%] h-[100px] md:h-[210px] rounded-xl">
-                            <img src={Hacker} alt="hacker" className={`${theme ? "border-2 border-black" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
+                            <img src={Hacker} alt="hacker" className={`${theme ? "" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
                         </div>
                         <p className="font-bold md:font-semibold text-black text-center md:text-end md:mt-2 text-[18px] md:text-[24px]" >
                             Web 2.0
@@ -90,7 +90,7 @@ const Skills = () => {
                         </p>
                         <div className=" absolute bottom-5 md:bottom-0 w-[95%] left-0 flex flex-col md:flex-row items-center justify-between">
                             <div className="hidden w-[186px] md:flex md:w-[65%] h-[100px] md:h-[210px] rounded-xl">
-                                <img src={Hacker} alt="hacker" className={`${theme ? "border-2 border-black" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
+                                <img src={Hacker} alt="hacker" className={`${theme ? "" : "border-2 border-white" } w-full h-full object-cover rounded-xl`} />
                             </div>
                             <p className="hidden md:flex gap-2 md:gap-4 text-black font-semibold items-center text-[8px] md:text-[14px]">
                                 Development / 2.0

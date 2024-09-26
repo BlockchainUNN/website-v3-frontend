@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "./Theme";
 import garage from "../assets/garage.svg";
-
+import gida from "../assets/gida.png";
+import cartesi from "../assets/cartesi.png";
+import alphablocks from "../assets/alphablocks.png";
+import avalanche from "../assets/avalanche.png";
 
 const Partner = ({ partnerImages }) => {
     const { theme } = useContext(ThemeContext);
@@ -35,13 +38,12 @@ const Partner = ({ partnerImages }) => {
 const Partners = () => {
 
     const partnerImages = [
-        garage, 
+        avalanche, 
         garage,
-        garage,
-        garage,
-        garage,
-        garage,
-        garage,
+        alphablocks,
+        gida,
+        cartesi,
+        avalanche
     ];
 
     return (
