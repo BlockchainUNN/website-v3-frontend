@@ -37,7 +37,7 @@ const Prizes = () => {
                         <img src={design} alt="silver" className="w-[180px] h-[100px] scale-100 md:scale-125 mt-2" />
                         <div className="text-start flex flex-col items-start mt-2">
                             <h1 className="text-blockathon-green font-semibold text-[20px] -mb-2 mt-2">Best Design</h1>
-                            <p className="text-white font-extrabold text-[25px] md:text-[40px]">$400K ($250)</p>
+                            <p className="text-white font-extrabold text-[25px] md:text-[40px]">400K ($250)</p>
                         </div>
                     </div>
                     <div className="flex flex-row gap-0 items-start border border-blockchain-green rounded-xl h-[100px] md:h-[122px] w-auto bg-black">
