@@ -46,7 +46,7 @@ const HeroHome = () => {
           theme
             ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green"
             : "bg-blockchain-white  border border-blockchain-green"
-        } absolute -left-4 top-[46%] rotate-12 w-[175px] rounded-r-full p-2`}
+        } absolute -left-4 top-[46%] rotate-12 w-[175px] rounded-r-full p-2 hidden md:flex`}
       >
          <div className="relative">
          <img
@@ -77,7 +77,7 @@ const HeroHome = () => {
           theme
             ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green border-r-0"
             : "bg-blockchain-white  border border-blockchain-green border-r-0"
-        } absolute right-0 top-[46%] -rotate-0 w-[175px] rounded-l-full p-2`}
+        } absolute right-0 top-[46%] -rotate-0 w-[175px] rounded-l-full p-2 hidden md:flex`}
       >
          <div className="relative">
          <img
