@@ -4,7 +4,7 @@ import winner from "../../assets/winner.png";
 
 const EventSchedule = () => {
     return (
-        <div className="bg-black px-4 md:px-[4rem] py-12 flex flex-col items-center">
+        <div className="bg-black px-4 md:px-[4rem] py-12 flex flex-col items-center w-full">
             <h1 className="text-white text-[30px] font-bold mb-8">Event Schedule</h1>
 
             <div className="w-full md:w-[80%] flex flex-col gap-12 items-center justify-center">
