@@ -15,7 +15,9 @@ const SocialLink = ({ to, type }) => {
 
   return (
     <Link
-      className="flex justify-center border border-blockchain-green bg-blockchain-green/15 w-6 h-6"
+      className={`flex justify-center border border-blockchain-green bg-blockchain-green/15 w-6 h-6 ${
+        theme ? "" : ""
+      }`}
       to={to}
     >
       {theme ? (
