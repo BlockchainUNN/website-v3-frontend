@@ -54,7 +54,7 @@ const Speakers = () => {
                 </div>
 
                 <div className="relative w-auto h-[423px] flex items-center justify-center">
-                    <img src={speakerloading} alt="loading" className="w-full h-2/3 " />
+                    <img src={speakerloading} alt="loading" className="w-full h-1/2 md:h-2/3 " />
                 </div>
             </div>
         </div>

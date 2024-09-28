@@ -93,7 +93,7 @@ const BlockathonHero = () => {
           className={`flex flex-col md:flex-row md:px-8 py-4 items-center justify-evenly gap-8 w-full md:w-[85%] h-full`}
         >
           <div className="flex flex-col gap-8 md:gap-4 items-center md:items-start w-[85%] md:w-full">
-            <div className="text-white flex items-center gap-4 ">
+            <div className="text-white flex flex-row justify-start items-center  gap-4 ">
               <div className="flex flex-col md:flex-row items-center gap-2">
                 <img src={attendee} alt="attendee" className="w-8 h-8" />
                 <div className="text-start md:text-center flex flex-col items-center">
@@ -103,7 +103,7 @@ const BlockathonHero = () => {
               </div>
 
               <div className="flex flex-col md:flex-row  items-center gap-2">
-                <img src={speaker} alt="speaker" className="w-8 h-8" />
+                <img src={speaker} alt="speaker" className="w-8 h-6" />
                 <div className="text-center flex flex-col items-center">
                   <p className="text-[1.3rem] font-bold">30</p>
                   <p>Speakers</p>
@@ -111,7 +111,7 @@ const BlockathonHero = () => {
               </div>
 
               <div className="flex flex-col md:flex-row  items-center gap-2">
-                <img src={sponsor} alt="sponsor" className="w-8 h-8" />
+                <img src={sponsor} alt="sponsor" className="w-8 h-6" />
                 <div className="text-center flex flex-col items-center">
                   <p className="text-[1.3rem] font-bold">10+</p>
                   <p>Sponsors</p>
@@ -147,10 +147,10 @@ const BlockathonHero = () => {
           </div>
 
           <div className="flex flex-col gap-4 items-center ">
-            <button className="px-12 py-4 border-white border rounded-md text-white w-[250px]">
-              Register Here
+            <button className="px-12 py-4 border-white border rounded-md text-white w-full md:w-[310px]">
+              Register for Conference
             </button>
-            <button className="px-12 py-4 bg-gray-200 rounded-md text-black w-[250px]">
+            <button className="px-12 py-4 bg-gray-200 rounded-md text-black w-full md:w-[310px]">
               Join the Hackathon
             </button>
           </div>
@@ -158,14 +158,30 @@ const BlockathonHero = () => {
       </div>
 
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-12 md:gap-[13%] w-full px-8 py-8 text-white">
-        <div className="w-full md:w-[350px] text-center md:text-start">
-          <h1 className="font-semibold mb-2 font-serif text-[28px]">
+        <div className="w-full md:w-[40%]">
+          <h1 className="font-semibold mb-2 font-serif text-[28px] text-center md:text-start">
             Blockathon Overview
           </h1>
-          <p className="w-full flex text-wrap">
-            BLOCKATHON is a 1-week event uniting both top and newbies focused on
-            technology and community. This 1-week event comprises workshops,
-            learning programs, builders and hackathon, panel session, e.t.c.
+          <p className="w-full text-justify font-medium">
+            BlockchainUNN Conference 3.0, themed "
+            <span className="text-blockchain-green font-semibold">BLOCKATHON</span>," is set to take
+            place this October. This third annual event is a dynamic 6-day
+            hackathon and building session designed to onboard the next
+            generation of blockchain builders. Combining workshops, learning
+            programs, networking opportunities, a career fair, panel sessions,
+            and talks from over 10 industry experts,{" "}
+            <span className="text-blockchain-green font-semibold">BLOCKATHON</span> aims to educate
+            and inspire both technical and non-technical participants.
+          </p>
+          <p className="w-full text-justify font-medium mt-2">
+            With an expected turnout of 5000+ attendees, including 200-300
+            hackers, and backed by solid industry sponsors, the conference
+            showcases the endless possibilities within the blockchain ecosystem.
+            At its core, BlockchainUNN believes that education is crucial for
+            widespread blockchain adoption, and{" "}
+            <span className="text-blockchain-green font-semibold">BLOCKATHON</span> serves as a
+            platform to bring this education to the forefront while recognizing
+            and nurturing emerging talent in the field.
           </p>
         </div>
         <div className="relative w-full md:w-[450px] h-[250px] text-center">
