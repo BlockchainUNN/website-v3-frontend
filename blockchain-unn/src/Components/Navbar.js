@@ -52,7 +52,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex gap-16 items-center justify-between w-full">
+      <div className="hidden md:flex max-lg:gap-8 gap-16 items-center justify-between w-full">
         <div className="mt-2 h-8 w-36">
           {theme ? (
             <img
@@ -69,7 +69,7 @@ const Navbar = () => {
           )}
         </div>
 
-        <ul className="flex gap-8">
+        <ul className="flex gap-8 max-lg:gap-4">
           {navItems.map((item) => (
             <li
               key={item}

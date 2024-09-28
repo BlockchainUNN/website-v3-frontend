@@ -14,3 +14,7 @@
 .App-light {
   background-color: #d8d8d8;
 }
+
+.font-outline-2 {
+  -webkit-text-stroke: 1px #a4d8bd;
+}

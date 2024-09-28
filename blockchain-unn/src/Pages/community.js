@@ -12,14 +12,18 @@ export default function Community() {
 
   return (
     <div
-      className={theme ? `App ` : `App bg-gradient-to-b from-grey to-white `}
+      className={
+        (theme
+          ? `App bg-gradient-to-b from-black1 to-black text-ash`
+          : `App bg-gradient-to-b from-grey to-white`) + " max-md:gap-20 gap-60"
+      }
     >
-      <div className="flex flex-col w-full justify-center">
-        <div className="flex w-full px-4 py-14 flex-col">
+      <div className="flex flex-col w-full justify-center max-lg:gap-4 max-sm:gap-0 gap-8">
+        <div className="flex w-full py-14 justify-center">
           <Navbar />
-          <Header />
         </div>
-        <div className="flex w-full flex-col gap-10">
+        <div className="flex w-full flex-col max-lg:gap-20 max-sm:gap-12 gap-32">
+          <Header />
           <CommunityImages />
           <Socials />
           <RecentEvents />
