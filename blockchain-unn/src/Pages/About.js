@@ -16,10 +16,10 @@ export default function About() {
           : `App bg-gradient-to-b from-grey to-white`) + ""
       }
     >
-      <div className="flex w-full px-4 py-14 justify-center">
+      <div className="flex w-full px-4 py-14 max-sm:py-8 justify-center">
         <Navbar />
       </div>
-      <div className="flex w-full flex-col py-12 gap-44">
+      <div className="flex w-full flex-col py-12 max-sm:gap-16 max-lg:gap-28 gap-44">
         <AboutUs />
         <TheTeam />
       </div>
