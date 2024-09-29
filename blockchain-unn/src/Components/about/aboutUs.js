@@ -7,10 +7,10 @@ export default function AboutUs() {
   return (
     <div className="flex flex-col w-full gap-24 max-lg:gap-16 max-sm:gap-6 max-md:gap-12">
       <div className="flex flex-col w-full text-center font-raleway gap-6 max-md:gap-4">
-        <h1 className="text-blockchain-green font-raleway-black max-md:text-[1.2rem] max-lg:text-[1.5rem] text-[1.75rem] leading-none uppercase  max-sm-420:text-red-500 max-sm:text-blue-500 max-md:text-yellow-500 max-lg:text-orange-500">
+        <h1 className="text-blockchain-green font-raleway-black max-md:text-[1.2rem] max-lg:text-[1.5rem] text-[1.75rem] leading-none uppercase">
           about us
         </h1>
-        <h2 className="font-raleway-black max-sm:text-[1.5rem] max-md:text-[2rem] max-lg:text-[3rem] text-[3.5rem] text-balance max-sm:leading-[2rem] max-md:leading-[3rem] max-lg:leading-[3.5rem] leading-[4rem]">
+        <h2 className="font-raleway-black max-sm:text-[1.5rem] max-sm-420:text-[1.2rem] max-md:text-[2rem] max-lg:text-[3rem] text-[3.5rem] text-balance max-sm-420:leading-[1.5rem] max-sm:leading-[2rem] max-md:leading-[3rem] max-lg:leading-[3.5rem] leading-[4rem]">
           Expanding the blockchainunn community and introducing web3.
         </h2>
         <span className="flex max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[1.2rem] text-[1.5rem] font-raleway text-balance mx-auto  max-sm-420:w-[20rem] max-sm:w-[26rem] max-md:w-[32rem] max-lg:w-[40rem] w-[51rem]">
@@ -29,7 +29,7 @@ export default function AboutUs() {
           title={"Our Mission"}
           icon={
             <img
-              className="max-sm:w-5 w-7 max-sm:h-5 h-7 my-auto"
+              className="max-sm:w-5 max-sm-420:w-4 w-7 max-sm:h-5 max-sm-420:h-4 h-7 my-auto"
               src={missionIcon}
               alt="Our Mission Icon"
             />
@@ -42,7 +42,7 @@ export default function AboutUs() {
           title={"Our Vision"}
           icon={
             <img
-              className="max-sm:w-5 w-7 max-sm:h-5 h-7 my-auto"
+              className="max-sm:w-5 max-sm-420:w-4 w-7 max-sm:h-5 max-sm-420:h-4 h-7 my-auto"
               src={visionIcon}
               alt="Our Vision Icon"
             />
@@ -55,7 +55,7 @@ export default function AboutUs() {
           title={"Our Values"}
           icon={
             <img
-              className="max-sm:w-5 w-7 max-sm:h-5 h-7 my-auto"
+              className="max-sm:w-5 max-sm-420:w-4 w-7 max-sm:h-5 max-sm-420:h-4 h-7 my-auto"
               src={valuesIcon}
               alt="Our Values Icon"
             />
