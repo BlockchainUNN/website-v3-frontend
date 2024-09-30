@@ -11,7 +11,6 @@ const Blockathon = () => {
            <BlockathonHero />
            <Speakers />
            <EventSchedule />
-           <Prizes />
            <Footer />
         </div>
     );

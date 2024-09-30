@@ -10,6 +10,7 @@ import blockchainunn from "../../assets/logo-black.svg";
 import gallery from "../../assets/gallery.png";
 import videos from "../../assets/video.png";
 import Categories from "./Categories";
+import Prizes from "./Prizes";
 
 const EventSchedule = () => {
   return (
@@ -26,7 +27,7 @@ const EventSchedule = () => {
               <p className="text-black font-light text-[10px]">
                 Mon 21st October, 2024
               </p>
-              <h2 className="text-black font-semibold text-[20px]">
+              <h2 className="text-black font-semibold text-[18px]">
                 Online Hackathon officially starts with workshops from sponsors.
               </h2>
             </div>
@@ -44,7 +45,7 @@ const EventSchedule = () => {
               <p className="text-black font-light text-[10px]">
                 Tue 22nd October, 2024
               </p>
-              <h2 className="text-black font-semibold text-[20px]">
+              <h2 className="text-black font-semibold text-[18px]">
                 Online Hackathon day (2) two continues with the hackers and
                 their teams.
               </h2>
@@ -65,7 +66,7 @@ const EventSchedule = () => {
               <p className="text-black font-light text-[10px]">
                 Wed 23rd October, 2024
               </p>
-              <h2 className="text-black font-semibold text-[20px]">
+              <h2 className="text-black font-semibold text-[18px]">
                 Admissions to all registered participants into the hacker house
                 for the physical phase.
               </h2>
@@ -84,7 +85,7 @@ const EventSchedule = () => {
               <p className="text-black font-light text-[10px]">
                 Thur 24th October, 2024
               </p>
-              <h2 className="text-black font-semibold text-[20px]">
+              <h2 className="text-black font-semibold text-[18px]">
                 Physical Hackathon day (2) two continues with hackers rounding
                 up.
               </h2>
@@ -105,7 +106,7 @@ const EventSchedule = () => {
               <p className="text-black font-light text-[10px]">
                 Fri 25th October, 2024
               </p>
-              <h2 className="text-black font-semibold text-[20px]">
+              <h2 className="text-black font-semibold text-[18px]">
                 Judges will review and judge, and the top 10 projects get to do
                 a physical presentation.
               </h2>
@@ -124,9 +125,9 @@ const EventSchedule = () => {
               <p className="text-black font-light text-[10px]">
                 Sat 26th October, 2024
               </p>
-              <h2 className="text-black font-semibold text-[20px]">
-                Conference 3.0 grand finale event where the winners will be
-                announced.
+              <h2 className="text-black font-semibold text-[18px]">
+                Conference 3.0 grand finale event for all techies. (Newbies,
+                Designers Developers Content writers, e.t.c.)
               </h2>
             </div>
           </div>
@@ -134,6 +135,7 @@ const EventSchedule = () => {
       </div>
 
       <Categories />
+      <Prizes />
 
       <div className="my-[3rem] flex flex-col items-center justify-center w-[90%] mx-auto">
         <h1 className="text-white text-[25px] text-center md:text-[30px] font-bold mb-8">
@@ -196,7 +198,7 @@ const EventSchedule = () => {
                 className="w-full h-full object-cover"
               />
               <p className="px-4 py-4 bg-white absolute bottom-0 w-full text-center text-black font-bold text-[20px]">
-                $5000 won by our devs and his team at ayathon
+                $3000 won by some of our devs and his team at ayathon
               </p>
             </div>
             <div className="relative w-auto h-[416px]">
@@ -206,7 +208,7 @@ const EventSchedule = () => {
                 className="w-full h-full object-cover"
               />
               <p className="px-4 py-4 bg-white absolute bottom-0 w-full text-center text-black font-bold text-[20px]">
-                Our community member won $4,500 at Muaccra
+                Our community member won $4,500 at Muaccra Hackathon
               </p>
             </div>
           </div>
@@ -218,7 +220,7 @@ const EventSchedule = () => {
                 className="w-full h-full object-cover"
               />
               <p className="px-4 py-4 bg-white absolute bottom-0 w-full text-center text-black font-bold text-[20px]">
-                Our Devs won at Hackerx Hackathon
+                3 of Our Dev Teams won at Hackerx Hackathon
               </p>
             </div>
             <div className="relative w-auto h-[416px]">
@@ -228,7 +230,8 @@ const EventSchedule = () => {
                 className="w-full h-full object-cover"
               />
               <p className="px-4 py-4 bg-white absolute bottom-0 w-full text-center text-black font-bold text-[20px]">
-                Our Hackers won $1,500 bounty at web3 Lagos Con
+                Our Hackers won out of the Lisk $1,500 bounty pool at web3 Lagos
+                Con Hackathon
               </p>
             </div>
           </div>

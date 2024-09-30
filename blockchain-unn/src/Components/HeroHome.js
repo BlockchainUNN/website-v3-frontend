@@ -3,6 +3,11 @@ import { ThemeContext } from "./Theme";
 import BlockathonHeader from "./BlockathonHeader";
 import Navbar from "./Navbar";
 import image from "../assets/image.png";
+import odoi from "../assets/team-pics/odoi.png";
+import cheta from "../assets/team-pics/cheta.png";
+import adaugo from "../assets/team-pics/adaugo.png";
+import dony from "../assets/team-pics/dony.png";
+import chukwuebuka from "../assets/team-pics/chukwuebuka.png";
 import {
   FaArrowRight,
   FaCode,
@@ -15,7 +20,7 @@ import {
 const HeroHome = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="w-full flex flex-col items-center overflow-x-clip">
+    <div className="w-full flex flex-col items-center overflow-hidden">
 
       <BlockathonHeader />
       <div
@@ -50,58 +55,60 @@ const HeroHome = () => {
       >
          <div className="relative">
          <img
-            src={image}
+            src={odoi}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] object-cover"
           />
           <img
-            src={image}
+            src={cheta}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] absolute left-8 top-0 object-cover"
           />
           <img
-            src={image}
+            src={chukwuebuka}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
           />
           <img
-            src={image}
+            src={adaugo}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
           />
          </div>
       </div>
 
-      <div
-        className={`${
-          theme
-            ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green border-r-0"
-            : "bg-blockchain-white  border border-blockchain-green border-r-0"
-        } absolute right-0 top-[46%] -rotate-0 w-[175px] rounded-l-full p-2 hidden md:flex`}
-      >
-         <div className="relative">
-         <img
-            src={image}
-            alt="i"
-            className="rounded-full  w-[60px] h-[60px] object-cover"
-          />
-          <img
-            src={image}
-            alt="i"
-            className="rounded-full  w-[60px] h-[60px] absolute left-8 top-0 object-cover"
-          />
-          <img
-            src={image}
-            alt="i"
-            className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
-          />
-          <img
-            src={image}
-            alt="i"
-            className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
-          />
-         </div>
-      </div>
+      <div className="absolute right-0 top-[44%] overflow-hidden w-[175px] h-[120px] hidden md:block">
+          <div
+            className={`${
+              theme
+                ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green border-r-0"
+                : "bg-blockchain-white border border-blockchain-green border-r-0"
+            } absolute top-4 -right-4 -rotate-12 w-[175px] rounded-l-full p-2 flex`}
+          >
+            <div className="relative">
+              <img
+                src={adaugo}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] object-cover"
+              />
+              <img
+                src={chukwuebuka}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] absolute left-8 top-0 object-cover"
+              />
+              <img
+                src={cheta}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
+              />
+              <img
+                src={odoi}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
+              />
+            </div>
+          </div>
+        </div>
 
       <div
         className={` ${
@@ -149,17 +156,17 @@ const HeroHome = () => {
           <h3 className="font-semibold">Community STATS</h3>
           <div className="relative flex ">
             <img
-              src={image}
+              src={dony}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] object-cover"
             />
             <img
-              src={image}
+              src={adaugo}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-14 object-cover"
             />
             <img
-              src={image}
+              src={chukwuebuka}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-28 object-cover"
             />
