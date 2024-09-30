@@ -8,7 +8,7 @@ import winnertag from "../../assets/icons/winnertag.svg";
 
 const Prizes = () => {
   return (
-    <div className="bg-dark-mode px-2 md:px-[2rem] xl:px-[4rem] py-12 flex flex-col items-center w-full">
+    <div className=" px-2 md:px-[2rem] xl:px-[4rem] py-12 flex flex-col items-center w-full">
       <h1 className="text-blockathon-green text-[25px] md:text-[80px] font-bold mb-4">
         PRIZES & RECOGNITION
       </h1>
