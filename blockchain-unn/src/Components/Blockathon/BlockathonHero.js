@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 
 const BlockathonHero = () => {
   const { theme } = useContext(ThemeContext);
-  //   const navigate = useNavigate();
 
   const calculateTimeLeft = () => {
     const eventDate = new Date("2024-10-30T00:00:00");
@@ -149,14 +148,14 @@ const BlockathonHero = () => {
 
           <div className="flex flex-col gap-4 items-center ">
             <Link to="/blockathon/registration">
-            <button className="px-12 py-4 border-white border rounded-md text-white w-full md:w-[310px]">
-              Register for Conference
-            </button>
+              <button className="px-12 py-4 border-white border rounded-md text-white w-full md:w-[310px]">
+                Register for Conference
+              </button>
             </Link>
             <Link to="/blockathon/hackathon/registration">
-            <button className="px-12 py-4 bg-gray-200 rounded-md text-black w-full md:w-[310px]">
-              Join the Hackathon
-            </button>
+              <button className="px-12 py-4 bg-gray-200 rounded-md text-black w-full md:w-[310px]">
+                Join the Hackathon
+              </button>
             </Link>
           </div>
         </div>
@@ -169,14 +168,14 @@ const BlockathonHero = () => {
           </h1>
           <p className="w-full text-justify font-medium">
             BlockchainUNN Conference 3.0, themed "
-            <span className="text-white font-bold">BLOCKATHON</span>," is set to take
-            place this October. This third annual event is a dynamic 6-day
+            <span className="text-white font-bold">BLOCKATHON</span>," is set to
+            take place this October. This third annual event is a dynamic 6-day
             hackathon and building session designed to onboard the next
             generation of blockchain builders. Combining workshops, learning
             programs, networking opportunities, a career fair, panel sessions,
             and talks from over 10 industry experts,{" "}
-            <span className="text-white font-bold">BLOCKATHON</span> aims to educate
-            and inspire both technical and non-technical participants.
+            <span className="text-white font-bold">BLOCKATHON</span> aims to
+            educate and inspire both technical and non-technical participants.
           </p>
           <p className="w-full text-justify font-medium mt-4">
             With an expected turnout of 5000+ attendees, including 200-300
