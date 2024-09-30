@@ -10,6 +10,7 @@ import { Button } from "../../Components/Buttons";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import verifyEmail from "../../assets/icons/verify-email.svg";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
 
@@ -46,6 +47,22 @@ const HackathonRegistration = () => {
     </h1>
   );
 
+  const Step3Header = () => (
+    <h1 className="flex justify-center flex-col text-white mx-auto max-sm-420:text-[1rem] max-sm:text-[1.2rem] max-md:text-[1.5rem] max-lg:text-[2rem] text-[2.75rem] text-nowrap gap-1.5 font-raleway-black">
+      <span className="flex gap-2 mx-auto">
+        Email <span className="text-blockathon-green">Verification</span>
+      </span>
+    </h1>
+  );
+
+  const Step4Header = () => (
+    <h1 className="flex justify-center flex-col text-white font-raleway-black mx-auto max-sm-420:text-[1rem] max-sm:text-[1.2rem] max-md:text-[1.5rem] max-lg:text-[2rem] text-[48px] text-nowrap gap-1.5">
+      <span className="flex gap-2 mx-auto ">
+        Log <span className="text-blockathon-green">In</span>
+      </span>
+    </h1>
+  );
+
   return (
     <section
       style={{ backgroundImage: `url(${bg_image})` }}
@@ -66,8 +83,16 @@ const HackathonRegistration = () => {
             <img src={previouSvg} alt="Go Back" className="h-6 max-sm:h-4" />
           </button>
         </div>
-        <div className="flex mx-auto my-auto gap-12 max-sm:gap-6 flex-col max-lg:w-full">
-          {currentStep === 1 ? <Step1Header /> : <Step2Header />}
+        <div className="flex mx-auto my-auto gap-12 max-sm:gap-6 flex-col max-lg:w-full w-[85%]">
+          {currentStep === 1 ? (
+            <Step1Header />
+          ) : currentStep === 2 ? (
+            <Step2Header />
+          ) : currentStep === 3 ? (
+            <Step3Header />
+          ) : (
+            <Step4Header />
+          )}
           <EmailStep
             step={currentStep}
             setStep={setCurrentStep}
@@ -78,7 +103,10 @@ const HackathonRegistration = () => {
             userDetails={userDetails}
             eventId={HACKATHON_ID}
             step={currentStep}
+            setStep={setCurrentStep}
           />
+          <EmailVerificationStep step={currentStep} setStep={setCurrentStep} />
+          <LoginStep step={currentStep} />
         </div>
       </div>
     </section>
@@ -154,7 +182,7 @@ const EmailStep = ({ step, setStep, setUserDetails, blogathon_id }) => {
   );
 };
 
-const DetailsStep = ({ userDetails, eventId, step }) => {
+const DetailsStep = ({ userDetails, eventId, step, setStep }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -184,14 +212,14 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
     setLoading(true);
 
     // Validation
-    const registrationKeys = Object.keys(registrationDetails);
-    const emptyFields = registrationKeys.filter((key) => {
-      if (!registrationDetails[key]) {
-        return key;
-      } else {
-        return undefined;
-      }
-    });
+    // const registrationKeys = Object.keys(registrationDetails);
+    // const emptyFields = registrationKeys.filter((key) => {
+    //   if (!registrationDetails[key]) {
+    //     return key;
+    //   } else {
+    //     return undefined;
+    //   }
+    // });
 
     if (emptyFields?.length > 0) {
       Swal.fire({
@@ -233,17 +261,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
         ),
       }).finally(() => navigate(-1));
       setLoading(false);
-    } catch (error) {
-      // Handle other errors
-      Swal.fire({
-        icon: "error",
-        text:
-          error?.response?.data?.error ||
-          error?.message ||
-          "Something went wrong, Please try again.",
-      });
-      setLoading(false);
-    }
+    }, 1000);
   };
 
   const handleChange = (event) => {
@@ -317,6 +335,79 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
           <Button text={"Register"} loading={loading} inverse={true} />
         </div>
       </form>
+    </div>
+  );
+};
+
+const EmailVerificationStep = ({ step, setStep }) => {
+  useEffect(() => {
+    if (step === 3) {
+      const timer = setTimeout(() => {
+        setStep(4);
+      }, 5000); // Modal disappears after 5 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [step, setStep]);
+
+  if (step !== 3) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center w-full">
+      <div className="bg-white py-16 px-12 rounded-lg text-center w-[65%] h-[616px] flex flex-col gap-2">
+        <h2 className="text-2xl font-raleway-black font-bold">Verify Email</h2>
+        <p className="mb-8 -mt-2">Hi dear, please check your mail to confirm</p>
+        <img src={verifyEmail} alt="Verify Email" className="w-[321px] h-[288.15px] mx-auto" />
+      </div>
+    </div>
+  );
+};
+
+const LoginStep = ({ step }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    // Implement login logic here
+    // ...
+    setLoading(false);
+  };
+
+  if (step !== 4) return null;
+
+  return (
+    <div className="flex w-full flex-col">
+       <p className="text-white font-raleway text-[36px] mx-auto -mt-12 mb-12">
+      Enter your details to become a hacker 
+      </p>
+      <form className="flex flex-col w-full gap-8 mb-8" onSubmit={handleSubmit}>
+        <Input
+          icon={emailSvg}
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+          className="h-[80px]"
+        />
+        <Input
+          icon={personSvg}
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          required
+          className="h-[80px]"
+        />
+        <div className="flex w-full max-sm:pt-2 pt-4 drop-shadow-2xl shadow-black shadow-2xl mx-auto">
+        <Button text={"Login"} loading={loading} inverse={true} />
+        </div>
+      </form>
+      <p className="flex justify-center flex-col text-white mx-auto text-[1rem] text-nowrap gap-1.5 font-raleway">
+      <span className="flex gap-2 mx-auto">
+      Don’t have an account? <span className="text-blockathon-green">Register </span>
+      </span>
+    </p>
     </div>
   );
 };
