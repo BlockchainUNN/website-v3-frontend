@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 
 const BlockathonHero = () => {
   const { theme } = useContext(ThemeContext);
-  const navigate = useNavigate();
 
   const calculateTimeLeft = () => {
     const eventDate = new Date("2024-10-30T00:00:00");
