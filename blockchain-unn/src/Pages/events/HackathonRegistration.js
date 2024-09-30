@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { API_ROUTES, customAxios } from "../../api.routes";
 import previouSvg from "../../assets/icons/previousArrow.svg";
 import bg_image from "../../assets/blogathon_bg.png";
@@ -19,7 +19,8 @@ import { ReactSwal } from "../../utils/swal";
  * 2. Then we send them the registeration link in their emails, part of their verification.
  */
 const HackathonRegistration = () => {
-  const HACKATHON_ID = "d23893ee-b2b2-449d-bd03-f4a97f2e54eb"; // Todo: Make this dynamic
+  const HACKATHON_ID = "blockathon"; // Todo: Make this dynamic
+  const BLOCKATHON_ID = "d23893ee-b2b2-449d-bd03-f4a97f2e54eb";
   const [currentStep, setCurrentStep] = useState(1);
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
@@ -71,6 +72,7 @@ const HackathonRegistration = () => {
             step={currentStep}
             setStep={setCurrentStep}
             setUserDetails={setUserDetails}
+            blogathon_id={BLOCKATHON_ID}
           />
           <DetailsStep
             userDetails={userDetails}
@@ -83,27 +85,34 @@ const HackathonRegistration = () => {
   );
 };
 
-const EmailStep = ({ step, setStep, setUserDetails }) => {
+const EmailStep = ({ step, setStep, setUserDetails, blogathon_id }) => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Get user details
+      // Get user details - {through the event attendee endpoint so we know if the user is regiatered for the blogathon or not}
       setLoading(true);
       const { data } = await customAxios
         .unprotected()
-        .get(API_ROUTES.users.getByEmail + email);
+        .post(API_ROUTES.events.attendee + blogathon_id, { email });
+
+      console.log(data);
 
       setUserDetails(data?.data);
       setStep(2);
       setLoading(false);
     } catch (error) {
+      console.log(error);
+
       // If status is 404, move to step 2
       if (error.status === 404) {
-        setUserDetails({ email });
-        setStep(2);
+        console.log(error?.response?.data?.error);
+        Swal.fire({
+          icon: "error",
+          text: "Please register for the confrence phase of the event first.",
+        });
         setLoading(false);
         return;
       }
@@ -156,30 +165,19 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
     confirmPassword: "",
   });
 
+  console.log("user details ==> ", userDetails);
+
   // Prefill and lock certain inputs - Will happen from url.
-  //   useEffect(() => {
-  //     if (
-  //       userDetails?.first_name &&
-  //       userDetails?.last_name &&
-  //       userDetails?.email
-  //     ) {
-  //       setRegisterationDetails((prev) => {
-  //         return {
-  //           ...prev,
-  //           firstName: userDetails?.first_name,
-  //           lastName: userDetails?.last_name,
-  //           email: userDetails?.email,
-  //         };
-  //       });
-  //     } else if (userDetails?.email) {
-  //       setRegisterationDetails((prev) => {
-  //         return {
-  //           ...prev,
-  //           email: userDetails?.email,
-  //         };
-  //       });
-  //     }
-  //   }, [userDetails?.first_name, userDetails?.last_name, userDetails?.email]);
+  useEffect(() => {
+    if (userDetails?.user?.email) {
+      setRegisterationDetails((prev) => {
+        return {
+          ...prev,
+          email: userDetails?.user?.email,
+        };
+      });
+    }
+  }, [userDetails?.user?.email]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -198,7 +196,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
     if (emptyFields?.length > 0) {
       Swal.fire({
         icon: "error",
-        text: "Please answer all questions",
+        text: "Please fill all fields",
       });
       setLoading(false);
       return;
@@ -206,9 +204,11 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
 
     try {
       // Register user for event
-      await customAxios
+      const { data } = await customAxios
         .unprotected()
-        .post(API_ROUTES.events.registration + eventId, registrationDetails);
+        .post(API_ROUTES.hackers.create + eventId, registrationDetails);
+      console.log(data);
+
       ReactSwal.fire({
         showConfirmButton: false,
         html: (
@@ -217,7 +217,10 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               <b>Successful Registration</b>
             </h1>
             <div className="text-center text-[0.875rem]">
-              <span>You have successfully registered for blockathon.</span>
+              <span>
+                You have successfully registered for the Hackathon phase of
+                blockathon.
+              </span>
               <br />
               <span>
                 Confirmation email has been sent to {registrationDetails.email}
