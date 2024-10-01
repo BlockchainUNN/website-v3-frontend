@@ -28,15 +28,15 @@ const HeroHome = () => {
         } flex flex-col md:py-4 items-center w-full font-raleway relative overflow-x-hidden `}
       >
         <Navbar />
-        <div className="text-center flex flex-col items-center w-[92%] md:w-[80%] mx-auto mt-8">
-          <h1 className="text-green-900 font-[900] text-[50px] md:text-[120px] font-raleway-black ">
+        <div className="text-center flex flex-col items-center w-[92%] md:w-[80%] mx-auto mt-16 mb-6">
+          <h1 className="text-[#02641c] font-[900] text-[50px] md:text-[120px] font-raleway-black leading-none">
             BLOCKCHAIN
           </h1>
           <div className="flex items-center gap-4 ">
-            <h1 className="text-green-900 font-extrabold text-[50px] md:text-[120px] font-raleway-black">
+            <h1 className="text-[#02641c] font-extrabold text-[50px] md:text-[120px] font-raleway-black leading-none">
               UNN
             </h1>
-            <div className="flex items-center justify-center bg-gradient-to-r from-green-950 to-green-500 p-2 md:p-4 w-[80%] md:[50%]">
+            <div className="flex items-center justify-center bg-gradient-to-r from-[#02641c] to-[#04CA39] p-2 md:p-4 w-[80%] md:[50%]">
               <p className="text-[12px] md:text-[30px] text-center w-full text-white border-t border-b border-white p-2 md:p-4 font-wallpoet">
                 Learn . Build . Innovate
               </p>
@@ -121,10 +121,10 @@ const HeroHome = () => {
       </div>
 
       <div className="flex flex-col md:flex-row items-center gap-4 mb-12 md:mb-20">
-        <button className="bg-gradient-to-r from-green-950 to-green-500 flex items-center justify-center gap-2 w-[200px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full text-white">
+        <button className="bg-gradient-to-r from-[#02641c] to-[#04CA39] flex items-center justify-center gap-2 w-[200px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full text-white">
           Get Started <FaArrowRight size={14} />
         </button>
-        <div className="flex items-center bg-gradient-to-r from-green-950 to-green-500 w-[150px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full">
+        <div className="flex items-center bg-gradient-to-r from-[#02641c] to-[#04CA39] w-[150px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full">
           <button className="bg-white w-[95%] h-[90%] rounded-full text-green-800">
             Newsletter
           </button>
