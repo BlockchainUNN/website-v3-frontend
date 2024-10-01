@@ -3,10 +3,10 @@ import image from '../assets/hacker.png';
 import logo from '../assets/logo-black.svg';
 import logo1 from '../assets/logo-white.svg';
 import { ThemeContext } from "./Theme";
-import hackerx1 from "../assets/designskill.png";
-import hackerx2 from "../assets/skill.png";
-import hackerx3 from "../assets/webskill.png";
-import avax from "../assets/blockathonc.png";
+import hackerx1 from "../assets/avax-2.jpg";
+import hackerx2 from "../assets/avax-3.jpg";
+import hackerx3 from "../assets/hacker-x-2.jpg";
+import avax from "../assets/hacker-x.JPG";
 import arbitrum from "../assets/arbitrum1.png";
 
 const PhotoCurl = () => {
