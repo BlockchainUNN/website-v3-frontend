@@ -117,7 +117,7 @@ const EventSchedule = () => {
             alt=""
             className="rotate-90 mb-6 md:mb-0 md:rotate-0"
           />
-          <div className="relative w-full md:w-[579px] h-[150px] sm:h-[120px] bg-blockchain-white flex flex-col items-center px-8 py-4">
+          <div className="relative w-full md:w-[579px] h-[170px] sm:h-[120px] bg-blockchain-white flex flex-col items-center px-8 py-4">
             <p className="border-2 border-black px-4 font-bold bg-blockathon-green text-black w-[85px] absolute -top-4">
               DAY 6
             </p>

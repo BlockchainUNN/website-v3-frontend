@@ -59,6 +59,7 @@ const Categories = () => {
     },
   ];
 
+  // Check screen width for mobile responsiveness
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 620);
@@ -70,6 +71,7 @@ const Categories = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Implement intersection observer for scrolling on mobile
   useEffect(() => {
     if (isMobile) {
       const observers = boxes.map((_, index) => {
@@ -78,7 +80,12 @@ const Categories = () => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 setTimeout(() => {
-                  setVisibleIndices((prev) => [...prev, index]);
+                  setVisibleIndices((prev) => {
+                    if (!prev.includes(index)) {
+                      return [...prev, index];
+                    }
+                    return prev;
+                  });
                 }, 2000); // 2-second delay
               } else {
                 setVisibleIndices((prev) => prev.filter((i) => i !== index));
@@ -101,22 +108,24 @@ const Categories = () => {
     // eslint-disable-next-line
   }, [isMobile]);
 
+  // Check visibility of boxes on scroll or hover
   const isVisible = (index) => {
     return isMobile ? visibleIndices.includes(index) : hoveredIndex === index;
   };
 
+  // Render individual boxes
   const renderBox = (box, index) => (
     <div
       key={index}
       id={`box-${index}`}
-      className={`flex items-center gap-2 justify-center w-[85%] md:w-[384px] h-auto mx-auto text-white text-center transition-all duration-300 ease-in-out ${
-        isVisible(index) ? "h-[400px]" : "h-[384px]"
+      className={`flex items-center justify-center w-[85%] md:w-[384px] h-[384px] mx-auto text-white text-center transition-all duration-300 ease-in-out ${
+        isVisible(index) ? "h-[384px]" : "h-[384px]"
       }`}
       onMouseEnter={() => !isMobile && setHoveredIndex(index)}
       onMouseLeave={() => !isMobile && setHoveredIndex(null)}
     >
       {isVisible(index) ? (
-        <div className="bg-dark-mode p-4 flex flex-col items-start justify-center h-[370px] w-full md:w-[306px] border border-blockathon-green">
+        <div className="bg-dark-mode p-4 flex flex-col items-start justify-center h-[384px] w-full md:w-[306px] border border-blockathon-green">
           <h2 className="text-blockathon-green text-wrap max-w-[90%] px-4 font-semibold text-start mb-6">
             {box.subtitle}
           </h2>
@@ -140,7 +149,7 @@ const Categories = () => {
   );
 
   return (
-    <div className="bg-black px-2 xl:px-[2rem] my-[3rem] flex flex-col items-center justify-center w-full md:w-[90%]">
+    <div className="bg-black px-2 xl:px-[2rem] my-[3rem] flex flex-col items-center justify-center w-full">
       <h1 className="text-white text-[30px] font-bold mb-12">
         Categories to build
       </h1>
