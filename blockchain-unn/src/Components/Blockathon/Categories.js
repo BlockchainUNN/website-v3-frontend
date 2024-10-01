@@ -140,7 +140,7 @@ const Categories = () => {
   );
 
   return (
-    <div className="bg-black px-2 xl:px-[2rem] my-[3rem] flex flex-col items-center justify-center w-[90%]">
+    <div className="bg-black px-2 xl:px-[2rem] my-[3rem] flex flex-col items-center justify-center w-full md:w-[90%]">
       <h1 className="text-white text-[30px] font-bold mb-12">
         Categories to build
       </h1>
