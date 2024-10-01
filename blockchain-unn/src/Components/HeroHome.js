@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { ThemeContext } from "./Theme";
 import BlockathonHeader from "./BlockathonHeader";
 import Navbar from "./Navbar";
-import image from "../assets/image.png";
 import odoi from "../assets/team-pics/odoi.png";
 import cheta from "../assets/team-pics/cheta.png";
 import adaugo from "../assets/team-pics/adaugo.png";
