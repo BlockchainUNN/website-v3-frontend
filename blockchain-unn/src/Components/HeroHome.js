@@ -29,11 +29,11 @@ const HeroHome = () => {
       >
         <Navbar />
         <div className="text-center flex flex-col items-center w-[92%] md:w-[80%] mx-auto mt-8">
-          <h1 className="text-green-900 font-[900] text-[50px] md:text-[120px] font-raleway ">
+          <h1 className="text-green-900 font-[900] text-[50px] md:text-[120px] font-raleway-black ">
             BLOCKCHAIN
           </h1>
           <div className="flex items-center gap-4 ">
-            <h1 className="text-green-900 font-extrabold text-[50px] md:text-[120px] font-raleway">
+            <h1 className="text-green-900 font-extrabold text-[50px] md:text-[120px] font-raleway-black">
               UNN
             </h1>
             <div className="flex items-center justify-center bg-gradient-to-r from-green-950 to-green-500 p-2 md:p-4 w-[80%] md:[50%]">
