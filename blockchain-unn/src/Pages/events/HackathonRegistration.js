@@ -8,7 +8,7 @@ import personSvg from "../../assets/icons/person.svg";
 import genderSvg from "../../assets/icons/gender.svg";
 import { Button } from "../../Components/Buttons";
 import { IoIosArrowForward } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
@@ -98,8 +98,6 @@ const EmailStep = ({ step, setStep, setUserDetails, blogathon_id }) => {
         .unprotected()
         .post(API_ROUTES.events.attendee + blogathon_id, { email });
 
-      console.log(data);
-
       setUserDetails(data?.data);
       setStep(2);
       setLoading(false);
@@ -164,8 +162,6 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
     password: "",
     confirmPassword: "",
   });
-
-  console.log("user details ==> ", userDetails);
 
   // Prefill and lock certain inputs - Will happen from url.
   useEffect(() => {
@@ -315,6 +311,17 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
 
         <div className="flex w-full max-sm:pt-2 pt-4 drop-shadow-2xl shadow-black shadow-2xl mx-auto">
           <Button text={"Register"} loading={loading} inverse={true} />
+        </div>
+        <div className="flex w-full">
+          <span className="flex mx-auto text-white gap-1 max-sm:text-[0.875rem]">
+            Already have an account?{" "}
+            <Link
+              to={"/blockathon/hackathon/login"}
+              className="text-blockathon-green"
+            >
+              Log In
+            </Link>
+          </span>
         </div>
       </form>
     </div>
