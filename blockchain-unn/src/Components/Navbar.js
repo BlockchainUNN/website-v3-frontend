@@ -20,6 +20,14 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Helper function to get the correct link for each nav item
+  const getNavItemLink = (item) => {
+    if (item.toLowerCase() === "team") {
+      return "/about#team";
+    }
+    return `/${item.toLowerCase()}`;
+  };
+
   return (
     <div
       className={`${
@@ -75,7 +83,7 @@ const Navbar = () => {
               key={item}
               className="relative cursor-pointer"
             >
-              <Link to={`/${item.toLowerCase()}`} className="block">
+              <Link to={getNavItemLink(item)} className="block">
                 <span>{item}</span>
                 {/* Show the green bar if this is the active page */}
                 {currentPage === item.toLowerCase() && (
@@ -110,7 +118,7 @@ const Navbar = () => {
                 className="cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Link to={`/${item.toLowerCase()}`} className="block">
+                <Link to={getNavItemLink(item)} className="block">
                   <span>{item}</span>
                 </Link>
               </li>

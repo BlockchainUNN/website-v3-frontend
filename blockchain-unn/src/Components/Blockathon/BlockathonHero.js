@@ -54,7 +54,7 @@ const BlockathonHero = () => {
         />
 
         <div className="absolute top-1/4 md:top-1/3 md:left-auto flex flex-col gap-4 items-center justify-center">
-          <div className="w-[85%] h-[75px] md:h-[180px] flex items-center justify-center px-4 bg-white">
+          <div className="w-[87%] h-[50px] md:h-[190px] flex items-center justify-center px-4 bg-white">
             <img src={blockathon} alt="Blockchain" className="w-full h-full" />
           </div>
           <h1 className="text-white text-[25px] md:text-[50px] font-bold ">
