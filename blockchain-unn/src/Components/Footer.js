@@ -20,14 +20,14 @@ const Footer = () => {
                 </div>
                 <div className="text-start flex flex-col items-start px-4 md:px-2 py-[2rem] w-[45%] ">
                     <h3 className={` ${theme ? "text-white" : "text-black"} text-[18px] md:text-[24px] font-semibold`}>Contact</h3>
-                    <p className={` ${theme ? "" : ""} text-blockchain-green text-[10px] md:text-[18px] font-medium`}>@blockchainunn.community</p>
+                    <p className={` ${theme ? "" : ""} text-blockchain-green text-[10px] md:text-[18px] font-medium`}>blockchainunn@gmail.com</p>
 
                     <p className={` ${theme ? "text-white" : "text-black"} text-[10px] md:text-[24px] font-semibold mt-4`}>University of Nigeria, Nsukka</p>
                     <p className={` ${theme ? "text-white" : "text-black"} text-[10px] md:text-[18px] font-semibold`}>Enugu state.</p>
                 </div>
             </div>
             <div className={`flex flex-col items-start justify-center w-full p-4 md:px-16 ${theme ? "text-white" : "text-black"} text-[10px] md:text-[16px]`}>
-                <p>Copyright © 2023 BlockchainUNN. All rights reserved.</p>
+                <p>Copyright © 2024 BlockchainUNN. All rights reserved.</p>
             </div>
         </div>
     );

@@ -16,15 +16,16 @@ const Skills = () => {
                 <img src={ellipse} alt="ellipse" className="w-[80%] md:w-auto mx-auto" />
                 <img src={ellipse} alt="ellipse" className="absolute top-0 w-[76%] md:w-[395px] right-12 md:right-0" />
                 <h2 className="absolute top-5 md:top-8 left-[30%] text-[30px] font-semibold ">
-                    Our Skill Set
+                    What we do
                 </h2>
             </div>
             <div className={` ${theme ? "text-white" : "text-black"} flex text-center w-[90%] md:w-[75%] text-[12px] md:text-[24px] mx-auto `}>
                 <p>
-                    Start your journey understanding blockchain technology, it&apos;s most popular applications
-                    and the current landscape of innovation in the industry. <span className="text-green-500">BlockchainUNN </span> is dedicated
+                <span className="text-black font-raleway-semibold">BlockchainUNN </span> is dedicated
                     to helping students learn and grow in exciting fields of Blockchain, technology,
                     and innovation.
+                    Start your journey understanding blockchain technology, it&apos;s most popular applications
+                    and the current landscape of innovation in the industry. 
                 </p>
             </div>
 
