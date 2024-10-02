@@ -1,5 +1,5 @@
 import React from "react";
-import blockchainwhite from "../../assets/logo-white.svg";
+import blockchainwhite from "../../assets/blockchainunn-white.png";
 import SocialLink from "../socialLink";
 
 const Footer = () => {

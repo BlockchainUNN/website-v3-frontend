@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ThemeSwitch from "./ThemeSwitch.js";
-import LogoBlack from "../assets/logo-black.svg";
-import LogoWhite from "../assets/logo-white.svg";
+import LogoBlack from "../assets/blockchainunn-green.png";
+import LogoWhite from "../assets/blockchainunn-white.png";
 import { ThemeContext } from "./Theme.js";
 import { FaBars, FaTimes } from "react-icons/fa";
 import SocialLink from "./socialLink.js";
