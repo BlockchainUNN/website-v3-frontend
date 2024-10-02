@@ -2,8 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../Theme";
 import Hacker from "../../assets/blockathonc.png";
 import blockathon from "../../assets/blockathonlogo.png";
-// import { useNavigate } from "react-router-dom";
-import map from "../../assets/map.png";
 import cup from "../../assets/icons/smallcup.svg";
 import attendee from "../../assets/icons/attendee.svg";
 import speaker from "../../assets/icons/speaker.svg";
@@ -189,10 +187,17 @@ const BlockathonHero = () => {
           </p>
         </div>
         <div className="relative w-full md:w-[450px] h-[250px] text-center">
-          <img src={map} alt="blockathon" className="w-full h-full" />
-          <p className="text-black absolute top-[4rem] w-full font-bold font-serif text-[22px]">
-            Lion Science Park
-          </p>
+          {/* Embed YouTube video using an iframe */}
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/Gp0ShcIGdkk"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
         </div>
       </div>
     </div>

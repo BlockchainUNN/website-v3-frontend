@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "./Theme";
-import blockchainunn from "../assets/logo-black.svg";
-import blockchainunnwhite from "../assets/logo-white.svg";
+import blockchainunn from "../assets/blockchainunn-green.png";
+import blockchainunnwhite from "../assets/blockchainunn-white.png";
 
 const Footer = () => {
     const { theme } = useContext(ThemeContext);

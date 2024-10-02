@@ -20,7 +20,7 @@ const Partner = ({ partnerImages }) => {
                 </p>
             </div>
             <div className="my-8 w-full overflow-x-hidden">
-                <div className="flex gap-4">
+                <div className="flex gap-4 animate-scroll-right">
                     {partnerImages.map((image, index) => (
                         <div
                             key={index}
