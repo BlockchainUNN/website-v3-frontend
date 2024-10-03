@@ -8,6 +8,7 @@ import HackathonRegistration from "./Pages/events/HackathonRegistration";
 import About from "./Pages/About";
 import Community from "./Pages/community";
 import HackathonLogin from "./Pages/events/HackathonLogin";
+import HackathonDashboard from "./Pages/events/HackathonDashboard";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
               <Route
                 path="/blockathon/hackathon/login"
                 element={<HackathonLogin />}
+              />
+              <Route
+                path="/blockathon/hackathon"
+                element={<HackathonDashboard />}
               />
             </Routes>
           </Router>

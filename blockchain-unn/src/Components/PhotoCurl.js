@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import image from '../assets/hacker.png';
-import logo from '../assets/logo-black.svg';
-import logo1 from '../assets/logo-white.svg';
+import logo from '../assets/blockchainunn-green.png';
+import logo1 from '../assets/blockchainunn-white.png';
 import { ThemeContext } from "./Theme";
 import hackerx1 from "../assets/avax-2.jpg";
 import hackerx2 from "../assets/avax-3.jpg";

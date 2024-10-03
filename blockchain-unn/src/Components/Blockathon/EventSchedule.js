@@ -6,7 +6,7 @@ import winner3 from "../../assets/winner3.png";
 import winner4 from "../../assets/winner4.png";
 import images from "../../assets/icons/images.svg";
 import video from "../../assets/icons/video.svg";
-import blockchainunn from "../../assets/logo-black.svg";
+import blockchainunn from "../../assets/blockchainunn-green.png";
 import gallery from "../../assets/gallery.png";
 import videos from "../../assets/video.png";
 import Categories from "./Categories";
@@ -155,12 +155,15 @@ const EventSchedule = () => {
               alt="winner"
               className="w-[92%] h-auto object-cover"
             />
-            <div className="w-full bg-white h-[88px] flex items-center justify-between px-4">
-              <h2 className="text-black font-extrabold text-[23px] underline">
-                View Gallery
-              </h2>
-              <img src={images} alt="icon" className="w-6 h-6" />
-            </div>
+
+            <a className="w-full" href="https://drive.google.com/drive/folders/1AOukLk8tMOUu-ZjuSLMRPlQFSMPVJzMy">
+              <div className="w-full bg-white h-[88px] flex items-center justify-between px-4">
+                <h2 className="text-black font-extrabold text-[23px] underline">
+                  View Gallery
+                </h2>
+                <img src={images} alt="icon" className="w-6 h-6" />
+              </div>
+            </a>
           </div>
           <div className="w-full md:w-[45%] h-fit  flex flex-col items-center">
             <div className="w-full bg-white h-[58px] flex items-center justify-between px-4">
@@ -174,12 +177,15 @@ const EventSchedule = () => {
               alt="winner"
               className="w-[92%] h-auto object-cover"
             />
-            <div className="w-full bg-white h-[88px] flex items-center justify-between px-4">
-              <h2 className="text-black font-extrabold text-[23px] underline">
-                Watch Video
-              </h2>
-              <img src={video} alt="icon" className="w-6 h-6" />
-            </div>
+            <a className="w-full" href="https://youtu.be/LMZLV6uYgns?si=6CD6mvo4nOCSms7a">
+              <div className="w-full bg-white h-[88px] flex items-center justify-between px-4">
+                <h2 className="text-black font-extrabold text-[23px] underline">
+                  Watch Video
+                </h2>
+
+                <img src={video} alt="icon" className="w-6 h-6" />
+              </div>
+            </a>
           </div>
         </div>
       </div>
