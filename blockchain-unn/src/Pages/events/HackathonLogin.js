@@ -8,6 +8,9 @@ import { Button } from "../../Components/Buttons";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import passwordSvg from "../../assets/icons/password.svg";
+import { setToken } from "../../utils/localStorage";
+import { updateHackerDetails } from "../../redux/slice";
+import { useDispatch } from "react-redux";
 
 const HackathonLogin = () => {
   const HACKATHON_ID = "blockathon"; // Todo: Make this dynamic
@@ -57,6 +60,9 @@ const LoginForm = ({ setUserDetails, hackathon_id }) => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -66,7 +72,10 @@ const LoginForm = ({ setUserDetails, hackathon_id }) => {
         .unprotected()
         .post(API_ROUTES.hackers.login + hackathon_id, { email, password });
 
-      setUserDetails(data?.data);
+      // Store login data locally And user data in redux state
+      setToken(data?.data?.tokens);
+      dispatch(updateHackerDetails(data?.data?.userDetails));
+      navigate("/blockathon/hackathon");
       setLoading(false);
     } catch (error) {
       console.log(error);

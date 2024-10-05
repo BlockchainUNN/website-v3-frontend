@@ -17,6 +17,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
+import { BiLogoWhatsapp } from "react-icons/bi";
 
 /**
  * Event Registration is in 2 steps:
@@ -26,7 +27,7 @@ import { ReactSwal } from "../../utils/swal";
  */
 const EventsRegistration = () => {
   const BLOGATNON_ID = "d23893ee-b2b2-449d-bd03-f4a97f2e54eb"; // Todo: Make this dynamic
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(2);
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
 
@@ -58,7 +59,7 @@ const EventsRegistration = () => {
                 Blockathon
               </span>
             </span>
-            <span>(Confrence 3.0)</span>
+            <span>(Conference 3.0)</span>
           </h1>
           <EmailStep
             step={currentStep}
@@ -229,7 +230,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
         .unprotected()
         .post(API_ROUTES.events.registration + eventId, registrationDetails);
       ReactSwal.fire({
-        confirmButtonText: "Register for the Hackathon",
+        showConfirmButton: false,
         html: (
           <div className="flex font-raleway text-black flex-col gap-2 justify-center px-6 py-6">
             <h1 className="text-black font-black mx-auto text-[1.5rem]">
@@ -237,14 +238,40 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             </h1>
             <div className="text-center text-[0.875rem]">
               <span>You have successfully registered for blockathon.</span>
-              <br />
               <span>
                 Confirmation email has been sent to {registrationDetails.email}
               </span>
+              <br />
+              <span>
+                Join our Whatsapp group for the oppourtunity to network with
+                other event attendees and for the latest updates about
+                Blogathon.
+              </span>
             </div>
-            <div className="flex mx-auto pt-8">
-              <img src={mailSent} className="w-44 h-44" alt="Success" />
+            <div className="flex mx-auto pt-4">
+              <img src={mailSent} className="w-36 h-36" alt="Success" />
             </div>
+            <div className="flex flex-col gap-4 w-full justify-center pt-4">
+              <a
+                href="https://www.namecheap.com/domains/registration/results/?domain=google"
+                target={"_blank"}
+                rel="noreferrer"
+                className="flex gap-2 justify-center mx-auto p-2 rounded-md bg-green-400 cusor-pointer text-white"
+              >
+                <BiLogoWhatsapp className="my-auto" color="white" />
+                <span className="text-[0.875rem] my-auto">
+                  Join Us on Whatsapp
+                </span>
+              </a>
+            </div>
+            <button
+              className="rounded-md mx-auto text-[0.875rem] px-4 py-2 bg-purple-400 text-white font-medium"
+              onClick={() => {
+                Swal.clickConfirm();
+              }}
+            >
+              Register for the Hackathon
+            </button>
           </div>
         ),
       }).then((result) => {
@@ -358,6 +385,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               "Community Management",
               "Copywriting",
               "Marketing",
+              "Others",
             ]}
             required
             value={registrationDetails.techCareer}
@@ -368,8 +396,13 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             }
             name="expirenceLevel"
             onChange={handleSelect}
-            placeholder="Experience level"
-            options={["0-2 years", "3-5 years", "5-7years"]}
+            placeholder="Experience level choosen career"
+            options={[
+              "0-2 years",
+              "3-5 years",
+              "5-7years",
+              "More than 7 years",
+            ]}
             required
             value={registrationDetails.expirenceLevel}
           />

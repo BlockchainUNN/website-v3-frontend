@@ -12,6 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
+import { BiLogoTelegram } from "react-icons/bi";
 
 /**
  * Hackathon Registration is in 2 steps:
@@ -73,6 +74,7 @@ const HackathonRegistration = () => {
             setStep={setCurrentStep}
             setUserDetails={setUserDetails}
             blogathon_id={BLOCKATHON_ID}
+            hackathon_id={HACKATHON_ID}
           />
           <DetailsStep
             userDetails={userDetails}
@@ -85,15 +87,54 @@ const HackathonRegistration = () => {
   );
 };
 
-const EmailStep = ({ step, setStep, setUserDetails, blogathon_id }) => {
+const EmailStep = ({
+  step,
+  setStep,
+  setUserDetails,
+  blogathon_id,
+  hackathon_id,
+}) => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
+
+    // Check if user is already registered as a hacker
+    try {
+      const { data } = await customAxios
+        .unprotected()
+        .get(API_ROUTES.hackers.get + hackathon_id + "/" + email);
+      Swal.fire({
+        icon: "info",
+        text: "You already registered for the hackerthon. Please click the button below to login",
+        confirmButtonText: "Continue",
+      }).then((result) => {
+        if (result.isConfirmed) navigate("/blockathon/hackathon/login");
+      });
+      console.table({ data });
+      setLoading(false);
+      return;
+    } catch (error) {
+      console.log("hacker -> error ==> ", error);
+      if (error.status !== 400) {
+        Swal.fire({
+          icon: "error",
+          text:
+            error?.response?.data?.error ||
+            error?.message ||
+            "Something went wrong, Please try again.",
+          confirmButtonText: "Close",
+        });
+        setLoading(false);
+        return;
+      }
+    }
+
     try {
       // Get user details - {through the event attendee endpoint so we know if the user is regiatered for the blogathon or not}
-      setLoading(true);
       const { data } = await customAxios
         .unprotected()
         .post(API_ROUTES.events.attendee + blogathon_id, { email });
@@ -155,6 +196,7 @@ const EmailStep = ({ step, setStep, setUserDetails, blogathon_id }) => {
 const DetailsStep = ({ userDetails, eventId, step }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [samePassword, setSamePassword] = useState(true);
 
   const [registrationDetails, setRegisterationDetails] = useState({
     email: "",
@@ -216,18 +258,43 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               <span>
                 You have successfully registered for the Hackathon phase of
                 blockathon.
-              </span>
-              <br />
+              </span>{" "}
               <span>
                 Confirmation email has been sent to {registrationDetails.email}
               </span>
+              <br />
+              <span>
+                Click the link below to join the Telegram Channel for the
+                Hackathon.
+              </span>
             </div>
-            <div className="flex mx-auto pt-8">
-              <img src={mailSent} className="w-44 h-44" alt="Success" />
+            <div className="flex mx-auto pt-4">
+              <img src={mailSent} className="w-36 h-36" alt="Success" />
+            </div>
+            <div className="flex flex-col gap-4 w-full justify-center pt-4">
+              <a
+                href="https://www.namecheap.com/domains/registration/results/?domain=google"
+                target={"_blank"}
+                rel="noreferrer"
+                className="flex gap-2 justify-center mx-auto p-2 rounded-md bg-blue-300 cusor-pointer text-white"
+              >
+                <BiLogoTelegram className="my-auto" color="white" />
+                <span className="text-[0.875rem] my-auto">
+                  Join Us on Telegram
+                </span>
+              </a>
+              <button
+                className="rounded-md mx-auto text-[0.875rem] px-4 py-2 bg-green-400 text-white font-medium"
+                onClick={() => {
+                  Swal.close();
+                }}
+              >
+                Close
+              </button>
             </div>
           </div>
         ),
-      }).finally(() => navigate(-1));
+      }).finally(() => navigate("/blockathon/hackathon/login"));
       setLoading(false);
     } catch (error) {
       // Handle other errors
@@ -285,6 +352,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               "Smart Contract Developer",
               "Designer",
               "Product Manager",
+              "Others",
             ]}
             required
             value={registrationDetails.role}
@@ -294,7 +362,14 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
           <Input
             icon={personSvg}
             name="password"
-            onChange={handleChange}
+            onChange={(event) => {
+              if (event.target.value === registrationDetails.password) {
+                setSamePassword(true);
+              } else {
+                setSamePassword(false);
+              }
+              handleChange(event);
+            }}
             placeholder="Password"
             required
             value={registrationDetails.password}
@@ -303,6 +378,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             icon={personSvg}
             name="confirmPassword"
             onChange={handleChange}
+            error={!samePassword}
             placeholder="Confirm Password"
             required
             value={registrationDetails.confirmPassword}
