@@ -27,7 +27,7 @@ import { BiLogoWhatsapp } from "react-icons/bi";
  */
 const EventsRegistration = () => {
   const BLOGATNON_ID = "d23893ee-b2b2-449d-bd03-f4a97f2e54eb"; // Todo: Make this dynamic
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
 
