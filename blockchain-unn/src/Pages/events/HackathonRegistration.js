@@ -13,6 +13,7 @@ import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
 import { BiLogoTelegram } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 /**
  * Hackathon Registration is in 2 steps:
@@ -20,8 +21,9 @@ import { BiLogoTelegram } from "react-icons/bi";
  * 2. Then we send them the registeration link in their emails, part of their verification.
  */
 const HackathonRegistration = () => {
-  const HACKATHON_ID = "blockathon"; // Todo: Make this dynamic
-  const BLOCKATHON_ID = "d23893ee-b2b2-449d-bd03-f4a97f2e54eb";
+  const { hackathon_id, blockathon_id } = useSelector((state) => state.app);
+  const HACKATHON_ID = hackathon_id;
+  const BLOCKATHON_ID = blockathon_id;
   const [currentStep, setCurrentStep] = useState(1);
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
@@ -134,10 +136,14 @@ const EmailStep = ({
     }
 
     try {
+      console.log("Second try");
+
       // Get user details - {through the event attendee endpoint so we know if the user is regiatered for the blogathon or not}
       const { data } = await customAxios
         .unprotected()
         .post(API_ROUTES.events.attendee + blogathon_id, { email });
+
+      console.log(data);
 
       setUserDetails(data?.data);
       setStep(2);

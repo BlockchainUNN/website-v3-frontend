@@ -18,6 +18,7 @@ import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
 import { BiLogoWhatsapp } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 /**
  * Event Registration is in 2 steps:
@@ -26,7 +27,7 @@ import { BiLogoWhatsapp } from "react-icons/bi";
  * If user exists in step 1, we prefill the users data.
  */
 const EventsRegistration = () => {
-  const BLOGATNON_ID = "d23893ee-b2b2-449d-bd03-f4a97f2e54eb"; // Todo: Make this dynamic
+  const { blockathon_id } = useSelector((state) => state.app);
   const [currentStep, setCurrentStep] = useState(1);
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const EventsRegistration = () => {
           />
           <DetailsStep
             userDetails={userDetails}
-            eventId={BLOGATNON_ID}
+            eventId={blockathon_id}
             step={currentStep}
           />
         </div>
