@@ -60,6 +60,14 @@ export const API_ROUTES = {
   },
   hackers: {
     create: "hackers/",
+    get: "hackers/",
+    login: "hackers/login/",
+  },
+  teams: {
+    create: "/hackathon/team/",
+    get: "/hackathon/team/",
+    leave: "/hackathon/team/",
+    join: "/hackathon/team/join/",
   },
   users: {
     getByEmail: "users/",
