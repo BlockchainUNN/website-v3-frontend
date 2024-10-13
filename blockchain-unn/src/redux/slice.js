@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   hackerDetails: null,
   hackathon_id: "blockathon",
+  blockathon_id: "blockathon",
 };
 
 export const appSlice = createSlice({

@@ -10,10 +10,11 @@ import Swal from "sweetalert2";
 import passwordSvg from "../../assets/icons/password.svg";
 import { setToken } from "../../utils/localStorage";
 import { updateHackerDetails } from "../../redux/slice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const HackathonLogin = () => {
-  const HACKATHON_ID = "blockathon"; // Todo: Make this dynamic
+  const { hackathon_id } = useSelector((state) => state.app);
+  const HACKATHON_ID = hackathon_id;
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
 
