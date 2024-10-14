@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { ThemeContext } from "./Theme";
 import timer from "../assets/icons/timer.svg";
 import timerwhite from "../assets/icons/timer-white.svg";
-import sportsfiesta from "../assets/sportsfiesta.png";
+import sportsfiesta from "../assets/events/sportsFiesta.png";
 import previousicon from "../assets/icons/previous-icon.svg";
 import nexticon from "../assets/icons/next-icon.svg";
 
@@ -21,11 +21,6 @@ const events = [
     imageSrc: sportsfiesta,
     date: "SAT. 31ST || JUN, 2024",
     title: "SPORTS FIESTA 3"
-  },
-  {
-    imageSrc: sportsfiesta,
-    date: "SUN. 1ST || JUL, 2024",
-    title: "SPORTS FIESTA 4"
   }
 ];
 
@@ -44,7 +39,7 @@ const PastEvents = () => {
   const { imageSrc, date, title } = events[currentIndex];
 
   return (
-    <div className="w-[85%] flex flex-col gap-4 items-center justify-center my-12">
+    <div className="w-[88%] flex flex-col gap-4 items-center justify-center my-12">
       <div className="flex items-center justify-center gap-2 w-full">
         <img
           src={theme ? timerwhite : timer}
@@ -59,7 +54,7 @@ const PastEvents = () => {
       <div className="flex items-center justify-between w-[95%] md:[85%]">
         <div className="relative w-full border-gradient">
         <img src={previousicon} alt="previous" onClick={handlePrevious} className="absolute -left-4 z-10 top-[40%] cursor-pointer w-12 h-12 md:w-auto md:h-auto" />
-          <div className="w-full h-[200px] md:h-[620px] rounded-xl">
+          <div className="w-full h-[200px] md:h-[650px] rounded-xl">
             <img src={imageSrc} alt={title} className="w-full h-full object-cover rounded-t-xl" />
           </div>
           <div className="font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-center bg-blockchain-white rounded-b-md">

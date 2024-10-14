@@ -7,6 +7,9 @@ import 'swiper/css/pagination';
 import financial from "../../assets/financial-inclusion.png";
 import governance from "../../assets/governance.png";
 import entertainment from "../../assets/entertainment.png";
+import real_world_assets from "../../assets/real-world-assets.png";
+import open_idea from "../../assets/open-idea.png";
+import collectibles from "../../assets/collectibles.png";
 import prevArrow from "../../assets/icons/previous-icon.svg";
 import nextArrow from "../../assets/icons/next-icon.svg";
 
@@ -18,14 +21,14 @@ const Categories = () => {
   const boxes = [
     {
       title: "Real World Assets (RWAs)",
-      image: financial,
+      image: real_world_assets,
       subtitle: "Real World Assets (RWAs)",
       description:
         "Applications on Real World Assets (RWAs) - digital representations of physical assets on the blockchain. These assets can range from real estate, commodities, and art to financial instruments like bonds and stocks, etc.",
     },
     {
       title: "Digital Collectibles",
-      image: financial,
+      image: collectibles,
       subtitle: "Digital Collectibles",
       description:
         "Applications in Digital Collectibles - preservation of African artifacts and promotion of digital tourism, etc.",
@@ -53,7 +56,7 @@ const Categories = () => {
     },
     {
       title: "Open Idea",
-      image: financial,
+      image: open_idea,
       subtitle: "Open Idea",
       description: "General Category - Open Idea; Surprise us.",
     },

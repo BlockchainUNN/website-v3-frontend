@@ -25,6 +25,9 @@ const Navbar = () => {
     if (item.toLowerCase() === "team") {
       return "/about#team";
     }
+    else if  (item.toLowerCase() === "events"){
+      return "/#events"
+    }
     return `/${item.toLowerCase()}`;
   };
 

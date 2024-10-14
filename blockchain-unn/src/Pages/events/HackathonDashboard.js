@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import bg_image from "../../assets/blogathon_bg.png";
 import home from "../../assets/icons/home.svg";
 import team from "../../assets/icons/team.svg";
@@ -17,6 +17,74 @@ import { format } from "date-fns";
 import { MoonLoader } from "react-spinners";
 import { Button } from "../../Components/Buttons";
 
+export const CustomSelect = ({ options, placeholder = "Select an option", onChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setIsOpen(false);
+    if (onChange) {
+      onChange(option);
+    }
+  };
+
+  return (
+    <div className="relative w-full" ref={dropdownRef}>
+      <button
+        type="button"
+        className="w-full md:w-[644px] h-[53px] border-[1px] border-black rounded-[5px] px-6 focus:outline-none"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className="flex items-start  gap-4">
+        <span className={`text-gray-400 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''} self-center`}>
+            ▼
+          </span>
+          <span className={`block truncate ${selectedOption ? '' : ''} text-[#898B8A] font-raleway-medium text-[20px]`}>
+            {selectedOption ? selectedOption.label : placeholder}
+          </span>
+          
+        </div>
+      </button>
+
+      {isOpen && (
+        <ul className="absolute z-10 w-full flex flex-wrap md:w-[644px] p-4 mt-1 overflow-auto bg-white border border-gray-300 rounded-md shadow-lg max-h-60 focus:outline-none">
+          {options.map((option) => (
+            <li
+              key={option.value}
+              className={`cursor-pointer select-none relative hover:bg-blue-100 w-1/2 p-2 ${
+                selectedOption && selectedOption.value === option.value ? '' : ''
+              }`}
+              onClick={() => handleOptionClick(option)}
+            >
+              <span className="block truncate text-[#898B8A] font-raleway-medium text-[20px]">{option.label}</span>
+              {selectedOption && selectedOption.value === option.value && (
+                <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-blue-600">
+                  ✓
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
 export const Home = () => {
   const rules = [
     "BlockchainUNN Conference 3.0 is happening in person.",
@@ -27,7 +95,7 @@ export const Home = () => {
   ];
 
   return (
-    <div className="w-[80%] h-[520px] mx-auto bg-white rounded-[26px] flex flex-col items-center py-[12px] px-[18px] gap-4">
+    <div className="w-[80%] xl:w-[60%] h-[520px] mx-auto bg-white rounded-[26px] flex flex-col items-center py-[12px] px-[18px] gap-4">
       <div className="w-full flex flex-col items-center h-[70px] mb-3">
         <h2 className="text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
           <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center">
@@ -150,7 +218,7 @@ export const Team = () => {
   };
 
   return (
-    <div className="w-[80%] h-[520px] mx-auto bg-white rounded-[26px] flex flex-col items-center py-[12px] px-[18px] gap-4">
+    <div className="w-[80%] xl:w-[60%] h-[520px] mx-auto bg-white rounded-[26px] flex flex-col items-center py-[12px] px-[18px] gap-4">
       <div className="w-full flex flex-col items-center h-[70px] mb-3">
         <h2 className="text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
           <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center">
@@ -268,7 +336,7 @@ export const Team = () => {
 };
 
 export const Schedule = () => (
-  <div className="w-[80%] h-fit mx-auto flex flex-col items-center py-[12px] px-[18px] gap-4">
+  <div className="w-[80%] xl:w-[60%] h-fit mx-auto flex flex-col items-center py-[12px] px-[18px] gap-4">
     <div className="w-full flex flex-col items-center h-[70px] mb-6">
       <h2 className="text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
         <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center">
@@ -376,9 +444,79 @@ export const Schedule = () => (
 );
 
 export const Project = () => {
-  const [isFocused, setIsFocused] = useState(false);
+  const [step, setStep] = useState(1);
+  const [isFocused, setIsFocused] = useState({});
+  const [formData, setFormData] = useState({});
+
+  const options = [
+    { value: 'financial', label: 'Financial Inclusion & Edu' },
+    { value: 'open-governance', label: 'Open governance' },
+    { value: 'identity-verification', label: 'E-Identity & Verification' },
+    { value: 'entertainment-media', label: 'Entertainment & Media'}
+  ];
+
+  const handleChange = (selectedOption) => {
+    setFormData(prev => ({ ...prev, category: selectedOption.value }));
+  };
+
+  const handleInputChange = (field) => (e) => {
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Add your form submission logic here
+  };
+
+  const renderInputField = (placeholder, field, type = "text") => (
+    <div className="relative">
+      <input
+        type={type}
+        className="w-full md:w-[644px] h-[53px] border-[1px] border-black rounded-[5px] px-6 focus:outline-none"
+        onFocus={() => setIsFocused(prev => ({ ...prev, [placeholder]: true }))}
+        onBlur={(e) => {
+          if (e.target.value === "") {
+            setIsFocused(prev => ({ ...prev, [placeholder]: false }));
+          }
+        }}
+        value={formData[field] || ""}
+        onChange={handleInputChange(field)}
+      />
+      {!isFocused[placeholder] && !formData[field] && (
+        <div className="absolute inset-y-0 left-0 flex gap-1 items-center pl-4 pointer-events-none">
+          <img src={projectblack} alt="Project" className="w-[35px] h-[35px]" />
+          <span className="text-[#898B8A] font-raleway-medium text-[20px]">
+            {placeholder}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+
+  const renderFileInput = (placeholder, field) => (
+    <div className="relative">
+      <input
+        type="file"
+        id={field}
+        className="hidden" // Hide the default file input
+        onChange={handleInputChange(field)}
+      />
+      <label
+        htmlFor={field} // Clicking this label will trigger the file input
+        className="w-full md:w-[644px] h-[53px] border-[1px] border-black rounded-[5px] px-4 py-2 cursor-pointer flex items-start gap-2 bg-gray-100"
+      >
+        <img src={projectblack} alt="Project" className="w-[35px] h-[35px]" />
+        <span className="text-[#898B8A] font-raleway-medium text-[20px]">
+          {formData[field] ? "File Selected" : placeholder}
+        </span>
+      </label>
+    </div>
+  );
+  
+
   return (
-    <div className="w-[80%] h-fit mx-auto bg-white rounded-[26px] flex flex-col items-center py-[60px] px-[18px] gap-4">
+    <div className="w-[80%] xl:w-[60%] h-fit mx-auto bg-white rounded-[26px] flex flex-col items-center py-[60px] px-[18px] gap-4">
       <div className="w-full flex flex-col items-center h-[70px] mb-3">
         <h2 className="text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
           <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center">
@@ -387,97 +525,86 @@ export const Project = () => {
           <span className="absolute left-[1px] -top-[1px] bg-clip-text text-transparent bg-gradient-to-b from-black to-[#1B1A1A] w-full self-center">
             PROJECT OVERVIEW
           </span>
-        </h2>
+        </h2>             
       </div>
 
       <div className="w-[60%]">
-        <form className="w-full flex flex-col gap-4">
-          <div className="relative">
-            <input
-              type="text"
-              className="w-full md:w-[644px] h-[73px] border-[1px] border-black rounded-[5] px-6  focus:outline-none"
-              onFocus={() => setIsFocused(true)}
-              onBlur={(e) => {
-                if (e.target.value === "") {
-                  setIsFocused(false);
-                }
-              }}
-            />
-            {!isFocused && (
-              <div className="absolute inset-y-0 left-0 flex gap-1 items-center pl-4 pointer-events-none">
-                <img
-                  src={projectblack}
-                  alt="Project"
-                  className="w-[35px] h-[35px]"
+        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+          {step === 1 ? (
+            <>
+              {renderInputField("Project", "projectName")}
+              <CustomSelect  
+                options={options}
+                placeholder="Select a Category"
+                onChange={handleChange}
+              />
+              <div className="relative">
+                <input
+                  className="w-full md:w-[644px] h-[73px] border-[1px] border-black rounded-[5px] px-4 py-2 focus:outline-none placeholder:-start-0 justify-start"
+                  onFocus={() => setIsFocused(prev => ({ ...prev, description: true }))}
+                  onBlur={(e) => {
+                    if (e.target.value === "") {
+                      setIsFocused(prev => ({ ...prev, description: false }));
+                    }
+                  }}
+                  value={formData.description || ""}
+                  onChange={handleInputChange("description")}
                 />
-                <span className="text-[#898B8A] font-raleway-medium text-[20px]">
-                  Project
-                </span>
+                {!isFocused.description && !formData.description && (
+                  <div className="absolute inset-y-0 left-0 flex gap-1 items-center pl-4 pointer-events-none">
+                    <img src={projectblack} alt="Project" className="w-[35px] h-[35px]" />
+                    <span className="text-[#898B8A] font-raleway-medium text-[20px]">
+                      Description of your project
+                    </span>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-          <div className="relative">
-            <input
-              type="text"
-              className="w-full md:w-[644px] h-[73px] border-[1px] border-black rounded-[5] px-6  focus:outline-none"
-              onFocus={() => setIsFocused(true)}
-              onBlur={(e) => {
-                if (e.target.value === "") {
-                  setIsFocused(false);
-                }
-              }}
-            />
-            {!isFocused && (
-              <div className="absolute inset-y-0 left-0 flex gap-1 items-center pl-4 pointer-events-none">
-                <img
-                  src={projectblack}
-                  alt="Project"
-                  className="w-[35px] h-[35px]"
-                />
-                <span className="text-[#898B8A] font-raleway-medium text-[20px]">
-                  Description of your project
-                </span>
-              </div>
-            )}
-          </div>
-          <div className="relative">
-            <input
-              type="text"
-              className="w-full md:w-[644px] h-[73px] border-[1px] border-black rounded-[5] px-6  focus:outline-none"
-              onFocus={() => setIsFocused(true)}
-              onBlur={(e) => {
-                if (e.target.value === "") {
-                  setIsFocused(false);
-                }
-              }}
-            />
-            {!isFocused && (
-              <div className="absolute inset-y-0 left-0 flex gap-1 items-center pl-4 pointer-events-none">
-                <img
-                  src={projectblack}
-                  alt="Project"
-                  className="w-[35px] h-[35px]"
-                />
-                <span className="text-[#898B8A] font-raleway-medium text-[20px]">
-                  Live Link
-                </span>
-              </div>
-            )}
-          </div>
+              {renderInputField("Live Link", "liveLink")}
+            </>
+          ) : (
+            <>
+              {renderInputField("Github Link", "githubLink")}
+              {renderInputField("Demo Video Link", "demoVideoLink")}
+              {renderInputField("Documentation Link", "documentationLink")}
+              {renderFileInput("Upload Images", "images")}
+            </>
+          )}
 
-          <button
-            type="button"
-            className="w-[33%] h-[73px] bg-black shadow-xl text-white font-raleway-medium text-[20px] rounded-[5px] mx-auto"
-          >
-            Submit
-          </button>
+          <div className="flex justify-center w-full items-center">
+            {step > 1 && (
+              <button
+                type="button"
+                onClick={() => setStep(1)}
+                className="flex items-center justify-center w-[33%] h-[73px] bg-gray-200 text-black font-raleway-medium text-[20px] rounded-[5px] mx-auto"
+              >
+                Previous
+              </button>
+            )}
+            {step === 1 ? (
+              <button
+                type="button"
+                onClick={() => setStep(2)}
+                className="flex items-center justify-center w-[33%] h-[73px] bg-black shadow-xl text-white font-raleway-medium text-[20px] rounded-[5px] mx-auto"
+              >
+                Next
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="w-[33%] h-[73px] bg-black shadow-xl text-white font-raleway-medium text-[20px] rounded-[5px] mx-auto"
+              >
+                Submit
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </div>
   );
 };
 
-export const Profile = () => (
+
+export const Submit = () => (
   <div className="text-white">
     <h2 className="text-2xl font-bold mb-4">Hackathon Resources</h2>
     <p>
@@ -494,8 +621,7 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
     { id: "team", label: "Team", icon: team },
     { id: "schedule", label: "Schedule", icon: schedule },
     { id: "project", label: "Project", icon: project },
-    { id: "profile", label: "Edit Profile", icon: profile },
-    { id: "exit", label: "Leave Team", icon: exit },
+    { id: "submit", label: "Submit", icon: profile },
   ];
 
   return (
@@ -580,8 +706,8 @@ const HackathonDashboard = () => {
         return <Schedule />;
       case "project":
         return <Project />;
-      case "profile":
-        return <Profile />;
+      case "submit":
+        return <Submit />;
       default:
         return <Home />;
     }

@@ -7,14 +7,14 @@ const Feedback = ({ feedbackData }) => {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className="mt-8 mb-8 flex flex-col gap-8 items-center justify-center">
+        <div className="mt-8 mb-8 flex flex-col gap-8 items-center justify-center w-full">
             <h2 className={`${theme ? "text-white" : "text-black"} text-[24px] md:text-[48px] font-semibold`}>
                 Community Feedbacks
             </h2>
 
-            <div className="flex flex-row md:flex-wrap  w-[99%] overflow-x-hidden md:w-[85%] gap-4 items-center justify-center ">
+            <div className="flex flex-row md:flex-wrap  w-[99%] overflow-x-hidden md:w-full gap-[2.5rem] items-center justify-center ">
                 {feedbackData.map((feedback, index) => (
-                    <div key={index} className={`${theme ? "bg-dark-mode" : "bg-transparent"} w-[230px] h-[149px] flex-shrink-0 md:w-[375px] md:h-[260px] border-gradient animate animate-scroll-right md:animate-none`}>
+                    <div key={index} className={`${theme ? "bg-dark-mode" : "bg-transparent"} w-[230px] h-[149px] flex-shrink-0 md:w-[400px] md:h-[260px] border-gradient animate animate-scroll-right md:animate-none`}>
                         <div className={` ${theme ? "text-white" : "text-black"} flex flex-col gap-4 p-4`}>
                             <div className="flex justify-between">
                                 <div className="flex justify-evenly items-center gap-2">

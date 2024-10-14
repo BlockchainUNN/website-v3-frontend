@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-center my-8 md:my-4 font-sans font-light text-[10px] md:text-[16px] ">
-        Copyright &copy; 2023 BlockchainUNN. All Rights Reserved
+        Copyright &copy; 2024 BlockchainUNN. All Rights Reserved
       </p>
     </div>
   );
