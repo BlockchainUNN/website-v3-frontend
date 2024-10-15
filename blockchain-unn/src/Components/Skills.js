@@ -21,7 +21,7 @@ const Skills = () => {
             </div>
             <div className={` ${theme ? "text-white" : "text-black"} flex text-center w-[90%] md:w-[75%] text-[12px] md:text-[24px] mx-auto `}>
                 <p>
-                <span className="text-black font-raleway-semibold">BlockchainUNN </span> is dedicated
+                <span className="font-raleway-semibold">BlockchainUNN </span> is dedicated
                     to helping students learn and grow in exciting fields of Blockchain, technology,
                     and innovation.
                     Start your journey understanding blockchain technology, it&apos;s most popular applications

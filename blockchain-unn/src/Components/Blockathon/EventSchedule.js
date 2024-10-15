@@ -25,7 +25,7 @@ const EventSchedule = () => {
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
               <p className="text-black font-light text-[10px]">
-                Mon 21st October, 2024
+                Mon 28th October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
                 Online Hackathon officially starts with workshops from sponsors.
@@ -43,7 +43,7 @@ const EventSchedule = () => {
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
               <p className="text-black font-light text-[10px]">
-                Tue 22nd October, 2024
+                Tue 29th October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
                 Online Hackathon day (2) two continues with the hackers and
@@ -64,7 +64,7 @@ const EventSchedule = () => {
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
               <p className="text-black font-light text-[10px]">
-                Wed 23rd October, 2024
+                Wed 30th October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
                 Admissions to all registered participants into the hacker house
@@ -83,7 +83,7 @@ const EventSchedule = () => {
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
               <p className="text-black font-light text-[10px]">
-                Thur 24th October, 2024
+                Thur 31st October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
                 Physical Hackathon day (2) two continues with hackers rounding
@@ -104,7 +104,7 @@ const EventSchedule = () => {
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
               <p className="text-black font-light text-[10px]">
-                Fri 25th October, 2024
+                Fri 1st November, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
                 Judges will review and judge, and the top 10 projects get to do
@@ -123,7 +123,7 @@ const EventSchedule = () => {
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
               <p className="text-black font-light text-[10px]">
-                Sat 26th October, 2024
+                Sat 2nd November, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
                 Conference 3.0 grand finale event for all techies. (Newbies,

@@ -8,7 +8,7 @@ const UpcomingEvents = () => {
     const { theme } = useContext(ThemeContext);
 
     const calculateTimeLeft = () => {
-        const eventDate = new Date("2024-10-30T00:00:00");
+        const eventDate = new Date("2024-11-01T10:00:00");
         const now = new Date();
         const difference = eventDate.getTime() - now.getTime();
         const totalSeconds = Math.floor(difference / 1000);
@@ -37,7 +37,7 @@ const UpcomingEvents = () => {
     }, []);
 
     return (
-        <div className="w-[85%] flex flex-col gap-4 items-center justify-center my-12">
+        <div className="w-full flex flex-col gap-4 items-center justify-center my-12" id="events">
             <div className="flex items-center justify-center gap-2 w-full">
                 <img src={theme ? timerwhite : timer} alt="timer" className="w-[38px] h-[38px] md:w-[95px] md:h-[95px]" />
                 <h1 className={`${theme ? "text-white" : "text-black"} text-[22.5px] md:text-[55px] `}>
