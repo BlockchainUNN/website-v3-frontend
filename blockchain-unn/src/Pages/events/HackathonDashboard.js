@@ -16,6 +16,8 @@ import Swal from "sweetalert2";
 import { format } from "date-fns";
 import { MoonLoader } from "react-spinners";
 import { Button } from "../../Components/Buttons";
+import not_ready from "../../assets/icons/not-submission.svg";
+import close_svg from "../../assets/icons/close-svg.svg";
 
 export const CustomSelect = ({ options, placeholder = "Select an option", onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -355,7 +357,7 @@ export const Schedule = () => (
           </p>
           <div className="w-full flex flex-col items-start justify-center mt-3">
             <p className="text-black font-light text-[10px]">
-              Mon 21st October, 2024
+              Mon 28th October, 2024
             </p>
             <h2 className="text-black font-semibold text-[18px]">
               Online Hackathon officially starts with workshops from sponsors.
@@ -369,7 +371,7 @@ export const Schedule = () => (
           </p>
           <div className="w-full flex flex-col items-start justify-center mt-3">
             <p className="text-black font-light text-[10px]">
-              Tue 22nd October, 2024
+              Tue 29th October, 2024
             </p>
             <h2 className="text-black font-semibold text-[18px]">
               Online Hackathon day (2) two continues with the hackers and their
@@ -385,7 +387,7 @@ export const Schedule = () => (
           </p>
           <div className="w-full flex flex-col items-start justify-center mt-3">
             <p className="text-black font-light text-[10px]">
-              Wed 23rd October, 2024
+              Wed 30th October, 2024
             </p>
             <h2 className="text-black font-semibold text-[18px]">
               Admissions to all registered participants into the hacker house
@@ -400,7 +402,7 @@ export const Schedule = () => (
           </p>
           <div className="w-full flex flex-col items-start justify-center mt-3">
             <p className="text-black font-light text-[10px]">
-              Thur 24th October, 2024
+              Thur 31st October, 2024
             </p>
             <h2 className="text-black font-semibold text-[18px]">
               Physical Hackathon day (2) two continues with hackers rounding up.
@@ -415,7 +417,7 @@ export const Schedule = () => (
           </p>
           <div className="w-full flex flex-col items-start justify-center mt-3">
             <p className="text-black font-light text-[10px]">
-              Fri 25th October, 2024
+              Fri 1st November, 2024
             </p>
             <h2 className="text-black font-semibold text-[18px]">
               Judges will review and judge, and the top 10 projects get to do a
@@ -430,7 +432,7 @@ export const Schedule = () => (
           </p>
           <div className="w-full flex flex-col items-start justify-center mt-3">
             <p className="text-black font-light text-[10px]">
-              Sat 26th October, 2024
+              Sat 2nd November, 2024
             </p>
             <h2 className="text-black font-semibold text-[18px]">
               Conference 3.0 grand finale event for all techies. (Newbies,
@@ -604,16 +606,50 @@ export const Project = () => {
 };
 
 
-export const Submit = () => (
-  <div className="text-white">
-    <h2 className="text-2xl font-bold mb-4">Hackathon Resources</h2>
-    <p>
-      Find all the resources you need for Blockathon 2024 here, including
-      documentation, APIs, and more.
-    </p>
-    {/* Add links to resources or embed them here */}
-  </div>
-);
+export const Submit = () => {
+  const submit = false;
+  const [modalOpen, setModalOpen] = useState(!submit);
+
+  const closeModal = () => {
+    setModalOpen(false); 
+  };
+
+  return (
+    <div className="relative w-[80%] xl:w-[60%] h-[520px] mx-auto bg-white rounded-[26px] flex flex-col items-center py-[12px] px-[18px] gap-4">
+      <div className="w-full flex flex-col items-center h-[70px] mb-3">
+        <h2 className="text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
+          <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center">
+            SUBMIT PROJECT
+          </span>
+          <span className="absolute left-[1px] -top-[1px] bg-clip-text text-transparent bg-gradient-to-b from-black to-[#1B1A1A] w-full self-center">
+            SUBMIT PROJECT
+          </span>
+        </h2>
+      </div>
+
+      {modalOpen && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-[26px]">
+          <div className="bg-white flex flex-col items-center p-6 rounded-lg shadow-lg text-center w-[88%] h-[85%]">
+            <img 
+              src={close_svg} 
+              onClick={closeModal} 
+              alt="Close Modal" 
+              className="cursor-pointer w-[33.59px] h-[33.65px] self-end"
+            />
+            <h3 className="text-[36px] font-raleway-semibold">Hasn't started</h3>
+            <p className="text-[24px] font-raleway-medium mb-[4rem]">Submission starts on the 29th of October</p>
+
+            <img 
+              src={not_ready} 
+              alt="Not Ready" 
+              className="w-[226px] h-[194.31px]" 
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export const Navbar = ({ activeTab, setActiveTab }) => {
   const tabs = [

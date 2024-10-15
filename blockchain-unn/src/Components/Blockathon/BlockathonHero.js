@@ -65,7 +65,7 @@ const BlockathonHero = () => {
                 3rd Edition, Enugu Nigeria
               </p>
               <p className="flex gap-2 items-center justify-center md:justify-start w-full px-2 text-[18px] ">
-                <FaCalendarAlt /> 21st-26th October
+                <FaCalendarAlt /> 26th Oct - 2nd Nov
               </p>
             </div>
             <div className="rounded-full px-4 py-4 border border-white w-[300px] h-[75px] flex items-center scale-75 md:scale-100">
@@ -75,7 +75,7 @@ const BlockathonHero = () => {
             </div>
             <div className="rounded-full  px-4 py-4 border border-white w-[300px] h-[75px] flex flex-col items-center justify-center scale-75 md:scale-100">
               <p className="w-full px-2 text-[18px] text-center md:text-start flex items-center gap-2 justify-center md:justify-start">
-                $3000 <img src={cup} alt="cup" className="w-4 h-4" />
+                $2000 <img src={cup} alt="cup" className="w-4 h-4" />
               </p>
               <p className="w-full px-2 text-[18px] text-center md:text-start">
                 Prize pool to be won.
