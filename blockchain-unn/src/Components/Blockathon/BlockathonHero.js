@@ -14,7 +14,7 @@ const BlockathonHero = () => {
   const { theme } = useContext(ThemeContext);
 
   const calculateTimeLeft = () => {
-    const eventDate = new Date("2024-10-30T00:00:00");
+    const eventDate = new Date("2024-11-02T10:00:00");
     const now = new Date();
     const difference = eventDate.getTime() - now.getTime();
     const totalSeconds = Math.floor(difference / 1000);
@@ -65,7 +65,7 @@ const BlockathonHero = () => {
                 3rd Edition, Enugu Nigeria
               </p>
               <p className="flex gap-2 items-center justify-center md:justify-start w-full px-2 text-[18px] ">
-                <FaCalendarAlt /> 26th Oct - 2nd Nov
+                <FaCalendarAlt /> 28th Oct - 2nd Nov
               </p>
             </div>
             <div className="rounded-full px-4 py-4 border border-white w-[300px] h-[75px] flex items-center scale-75 md:scale-100">
@@ -95,7 +95,7 @@ const BlockathonHero = () => {
               <div className="flex flex-col md:flex-row items-center gap-2">
                 <img src={attendee} alt="attendee" className="w-8 h-8" />
                 <div className="text-start md:text-center flex flex-col items-center">
-                  <p className="text-[1rem] md:text-[1.3rem] font-bold">3000</p>
+                  <p className="text-[1rem] md:text-[1.3rem] font-bold">5000</p>
                   <p>Attendee</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const BlockathonHero = () => {
               <div className="flex flex-col md:flex-row  items-center gap-2">
                 <img src={speaker} alt="speaker" className="w-8 h-6" />
                 <div className="text-center flex flex-col items-center">
-                  <p className="text-[1.3rem] font-bold">30</p>
+                  <p className="text-[1.3rem] font-bold">10+</p>
                   <p>Speakers</p>
                 </div>
               </div>
