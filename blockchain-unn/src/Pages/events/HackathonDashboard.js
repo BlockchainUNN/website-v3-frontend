@@ -528,7 +528,7 @@ export const Project = () => {
         </h2>             
       </div>
 
-      <div className="w-[60%]">
+      <div className="w-[80%]">
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
           {step === 1 ? (
             <>
