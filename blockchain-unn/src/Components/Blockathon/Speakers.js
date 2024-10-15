@@ -48,7 +48,7 @@ const Speakers = () => {
                     <img src={Alvan} alt="Aronu" className="w-full h-full object-cover" />
                     <div className="w-full px-4 py-2 absolute bottom-4 text-white">
                         <h2 className=" font-bold font-serif text-[23px] mb-2">OKECHUKWU ALVAN</h2>
-                        <p>Forex Expert</p>
+                        <p>Financial Markets Trader</p>
                         <p className="font-semibold text-[15px]">Co-founder, BlockchainUNN</p>
                     </div>
                 </div>
