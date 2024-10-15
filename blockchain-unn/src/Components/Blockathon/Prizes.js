@@ -15,12 +15,12 @@ const Prizes = () => {
 
       <div className="w-full md:w-[95%] xl:w-[80%] mb-12">
         <div className="grid grid-cols-2 gap-2 items-center">
-          <div className="flex flex-col items-center justify-center border border-blockchain-green rounded-xl h-[350px] md:h-[450px] w-auto bg-black relative">
+          <div className="flex flex-col items-center justify-center border border-blockchain-green rounded-xl h-[350px] md:h-full w-auto bg-black relative">
             <p className="text-blockathon-green font-semibold text-[25px] -mb-3">
               Grand Prize
             </p>
             <h1 className="text-white font-extrabold text-[25px] md:text-[60px]">
-              8M ($5,000)
+              3M ($2,000)
             </h1>
             <img
               src={winnertag}
@@ -52,7 +52,7 @@ const Prizes = () => {
                 2nd Prize
               </p>
               <h1 className="text-white font-[900] text-[25px] md:text-[40px]">
-                1.2M ($750)
+                975K ($650)
               </h1>
               <img
                 src={silver}
@@ -60,34 +60,19 @@ const Prizes = () => {
                 className="w-[120px] h-[80px] scale-125"
               />
             </div>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 ">
-          <div className="flex flex-row gap-0 items-center justify-center border border-blockchain-green rounded-xl h-[100px] md:h-[122px] w-auto bg-black md:order-1 order-2">
-            <img
-              src={design}
-              alt="best design"
-              className="w-[150px] h-[90px] scale-100 md:scale-125 mt-2"
-            />
-            <div className="text-start flex flex-col items-start mt-2">
-              <h1 className="text-blockathon-green font-semibold text-[20px] -mb-2 mt-2">
-                Best Design
-              </h1>
-              <p className="text-white font-extrabold text-[25px] md:text-[40px]">
-                400K ($250)
-              </p>
-            </div>
-          </div>
 
-          <div className="flex flex-row items-center gap-0 justify-center border border-blockchain-green rounded-xl h-[100px] md:h-[122px] w-auto bg-black md:order-2 order-1">
-            <img src={bronze} alt="3rd prize" className="w-[150px] h-[90px]" />
-            <div className="text-start flex flex-col items-start mt-2">
-              <h1 className="text-blockathon-green font-semibold text-[20px] -mb-2 md:-mb-4 mt-2">
+            <div className="flex flex-col items-center justify-center border border-blockchain-green rounded-xl h-[168px] md:h-[222px] w-auto bg-black">
+              <p className=" text-blockathon-green font-semibold text-[25px] -mb-2">
                 3rd Prize
-              </h1>
-              <p className="text-white font-extrabold text-[25px] md:text-[40px]">
-                800K ($500)
               </p>
+              <h1 className="text-white font-[900] text-[25px] md:text-[40px]">
+                525K ($350)
+              </h1>
+              <img
+                src={bronze}
+                alt="bronze"
+                className="w-[120px] h-[80px] scale-125"
+              />
             </div>
           </div>
         </div>
