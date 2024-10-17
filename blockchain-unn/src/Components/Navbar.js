@@ -9,7 +9,7 @@ import SocialLink from "./socialLink.js";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ["Home", "About", "Community", "Blog", "Team", "Events"];
+  const navItems = ["Home", "About", "Community", "Team", "Events"]; //"Blog"
   const { theme } = useContext(ThemeContext);
   const location = useLocation();
 
@@ -79,10 +79,7 @@ const Navbar = () => {
 
         <ul className="flex gap-8 max-lg:gap-4">
           {navItems.map((item) => (
-            <li
-              key={item}
-              className="relative cursor-pointer"
-            >
+            <li key={item} className="relative cursor-pointer">
               <Link to={getNavItemLink(item)} className="block">
                 <span>{item}</span>
                 {/* Show the green bar if this is the active page */}
