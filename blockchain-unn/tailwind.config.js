@@ -26,12 +26,19 @@ module.exports = {
       },
       backgroundImage: {
         "dark-mode": "linear-gradient(to bottom, #000000, #0E0E0E)",
+        "dark-mode-2": "linear-gradient(to bottom, #000000, #1B1A1A)",
       },
       colors: {
         "blockchain-green": "#02641C",
         "blockathon-green": "#2CE85E",
         "blockchain-white": "#CBD7CE",
         grey: "#d8d8d8",
+        white1: "#EDEDED",
+        black1: "#0e0e0e",
+        ash: "#B2B2B2",
+      },
+      dropShadow: {
+        custom: "-25px 12px 5px #02641c",
       },
       borderImage: {
         "custom-gradient":

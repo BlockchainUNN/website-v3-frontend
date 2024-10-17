@@ -50,19 +50,9 @@ const teamData = [
     },
   },
   {
-    image: kreativeAma,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
-    tag: content,
-    socials: {
-      linkedIn: "",
-      twitter: "",
-    },
-  },
-  {
     image: kamto,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
+    name: "Obichili Kamtochukwu",
+    role: "Social Media Manager I",
     tag: socials,
     socials: {
       linkedIn: "",
@@ -71,8 +61,8 @@ const teamData = [
   },
   {
     image: cheta,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
+    name: "Chichetaram Eze",
+    role: "Social Media Manager II",
     tag: socials,
     socials: {
       linkedIn: "",
@@ -81,8 +71,8 @@ const teamData = [
   },
   {
     image: odoi,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
+    name: "Nwobodo Emmanuel",
+    role: "Backend Developer",
     tag: dev,
     socials: {
       linkedIn: "",
@@ -90,29 +80,9 @@ const teamData = [
     },
   },
   {
-    image: chukwuebuka,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
-    tag: content,
-    socials: {
-      linkedIn: "",
-      twitter: "",
-    },
-  },
-  {
-    image: dony,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
-    tag: designs,
-    socials: {
-      linkedIn: "",
-      twitter: "",
-    },
-  },
-  {
     image: soluchi,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
+    name: "Victoria Ofuasia",
+    role: "Assistant Developer Community Lead",
     tag: dev,
     socials: {
       linkedIn: "",
@@ -121,8 +91,8 @@ const teamData = [
   },
   {
     image: devShezzy,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
+    name: "Ogbonna Chukwuebuka Shedrach",
+    role: "Blockchain Developer",
     tag: dev,
     socials: {
       linkedIn: "",
@@ -131,9 +101,89 @@ const teamData = [
   },
   {
     image: adaugo,
-    name: "Nduka Anthony Annaelechukwu",
-    role: "Founder",
+    name: "Okwara Munachi Adaugo",
+    role: "UI/UX Designer",
     tag: designs,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Chukwuebuka Ukatu Jude",
+    role: "Community",
+    tag: socials,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Obi Nnaemeka Simon-Peter",
+    role: "Developer Community Lead",
+    tag: dev,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Ugwu Stanley Junior",
+    role: "Cinematographer & Editor",
+    tag: socials,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Chukwuemeka Chidimma",
+    role: "Graphic Designer",
+    tag: designs,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Delight Okechukwu",
+    role: "Designer",
+    tag: designs,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Samson Damian",
+    role: "Content Lead",
+    tag: content,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Amarachukwu Awaeze",
+    role: "Pro/ Advisor Content Writer",
+    tag: content,
+    socials: {
+      linkedIn: "",
+      twitter: "",
+    },
+  },
+  {
+    image: adaugo,
+    name: "Nnam Darlington",
+    role: "Pro/Advisor Community Lead",
+    tag: socials,
     socials: {
       linkedIn: "",
       twitter: "",

@@ -46,6 +46,13 @@ code {
   -webkit-mask-composite: xor;
 }
 
+
+.text-stroke {
+  -webkit-text-stroke: 1px black; /* Stroke color and width */
+  color: white; /* Base text color */
+}
+
+
 @font-face {
   font-family: "Raleway-Black";
   src: url("./assets/fonts/raleway/Raleway-Black.ttf");

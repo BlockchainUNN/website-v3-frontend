@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import image from '../assets/hacker.png';
-import logo from '../assets/logo-black.svg';
-import logo1 from '../assets/logo-white.svg';
+import logo from '../assets/blockchainunn-green.png';
+import logo1 from '../assets/blockchainunn-white.png';
 import { ThemeContext } from "./Theme";
-
+import hackerx1 from "../assets/avax-2.jpg";
+import hackerx2 from "../assets/avax-3.jpg";
+import hackerx3 from "../assets/hacker-x-2.jpg";
+import avax from "../assets/hacker-x.JPG";
+import arbitrum from "../assets/arbitrum1.png";
 
 const PhotoCurl = () => {
     const { theme } = useContext(ThemeContext);
@@ -17,7 +21,7 @@ const PhotoCurl = () => {
                         <h1 className="text-[6px] md:text-[12px]">HACKER X</h1>
                     </div>
                     <div className={`${theme ? "border-black" : "border-white"} border-t-4 border-l-4 border-r-4 h-[85%] md:h-[96%]`}>
-                        <img src={image} alt="hacker" className="w-full h-full object-cover" />
+                        <img src={hackerx1} alt="hacker" className="w-full h-full object-cover" />
                     </div>
                 </div>
 
@@ -39,7 +43,7 @@ const PhotoCurl = () => {
                         <h1 className="text-[6px] md:text-[12px]">BLOCKCHAINUNN</h1>
                     </div>
                     <div className={`${theme ? "border-black" : "border-white"} border-t-4 border-l-4 border-r-4 h-[85%] md:h-[96%]`}>
-                        <img src={image} alt="hacker" className="w-full h-full object-cover" />
+                        <img src={hackerx2} alt="hacker" className="w-full h-full object-cover" />
                     </div>
                 </div>
             </div>
@@ -55,7 +59,7 @@ const PhotoCurl = () => {
             <div className="relative flex flex-wrap items-center w-full justify-evenly -mt-2 md:mt-8">
                 <div className="bg-[#02641C] w-[162.34px] md:w-[335.96px] h-[130.98px] md:h-[267.21px] rounded-sm px-2 md:p-4 rotate-12 absolute -top-4 md:-top-8 -left-[18%] md:left-[8%]">
                     <div className={`${theme ? "border-black" : "border-white"} border-b-4 border-l-4 border-r-4 h-[85%] md:h-[96%]`}>
-                        <img src={image} alt="hacker" className="w-full h-full object-cover" />
+                        <img src={avax} alt="hacker" className="w-full h-full object-cover" />
                     </div>
                     <div className={`${theme ? "text-black" : "text-white"} font-wallpoet flex items-center justify-between`}>
                         <h1 className="text-[6px] md:text-[12px]">BLOCKCHAINUNN</h1>
@@ -66,7 +70,7 @@ const PhotoCurl = () => {
 
                 <div className="bg-[#02641C] w-[162.34px] md:w-[335.96px] h-[130.98px] md:h-[267.21px] rounded-sm px-2 md:p-4">
                 <div className={`${theme ? "border-black" : "border-white"} border-b-4 border-l-4 border-r-4 h-[85%] md:h-[96%]`}>
-                        <img src={image} alt="hacker" className="w-full h-full object-cover" />
+                        <img src={arbitrum} alt="hacker" className="w-full h-full object-cover" />
                     </div>
                     <div className={`${theme ? "text-black" : "text-white"} font-wallpoet flex items-center justify-between`}>
                         <h1 className="text-[6px] md:text-[12px]">BLOCKCHAINUNN</h1>
@@ -77,7 +81,7 @@ const PhotoCurl = () => {
 
                 <div className="bg-[#02641C] w-[162.34px] md:w-[335.96px] h-[130.98px] md:h-[267.21px] rounded-sm px-2 md:p-4 -rotate-12 absolute -top-4 md:-top-8 -right-[18%] md:right-[8%]">
                 <div className={`${theme ? "border-black" : "border-white"} border-b-4 border-l-4 border-r-4 h-[85%] md:h-[96%]`}>
-                        <img src={image} alt="hacker" className="w-full h-full object-cover" />
+                        <img src={hackerx3} alt="hacker" className="w-full h-full object-cover" />
                     </div>
                     <div className={`${theme ? "text-black" : "text-white"} font-wallpoet flex items-center justify-between rotate-180`}>
                         <h1 className="text-[6px] md:text-[12px]">BLOCKCHAINUNN</h1>

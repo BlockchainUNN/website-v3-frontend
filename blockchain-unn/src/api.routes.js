@@ -56,6 +56,18 @@ export const customAxios = {
 export const API_ROUTES = {
   events: {
     registration: "events/registeration/",
+    attendee: "events/attendees/",
+  },
+  hackers: {
+    create: "hackers/",
+    get: "hackers/",
+    login: "hackers/login/",
+  },
+  teams: {
+    create: "/hackathon/team/",
+    get: "/hackathon/team/",
+    leave: "/hackathon/team/",
+    join: "/hackathon/team/join/",
   },
   users: {
     getByEmail: "users/",

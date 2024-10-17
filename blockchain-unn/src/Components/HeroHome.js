@@ -2,7 +2,11 @@ import React, { useContext } from "react";
 import { ThemeContext } from "./Theme";
 import BlockathonHeader from "./BlockathonHeader";
 import Navbar from "./Navbar";
-import image from "../assets/image.png";
+import odoi from "../assets/team-pics/odoi.png";
+import cheta from "../assets/team-pics/cheta.png";
+import adaugo from "../assets/team-pics/adaugo.png";
+import dony from "../assets/team-pics/dony.png";
+import chukwuebuka from "../assets/team-pics/chukwuebuka.png";
 import {
   FaArrowRight,
   FaCode,
@@ -15,7 +19,7 @@ import {
 const HeroHome = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="w-full flex flex-col items-center overflow-x-clip">
+    <div className="w-full flex flex-col items-center overflow-hidden">
 
       <BlockathonHeader />
       <div
@@ -24,15 +28,15 @@ const HeroHome = () => {
         } flex flex-col md:py-4 items-center w-full font-raleway relative overflow-x-hidden `}
       >
         <Navbar />
-        <div className="text-center flex flex-col items-center w-[92%] md:w-[80%] mx-auto mt-8">
-          <h1 className="text-green-900 font-[900] text-[50px] md:text-[120px] font-raleway ">
+        <div className="text-center flex flex-col items-center w-[92%] md:w-[80%] mx-auto mt-16 mb-6">
+          <h1 className="text-[#02641c] font-[900] text-[50px] md:text-[120px] font-raleway-black leading-none">
             BLOCKCHAIN
           </h1>
           <div className="flex items-center gap-4 ">
-            <h1 className="text-green-900 font-extrabold text-[50px] md:text-[120px] font-raleway">
+            <h1 className="text-[#02641c] font-extrabold text-[50px] md:text-[120px] font-raleway-black leading-none">
               UNN
             </h1>
-            <div className="flex items-center justify-center bg-gradient-to-r from-green-950 to-green-500 p-2 md:p-4 w-[80%] md:[50%]">
+            <div className="flex items-center justify-center bg-gradient-to-r from-[#02641c] to-[#04CA39] p-2 md:p-4 w-[80%] md:[50%]">
               <p className="text-[12px] md:text-[30px] text-center w-full text-white border-t border-b border-white p-2 md:p-4 font-wallpoet">
                 Learn . Build . Innovate
               </p>
@@ -46,62 +50,64 @@ const HeroHome = () => {
           theme
             ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green"
             : "bg-blockchain-white  border border-blockchain-green"
-        } absolute -left-4 top-[46%] rotate-12 w-[175px] rounded-r-full p-2`}
+        } absolute -left-4 top-[46%] rotate-12 w-[175px] rounded-r-full p-2 hidden md:flex`}
       >
          <div className="relative">
          <img
-            src={image}
+            src={odoi}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] object-cover"
           />
           <img
-            src={image}
+            src={cheta}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] absolute left-8 top-0 object-cover"
           />
           <img
-            src={image}
+            src={chukwuebuka}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
           />
           <img
-            src={image}
+            src={adaugo}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
           />
          </div>
       </div>
 
-      <div
-        className={`${
-          theme
-            ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green border-r-0"
-            : "bg-blockchain-white  border border-blockchain-green border-r-0"
-        } absolute right-0 top-[46%] -rotate-0 w-[175px] rounded-l-full p-2`}
-      >
-         <div className="relative">
-         <img
-            src={image}
-            alt="i"
-            className="rounded-full  w-[60px] h-[60px] object-cover"
-          />
-          <img
-            src={image}
-            alt="i"
-            className="rounded-full  w-[60px] h-[60px] absolute left-8 top-0 object-cover"
-          />
-          <img
-            src={image}
-            alt="i"
-            className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
-          />
-          <img
-            src={image}
-            alt="i"
-            className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
-          />
-         </div>
-      </div>
+      <div className="absolute right-0 top-[44%] overflow-hidden w-[175px] h-[120px] hidden md:block">
+          <div
+            className={`${
+              theme
+                ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green border-r-0"
+                : "bg-blockchain-white border border-blockchain-green border-r-0"
+            } absolute top-4 -right-4 -rotate-12 w-[175px] rounded-l-full p-2 flex`}
+          >
+            <div className="relative">
+              <img
+                src={adaugo}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] object-cover"
+              />
+              <img
+                src={chukwuebuka}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] absolute left-8 top-0 object-cover"
+              />
+              <img
+                src={cheta}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
+              />
+              <img
+                src={odoi}
+                alt="i"
+                className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
+              />
+            </div>
+          </div>
+        </div>
 
       <div
         className={` ${
@@ -115,10 +121,10 @@ const HeroHome = () => {
       </div>
 
       <div className="flex flex-col md:flex-row items-center gap-4 mb-12 md:mb-20">
-        <button className="bg-gradient-to-r from-green-950 to-green-500 flex items-center justify-center gap-2 w-[200px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full text-white">
+        <button className="bg-gradient-to-r from-[#02641c] to-[#04CA39] flex items-center justify-center gap-2 w-[200px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full text-white">
           Get Started <FaArrowRight size={14} />
         </button>
-        <div className="flex items-center bg-gradient-to-r from-green-950 to-green-500 w-[150px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full">
+        <div className="flex items-center bg-gradient-to-r from-[#02641c] to-[#04CA39] w-[150px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full">
           <button className="bg-white w-[95%] h-[90%] rounded-full text-green-800">
             Newsletter
           </button>
@@ -149,17 +155,17 @@ const HeroHome = () => {
           <h3 className="font-semibold">Community STATS</h3>
           <div className="relative flex ">
             <img
-              src={image}
+              src={dony}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] object-cover"
             />
             <img
-              src={image}
+              src={adaugo}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-14 object-cover"
             />
             <img
-              src={image}
+              src={chukwuebuka}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-28 object-cover"
             />

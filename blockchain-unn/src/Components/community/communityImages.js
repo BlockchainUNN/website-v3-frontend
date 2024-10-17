@@ -60,12 +60,12 @@ export default function CommunityImages() {
   }, [displayImages]);
 
   return (
-    <div className="grid grid-cols-3 px-24">
+    <div className="grid grid-cols-3 max-lg:px-0 px-24">
       {displayImages.map((imgIndex, index) => {
         return (
           <div
             style={{ backgroundImage: `url(${communityPics[imgIndex]})` }}
-            className="flex w-full min-h-[18rem] bg-cover bg-no-repeat bg-black transition-all ease-linear duration-1000"
+            className="flex w-full max-md:min-h-[13rem] max-sm:min-h-[9rem] max-sm-420:min-h-[7rem] min-h-[18rem] bg-cover bg-no-repeat bg-black transition-all ease-linear duration-1000"
           >
             <div
               className={
