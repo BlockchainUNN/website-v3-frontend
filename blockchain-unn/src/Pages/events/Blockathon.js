@@ -5,14 +5,14 @@ import EventSchedule from "../../Components/Blockathon/EventSchedule";
 import Footer from "../../Components/Blockathon/Footer";
 
 const Blockathon = () => {
-    return (
-        <div className="w-full flex flex-col items-center">
-           <BlockathonHero />
-           <Speakers />
-           <EventSchedule />
-           <Footer />
-        </div>
-    );
-}
+  return (
+    <div className="w-full flex flex-col items-center">
+      <BlockathonHero />
+      <Speakers />
+      <EventSchedule />
+      <Footer />
+    </div>
+  );
+};
 
 export default Blockathon;

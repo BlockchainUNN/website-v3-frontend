@@ -17,6 +17,7 @@ export default function Socials() {
                 alt={item.name}
               />
             }
+            to={item.to}
             social={item.name}
             content={item.content}
           />

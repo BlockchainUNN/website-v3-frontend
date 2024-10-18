@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { ThemeContext } from "../Theme";
+import { Link } from "react-router-dom";
 
-export default function SocialsCard({ social, icon, content }) {
+export default function SocialsCard({ social, icon, content, to }) {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div
+    <Link
+      to={to}
       className={
-        " flex p-px bg-gradient-to-b from-gray-300 via-green-400 to-gray-300 rounded-2xl"
+        " flex p-px bg-gradient-to-b from-gray-300 via-green-400 to-gray-300 rounded-2xl cursor-pointer"
       }
     >
       <div
@@ -26,6 +28,6 @@ export default function SocialsCard({ social, icon, content }) {
           {content}
         </span>
       </div>
-    </div>
+    </Link>
   );
 }

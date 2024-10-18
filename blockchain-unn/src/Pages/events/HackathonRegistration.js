@@ -114,7 +114,7 @@ const EmailStep = ({
         text: "You already registered for the hackerthon. Please click the button below to login",
         confirmButtonText: "Continue",
       }).then((result) => {
-        if (result.isConfirmed) navigate("/blockathon/hackathon/login");
+        if (result.isConfirmed) navigate("/event/hackathon/login");
       });
       console.table({ data });
       setLoading(false);
@@ -300,7 +300,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             </div>
           </div>
         ),
-      }).finally(() => navigate("/blockathon/hackathon/login"));
+      }).finally(() => navigate("/event/hackathon/login"));
       setLoading(false);
     } catch (error) {
       // Handle other errors
@@ -398,7 +398,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
           <span className="flex mx-auto text-white gap-1 max-sm:text-[0.875rem]">
             Already have an account?{" "}
             <Link
-              to={"/blockathon/hackathon/login"}
+              to={"/event/hackathon/login"}
               className="text-blockathon-green"
             >
               Log In

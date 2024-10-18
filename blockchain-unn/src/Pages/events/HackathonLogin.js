@@ -76,7 +76,7 @@ const LoginForm = ({ setUserDetails, hackathon_id }) => {
       // Store login data locally And user data in redux state
       setToken(data?.data?.tokens);
       dispatch(updateHackerDetails(data?.data?.userDetails));
-      navigate("/blockathon/hackathon");
+      navigate("/event/hackathon");
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -119,7 +119,7 @@ const LoginForm = ({ setUserDetails, hackathon_id }) => {
           <span className="flex mx-auto text-white gap-1 max-sm:text-[0.875rem]">
             Don't have an account?{" "}
             <Link
-              to={"/blockathon/hackathon/registration"}
+              to={"/event/hackathon/registration"}
               className="text-blockathon-green"
             >
               Register

@@ -277,9 +277,9 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
         ),
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/blockathon/hackathon/registration");
+          navigate("/event/hackathon/registration");
         } else {
-          navigate("/blockathon");
+          navigate("/event");
         }
       });
       setLoading(false);
@@ -440,7 +440,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
         <div className="flex w-full">
           <Link
             className="mx-auto text-white underline max-sm:text-[0.875rem]"
-            to={"/blockathon/hackathon/registration"}
+            to={"/event/hackathon/registration"}
           >
             Want to participate in the Hackathon?
           </Link>

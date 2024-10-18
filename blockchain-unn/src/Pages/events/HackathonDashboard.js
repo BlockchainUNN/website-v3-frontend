@@ -19,7 +19,11 @@ import { Button } from "../../Components/Buttons";
 import not_ready from "../../assets/icons/not-submission.svg";
 import close_svg from "../../assets/icons/close-svg.svg";
 
-export const CustomSelect = ({ options, placeholder = "Select an option", onChange }) => {
+export const CustomSelect = ({
+  options,
+  placeholder = "Select an option",
+  onChange,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const dropdownRef = useRef(null);
@@ -31,9 +35,9 @@ export const CustomSelect = ({ options, placeholder = "Select an option", onChan
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -53,13 +57,20 @@ export const CustomSelect = ({ options, placeholder = "Select an option", onChan
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-start  gap-4">
-        <span className={`text-gray-400 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''} self-center`}>
+          <span
+            className={`text-gray-400 transition-transform duration-200 ${
+              isOpen ? "transform rotate-180" : ""
+            } self-center`}
+          >
             ▼
           </span>
-          <span className={`block truncate ${selectedOption ? '' : ''} text-[#898B8A] font-raleway-medium text-[20px]`}>
+          <span
+            className={`block truncate ${
+              selectedOption ? "" : ""
+            } text-[#898B8A] font-raleway-medium text-[20px]`}
+          >
             {selectedOption ? selectedOption.label : placeholder}
           </span>
-          
         </div>
       </button>
 
@@ -69,11 +80,15 @@ export const CustomSelect = ({ options, placeholder = "Select an option", onChan
             <li
               key={option.value}
               className={`cursor-pointer select-none relative hover:bg-blue-100 w-1/2 p-2 ${
-                selectedOption && selectedOption.value === option.value ? '' : ''
+                selectedOption && selectedOption.value === option.value
+                  ? ""
+                  : ""
               }`}
               onClick={() => handleOptionClick(option)}
             >
-              <span className="block truncate text-[#898B8A] font-raleway-medium text-[20px]">{option.label}</span>
+              <span className="block truncate text-[#898B8A] font-raleway-medium text-[20px]">
+                {option.label}
+              </span>
               {selectedOption && selectedOption.value === option.value && (
                 <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-blue-600">
                   ✓
@@ -451,18 +466,18 @@ export const Project = () => {
   const [formData, setFormData] = useState({});
 
   const options = [
-    { value: 'financial', label: 'Financial Inclusion & Edu' },
-    { value: 'open-governance', label: 'Open governance' },
-    { value: 'identity-verification', label: 'E-Identity & Verification' },
-    { value: 'entertainment-media', label: 'Entertainment & Media'}
+    { value: "financial", label: "Financial Inclusion & Edu" },
+    { value: "open-governance", label: "Open governance" },
+    { value: "identity-verification", label: "E-Identity & Verification" },
+    { value: "entertainment-media", label: "Entertainment & Media" },
   ];
 
   const handleChange = (selectedOption) => {
-    setFormData(prev => ({ ...prev, category: selectedOption.value }));
+    setFormData((prev) => ({ ...prev, category: selectedOption.value }));
   };
 
   const handleInputChange = (field) => (e) => {
-    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
@@ -476,10 +491,12 @@ export const Project = () => {
       <input
         type={type}
         className="w-full md:w-[644px] h-[53px] border-[1px] border-black rounded-[5px] px-6 focus:outline-none"
-        onFocus={() => setIsFocused(prev => ({ ...prev, [placeholder]: true }))}
+        onFocus={() =>
+          setIsFocused((prev) => ({ ...prev, [placeholder]: true }))
+        }
         onBlur={(e) => {
           if (e.target.value === "") {
-            setIsFocused(prev => ({ ...prev, [placeholder]: false }));
+            setIsFocused((prev) => ({ ...prev, [placeholder]: false }));
           }
         }}
         value={formData[field] || ""}
@@ -515,7 +532,6 @@ export const Project = () => {
       </label>
     </div>
   );
-  
 
   return (
     <div className="w-[80%] xl:w-[60%] h-fit mx-auto bg-white rounded-[26px] flex flex-col items-center py-[60px] px-[18px] gap-4">
@@ -527,7 +543,7 @@ export const Project = () => {
           <span className="absolute left-[1px] -top-[1px] bg-clip-text text-transparent bg-gradient-to-b from-black to-[#1B1A1A] w-full self-center">
             PROJECT OVERVIEW
           </span>
-        </h2>             
+        </h2>
       </div>
 
       <div className="w-[80%]">
@@ -535,7 +551,7 @@ export const Project = () => {
           {step === 1 ? (
             <>
               {renderInputField("Project", "projectName")}
-              <CustomSelect  
+              <CustomSelect
                 options={options}
                 placeholder="Select a Category"
                 onChange={handleChange}
@@ -543,10 +559,12 @@ export const Project = () => {
               <div className="relative">
                 <input
                   className="w-full md:w-[644px] h-[73px] border-[1px] border-black rounded-[5px] px-4 py-2 focus:outline-none placeholder:-start-0 justify-start"
-                  onFocus={() => setIsFocused(prev => ({ ...prev, description: true }))}
+                  onFocus={() =>
+                    setIsFocused((prev) => ({ ...prev, description: true }))
+                  }
                   onBlur={(e) => {
                     if (e.target.value === "") {
-                      setIsFocused(prev => ({ ...prev, description: false }));
+                      setIsFocused((prev) => ({ ...prev, description: false }));
                     }
                   }}
                   value={formData.description || ""}
@@ -554,7 +572,11 @@ export const Project = () => {
                 />
                 {!isFocused.description && !formData.description && (
                   <div className="absolute inset-y-0 left-0 flex gap-1 items-center pl-4 pointer-events-none">
-                    <img src={projectblack} alt="Project" className="w-[35px] h-[35px]" />
+                    <img
+                      src={projectblack}
+                      alt="Project"
+                      className="w-[35px] h-[35px]"
+                    />
                     <span className="text-[#898B8A] font-raleway-medium text-[20px]">
                       Description of your project
                     </span>
@@ -605,13 +627,12 @@ export const Project = () => {
   );
 };
 
-
 export const Submit = () => {
   const submit = false;
   const [modalOpen, setModalOpen] = useState(!submit);
 
   const closeModal = () => {
-    setModalOpen(false); 
+    setModalOpen(false);
   };
 
   return (
@@ -630,19 +651,23 @@ export const Submit = () => {
       {modalOpen && (
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-[26px]">
           <div className="bg-white flex flex-col items-center p-6 rounded-lg shadow-lg text-center w-[88%] h-[85%]">
-            <img 
-              src={close_svg} 
-              onClick={closeModal} 
-              alt="Close Modal" 
+            <img
+              src={close_svg}
+              onClick={closeModal}
+              alt="Close Modal"
               className="cursor-pointer w-[33.59px] h-[33.65px] self-end"
             />
-            <h3 className="text-[36px] font-raleway-semibold">Hasn't started</h3>
-            <p className="text-[24px] font-raleway-medium mb-[4rem]">Submission starts on the 29th of October</p>
+            <h3 className="text-[36px] font-raleway-semibold">
+              Hasn't started
+            </h3>
+            <p className="text-[24px] font-raleway-medium mb-[4rem]">
+              Submission starts on the 29th of October
+            </p>
 
-            <img 
-              src={not_ready} 
-              alt="Not Ready" 
-              className="w-[226px] h-[194.31px]" 
+            <img
+              src={not_ready}
+              alt="Not Ready"
+              className="w-[226px] h-[194.31px]"
             />
           </div>
         </div>
@@ -716,14 +741,14 @@ const HackathonDashboard = () => {
               text: "Session Expired. Please Log In.",
               confirmButtonText: "Login",
             }).then((result) => {
-              if (result.isConfirmed) navigate("/blockathon/hackathon/login");
+              if (result.isConfirmed) navigate("/event/hackathon/login");
             });
           } else {
             Swal.fire({
               icon: "error",
               text: "Something Went Wrong!!!",
               confirmButtonText: "Close",
-            }).finally(() => navigate("/blockathon"));
+            }).finally(() => navigate("/event"));
           }
         }
       } else {
