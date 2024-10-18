@@ -254,7 +254,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             </div>
             <div className="flex flex-col gap-4 w-full justify-center pt-4">
               <a
-                href="https://www.namecheap.com/domains/registration/results/?domain=google"
+                href="https://chat.whatsapp.com/DEYnsVLHv6KJU4jirzsakm"
                 target={"_blank"}
                 rel="noreferrer"
                 className="flex gap-2 justify-center mx-auto p-2 rounded-md bg-green-400 cusor-pointer text-white"
@@ -277,9 +277,9 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
         ),
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/blockathon/hackathon/registration");
+          navigate("/event/hackathon/registration");
         } else {
-          navigate("/blockathon");
+          navigate("/event");
         }
       });
       setLoading(false);
@@ -440,7 +440,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
         <div className="flex w-full">
           <Link
             className="mx-auto text-white underline max-sm:text-[0.875rem]"
-            to={"/blockathon/hackathon/registration"}
+            to={"/event/hackathon/registration"}
           >
             Want to participate in the Hackathon?
           </Link>

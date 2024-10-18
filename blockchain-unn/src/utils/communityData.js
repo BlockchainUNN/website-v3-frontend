@@ -44,11 +44,13 @@ export const communitySocials = [
   {
     icon: linkedIn,
     name: "LinkedIn",
+    to: "https://www.linkedin.com/company/blockchainunn/",
     content: "Follow for spaces, events and updates we host",
   },
   {
     icon: x,
     name: "X-Space",
+    to: "https://x.com/BlockchainUNN",
     content: "Follow for spaces, events and updates we host",
   },
   {
@@ -84,6 +86,7 @@ export const communitySocials = [
   {
     icon: instagram,
     name: "Instagram",
+    to: "https://www.instagram.com/blockchainunn",
     content: "Let’s connect on Instagram",
   },
 ];

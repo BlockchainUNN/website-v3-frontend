@@ -9,9 +9,14 @@ import sponsor from "../../assets/icons/sponsor.svg";
 import hacker from "../../assets/icons/hacker.svg";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { API_ROUTES, customAxios } from "../../api.routes";
+import { useSelector } from "react-redux";
 
 const BlockathonHero = () => {
   const { theme } = useContext(ThemeContext);
+  const [attendeeCount, setAttendeeCount] = useState(0);
+  const [hackerCount, setHackerCount] = useState(0);
+  const { blockathon_id, hackathon_id } = useSelector((state) => state.app);
 
   const calculateTimeLeft = () => {
     const eventDate = new Date("2024-11-02T10:00:00");
@@ -41,6 +46,26 @@ const BlockathonHero = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  // Get Event Attendee Count and Hacker
+  useEffect(() => {
+    (async () => {
+      try {
+        const eventAttendeeCountResponse = await customAxios
+          .unprotected()
+          .get(API_ROUTES.events.attendeeCount + blockathon_id);
+
+        const hackerCountResponse = await customAxios
+          .unprotected()
+          .get(API_ROUTES.hackers.count + hackathon_id);
+
+        setAttendeeCount(eventAttendeeCountResponse.data.data.attendeeCount);
+        setHackerCount(hackerCountResponse.data.data.hackerCount);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [blockathon_id, hackathon_id]);
 
   return (
     <div className={`w-full  ${theme ? "bg-black" : "bg-black"}`}>
@@ -95,7 +120,9 @@ const BlockathonHero = () => {
               <div className="flex flex-col md:flex-row items-center gap-2">
                 <img src={attendee} alt="attendee" className="w-8 h-8" />
                 <div className="text-start md:text-center flex flex-col items-center">
-                  <p className="text-[1rem] md:text-[1.3rem] font-bold">5000</p>
+                  <p className="text-[1rem] md:text-[1.3rem] font-bold">
+                    {attendeeCount}
+                  </p>
                   <p>Attendee</p>
                 </div>
               </div>
@@ -119,7 +146,7 @@ const BlockathonHero = () => {
               <div className="flex flex-col md:flex-row  items-center gap-2">
                 <img src={hacker} alt="hacker" className="w-8 h-8" />
                 <div className="text-center flex flex-col items-center">
-                  <p className="text-[1.3.rem] font-bold">500</p>
+                  <p className="text-[1.3.rem] font-bold">{hackerCount}</p>
                   <p>Hackers</p>
                 </div>
               </div>
@@ -145,12 +172,12 @@ const BlockathonHero = () => {
           </div>
 
           <div className="flex flex-col gap-4 items-center ">
-            <Link to="/blockathon/registration">
+            <Link to="/event/registration">
               <button className="px-12 py-4 border-white border rounded-md text-white w-full md:w-[310px]">
                 Register for Conference
               </button>
             </Link>
-            <Link to="/blockathon/hackathon/registration">
+            <Link to="/event/hackathon/registration">
               <button className="px-12 py-4 bg-gray-200 rounded-md text-black w-full md:w-[310px]">
                 Join the Hackathon
               </button>

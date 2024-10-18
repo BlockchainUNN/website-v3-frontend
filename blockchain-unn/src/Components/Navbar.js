@@ -9,7 +9,7 @@ import SocialLink from "./socialLink.js";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ["Home", "About", "Community", "Blog", "Team", "Events"];
+  const navItems = ["Home", "About", "Community", "Team", "Events"]; //"Blog"
   const { theme } = useContext(ThemeContext);
   const location = useLocation();
 
@@ -24,9 +24,8 @@ const Navbar = () => {
   const getNavItemLink = (item) => {
     if (item.toLowerCase() === "team") {
       return "/about#team";
-    }
-    else if  (item.toLowerCase() === "events"){
-      return "/#events"
+    } else if (item.toLowerCase() === "events") {
+      return "/event";
     }
     return `/${item.toLowerCase()}`;
   };
@@ -82,10 +81,7 @@ const Navbar = () => {
 
         <ul className="flex gap-8 max-lg:gap-4">
           {navItems.map((item) => (
-            <li
-              key={item}
-              className="relative cursor-pointer"
-            >
+            <li key={item} className="relative cursor-pointer">
               <Link to={getNavItemLink(item)} className="block">
                 <span>{item}</span>
                 {/* Show the green bar if this is the active page */}
@@ -99,10 +95,16 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <ThemeSwitch />
-          <SocialLink to={""} type={"linkedin"} />
+          <SocialLink
+            to={"https://www.linkedin.com/company/blockchainunn/"}
+            type={"linkedin"}
+          />
           <SocialLink to={""} type={"telegram"} />
-          <SocialLink to={""} type={"x"} />
-          <SocialLink to={""} type={"instagram"} />
+          <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
+          <SocialLink
+            to={"https://www.instagram.com/blockchainunn"}
+            type={"instagram"}
+          />
         </div>
       </div>
 
