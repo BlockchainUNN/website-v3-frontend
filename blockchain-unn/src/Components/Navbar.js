@@ -24,9 +24,8 @@ const Navbar = () => {
   const getNavItemLink = (item) => {
     if (item.toLowerCase() === "team") {
       return "/about#team";
-    }
-    else if  (item.toLowerCase() === "events"){
-      return "/#events"
+    } else if (item.toLowerCase() === "events") {
+      return "/event";
     }
     return `/${item.toLowerCase()}`;
   };
@@ -96,10 +95,16 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <ThemeSwitch />
-          <SocialLink to={""} type={"linkedin"} />
+          <SocialLink
+            to={"https://www.linkedin.com/company/blockchainunn/"}
+            type={"linkedin"}
+          />
           <SocialLink to={""} type={"telegram"} />
-          <SocialLink to={""} type={"x"} />
-          <SocialLink to={""} type={"instagram"} />
+          <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
+          <SocialLink
+            to={"https://www.instagram.com/blockchainunn"}
+            type={"instagram"}
+          />
         </div>
       </div>
 

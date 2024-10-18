@@ -21,24 +21,21 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/community" element={<Community />} />
-              <Route path="/blockathon" element={<Blockathon />} />
+              <Route path="/event" element={<Blockathon />} />
               {/* Add more routes as needed */}
               <Route
-                path="/blockathon/registration"
+                path="/event/registration"
                 element={<EventsRegistration />}
               />
               <Route
-                path="/blockathon/hackathon/registration"
+                path="/event/hackathon/registration"
                 element={<HackathonRegistration />}
               />
               <Route
-                path="/blockathon/hackathon/login"
+                path="/event/hackathon/login"
                 element={<HackathonLogin />}
               />
-              <Route
-                path="/blockathon/hackathon"
-                element={<HackathonDashboard />}
-              />
+              <Route path="/event/hackathon" element={<HackathonDashboard />} />
             </Routes>
           </Router>
         </ThemeProvider>
