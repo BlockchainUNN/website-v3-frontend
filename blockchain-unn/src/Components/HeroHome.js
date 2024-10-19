@@ -15,7 +15,7 @@ import {
   FaPenNib,
   FaPeopleCarry,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeroHome = () => {
   const { theme } = useContext(ThemeContext);
@@ -131,12 +131,13 @@ const HeroHome = () => {
         </button>
         <div className="flex items-center bg-gradient-to-r from-[#02641c] to-[#04CA39] w-[150px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full">
           {/* Linked to substack for now. Link to news letter section later */}
-          <button
-            onClick={() => navigate("https://blockchainunn.substack.com/")}
-            className="bg-white w-[95%] h-[90%] rounded-full text-green-800"
+          <Link
+            to={"https://blockchainunn.substack.com/"}
+            target={"_blank"}
+            className="bg-white w-[95%] h-[90%] rounded-full text-green-800 cursor-pointer"
           >
             Newsletter
-          </button>
+          </Link>
         </div>
       </div>
 

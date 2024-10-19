@@ -6,10 +6,11 @@ import sportsfiesta from "../assets/events/sportsFiesta.png";
 import previousicon from "../assets/icons/previous-icon.svg";
 import nexticon from "../assets/icons/next-icon.svg";
 import { useNavigate } from "react-router-dom";
+import space1 from "../assets/events/spaces/1.jpg";
 
 const events = [
   {
-    imageSrc: sportsfiesta,
+    imageSrc: space1,
     date: "SAT. 29TH || JUN, 2024",
     title: "SPORTS FIESTA",
   },

@@ -9,7 +9,7 @@ import SocialLink from "./socialLink.js";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ["Home", "Community", "Events", "Hackaton Login"]; //"Blog"
+  const navItems = ["Home", "Community", "Event", "Hackathon Login"]; //"Blog"
   const { theme } = useContext(ThemeContext);
   const location = useLocation();
 
@@ -26,7 +26,7 @@ const Navbar = () => {
       return "/about#team";
     } else if (item.toLowerCase() === "event") {
       return "/event";
-    } else if (item.toLowerCase() === "hackaton login") {
+    } else if (item.toLowerCase() === "hackathon login") {
       return "/event/hackathon";
     }
     return `/${item.toLowerCase()}`;

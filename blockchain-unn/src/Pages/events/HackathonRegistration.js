@@ -260,13 +260,13 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             <h1 className="text-black font-black mx-auto text-[1.5rem]">
               <b>Successful Registration</b>
             </h1>
-            <div className="text-center text-[0.875rem]">
+            <div className="flex flex-col text-left text-[0.875rem]">
               <span>
                 You have successfully registered for the Hackathon phase of
-                blockathon.
-              </span>{" "}
-              <span>
-                Confirmation email has been sent to {registrationDetails.email}
+                blockathon. Confirmation email has been sent to{" "}
+                <b className="text-black underline">
+                  {registrationDetails.email}
+                </b>
               </span>
               <br />
               <span>
