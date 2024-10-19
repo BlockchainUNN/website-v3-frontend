@@ -44,7 +44,7 @@ const HackathonRegistration = () => {
         Create an <span className="text-blockathon-green">Account</span>
       </span>
       <span className="text-white font-normal mx-auto max-sm-420:text-[0.875rem] max-md:text-[1rem] max-lg:text-[1.2rem] text-[1.5rem] text-nowrap font-raleway">
-        Enter your details to become a hacker
+        Enter your details to join the Hackathon
       </span>
     </h1>
   );
@@ -271,7 +271,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               <br />
               <span>
                 Click the link below to join the Telegram Channel for the
-                Hackathon.
+                Hackathon and meet other hackers to form teams.
               </span>
             </div>
             <div className="flex mx-auto pt-4">
@@ -286,7 +286,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               >
                 <BiLogoTelegram className="my-auto" color="white" />
                 <span className="text-[0.875rem] my-auto">
-                  Join Us on Telegram
+                  Join Hackers Telegram
                 </span>
               </a>
               <button
@@ -356,7 +356,8 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               "Frontend Developer",
               "Backend Developer",
               "Smart Contract Developer",
-              "Designer",
+              "Graphics Designer",
+              "UI/UX Designer",
               "Product Manager",
               "Others",
             ]}

@@ -70,7 +70,9 @@ export function SelectInput({
           )}
         </div>
         <div className="flex w-full h-full bg-transparent justify-between border-none outline-none cursor-pointer">
-          <span className="my-auto ">{value || placeholder}</span>
+          <span className="my-auto text-nowrap">
+            {showOptions ? placeholder : value ? value : placeholder}
+          </span>
           {showOptions ? (
             <IoIosArrowUp color="white" className="my-auto" />
           ) : (
@@ -102,7 +104,7 @@ export function SelectInput({
               event.currentTarget.classList.remove("text-blockathon-green")
             }
           >
-            <span>{option}</span>
+            <span className="text-nowrap">{option}</span>
           </button>
         ))}
       </div>

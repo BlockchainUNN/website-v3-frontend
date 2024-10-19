@@ -24,7 +24,10 @@ const HackathonLogin = () => {
         Log <span className="text-blockathon-green">In</span>
       </span>
       <span className="text-white font-normal mx-auto max-sm-420:text-[0.875rem] max-md:text-[1rem] max-lg:text-[1.2rem] text-[1.5rem] text-nowrap font-raleway">
-        Enter your details to become a hacker
+        Succefully registered for the hackathon?
+      </span>
+      <span className="text-white font-normal mx-auto max-sm-420:text-[0.875rem] max-md:text-[1rem] max-lg:text-[1.2rem] text-[1.5rem] text-nowrap font-raleway">
+        Login Below to join or form a team
       </span>
     </h1>
   );

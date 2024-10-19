@@ -22,10 +22,16 @@ const Footer = () => {
             FOLLOW US
           </p>
           <div className="flex items-center gap-2">
-            <SocialLink to={""} type={"linkedin"} />
-            <SocialLink to={""} type={"telegram"} />
-            <SocialLink to={""} type={"x"} />
-            <SocialLink to={""} type={"instagram"} />
+            <SocialLink
+              to={"https://www.linkedin.com/company/blockchainunn/"}
+              type={"linkedin"}
+            />
+            <SocialLink to={"https://t.me/BlockchainUNN/1"} type={"telegram"} />
+            <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
+            <SocialLink
+              to={"https://www.instagram.com/blockchainunn"}
+              type={"instagram"}
+            />
           </div>
         </div>
       </div>
