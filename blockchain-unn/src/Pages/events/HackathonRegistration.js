@@ -44,7 +44,7 @@ const HackathonRegistration = () => {
         Create an <span className="text-blockathon-green">Account</span>
       </span>
       <span className="text-white font-normal mx-auto max-sm-420:text-[0.875rem] max-md:text-[1rem] max-lg:text-[1.2rem] text-[1.5rem] text-nowrap font-raleway">
-        Enter your details to become a hacker
+        Enter your details to join the Hackathon
       </span>
     </h1>
   );
@@ -260,18 +260,18 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             <h1 className="text-black font-black mx-auto text-[1.5rem]">
               <b>Successful Registration</b>
             </h1>
-            <div className="text-center text-[0.875rem]">
+            <div className="flex flex-col text-left text-[0.875rem]">
               <span>
                 You have successfully registered for the Hackathon phase of
-                blockathon.
-              </span>{" "}
-              <span>
-                Confirmation email has been sent to {registrationDetails.email}
+                blockathon. Confirmation email has been sent to{" "}
+                <b className="text-black underline">
+                  {registrationDetails.email}
+                </b>
               </span>
               <br />
               <span>
                 Click the link below to join the Telegram Channel for the
-                Hackathon.
+                Hackathon and meet other hackers to form teams.
               </span>
             </div>
             <div className="flex mx-auto pt-4">
@@ -286,7 +286,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               >
                 <BiLogoTelegram className="my-auto" color="white" />
                 <span className="text-[0.875rem] my-auto">
-                  Join Us on Telegram
+                  Join Hackers Telegram
                 </span>
               </a>
               <button
@@ -356,7 +356,8 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               "Frontend Developer",
               "Backend Developer",
               "Smart Contract Developer",
-              "Designer",
+              "Graphics Designer",
+              "UI/UX Designer",
               "Product Manager",
               "Others",
             ]}

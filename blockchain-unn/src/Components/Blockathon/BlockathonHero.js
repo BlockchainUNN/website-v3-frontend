@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../Theme";
 import Hacker from "../../assets/blockathonc.png";
-import blockathon from "../../assets/blockathonlogo.png";
+import blockathon from "../../assets/events/Blockathon_Okey.jpg";
 import cup from "../../assets/icons/smallcup.svg";
 import attendee from "../../assets/icons/attendee.svg";
 import speaker from "../../assets/icons/speaker.svg";
@@ -11,6 +11,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { API_ROUTES, customAxios } from "../../api.routes";
 import { useSelector } from "react-redux";
+import Navbar from "../Navbar";
 
 const BlockathonHero = () => {
   const { theme } = useContext(ThemeContext);
@@ -19,7 +20,7 @@ const BlockathonHero = () => {
   const { blockathon_id, hackathon_id } = useSelector((state) => state.app);
 
   const calculateTimeLeft = () => {
-    const eventDate = new Date("2024-11-02T10:00:00");
+    const eventDate = new Date("2024-10-28T10:00:00");
     const now = new Date();
     const difference = eventDate.getTime() - now.getTime();
     const totalSeconds = Math.floor(difference / 1000);
@@ -68,7 +69,9 @@ const BlockathonHero = () => {
   }, [blockathon_id, hackathon_id]);
 
   return (
-    <div className={`w-full  ${theme ? "bg-black" : "bg-black"}`}>
+    <div
+      className={`w-full  ${theme ? "bg-black relative" : "bg-black relative"}`}
+    >
       <div className="flex flex-col items-center justify-center w-full h-screen relative">
         <img
           src={Hacker}
@@ -78,7 +81,11 @@ const BlockathonHero = () => {
 
         <div className="absolute top-1/4 md:top-1/3 md:left-auto flex flex-col gap-4 items-center justify-center">
           <div className="w-[87%] h-[50px] md:h-[190px] flex items-center justify-center px-4 bg-white">
-            <img src={blockathon} alt="Blockchain" className="w-full h-full" />
+            <img
+              src={blockathon}
+              alt="Blockchain"
+              className="w-full h-full object-fit"
+            />
           </div>
           <h1 className="text-white text-[25px] md:text-[50px] font-bold ">
             BlockchainUNN <span className="font-light">Conference</span> 3.0
@@ -123,7 +130,7 @@ const BlockathonHero = () => {
                   <p className="text-[1rem] md:text-[1.3rem] font-bold">
                     {attendeeCount}
                   </p>
-                  <p>Attendee</p>
+                  <p>Attendees</p>
                 </div>
               </div>
 
@@ -138,7 +145,7 @@ const BlockathonHero = () => {
               <div className="flex flex-col md:flex-row  items-center gap-2">
                 <img src={sponsor} alt="sponsor" className="w-8 h-6" />
                 <div className="text-center flex flex-col items-center">
-                  <p className="text-[1.3rem] font-bold">10+</p>
+                  <p className="text-[1.3rem] font-bold">2</p>
                   <p>Sponsors</p>
                 </div>
               </div>

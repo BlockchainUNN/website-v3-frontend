@@ -237,16 +237,19 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             <h1 className="text-black font-black mx-auto text-[1.5rem]">
               <b>Successful Registration</b>
             </h1>
-            <div className="text-center text-[0.875rem]">
-              <span>You have successfully registered for blockathon.</span>
+            <div className="text-left flex flex-col text-[0.875rem]">
               <span>
-                Confirmation email has been sent to {registrationDetails.email}
+                You have successfully registered for blockathon. Confirmation
+                email has been sent to{" "}
+                <b className="text-black underline">
+                  {registrationDetails.email}
+                </b>
               </span>
               <br />
               <span>
                 Join our Whatsapp group for the oppourtunity to network with
                 other event attendees and for the latest updates about
-                Blogathon.
+                Blockathon.
               </span>
             </div>
             <div className="flex mx-auto pt-4">
@@ -304,10 +307,26 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
   };
 
   // For the custom select inputs
-  const handleSelect = (name, value) => {
+  const handleSelect = async (name, value) => {
+    let userValue = value;
+    if (value.toLowerCase() === "others") {
+      Swal.fire({
+        text: "Please fill in your answer here...",
+        input: "text",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          userValue = result.value;
+          setRegisterationDetails({
+            ...registrationDetails,
+            [name]: userValue,
+          });
+        }
+      });
+    }
+
     setRegisterationDetails({
       ...registrationDetails,
-      [name]: value,
+      [name]: userValue,
     });
   };
 
@@ -397,12 +416,14 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             }
             name="expirenceLevel"
             onChange={handleSelect}
-            placeholder="Experience level choosen career"
+            placeholder="Experience level in choosen skillset"
             options={[
-              "0-2 years",
-              "3-5 years",
-              "5-7years",
-              "More than 7 years",
+              "Newbie",
+              "Beginner",
+              "Intermediate",
+              "Competent",
+              "Advanced",
+              "Expert",
             ]}
             required
             value={registrationDetails.expirenceLevel}
@@ -413,8 +434,8 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             iconComponent={<MdLocationPin size={"1.5rem"} className="-mr-2" />}
             name="attendingFrom"
             onChange={handleSelect}
-            placeholder="Where are you attending from"
-            options={["UNEC", "UNN", "Others"]}
+            placeholder="Where are you attending from?"
+            options={["Enugu/UNEC", "Nsukka/UNN", "Others"]}
             required
             value={registrationDetails.attendingFrom}
           />
@@ -423,9 +444,9 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
             iconComponent={<FaCode size={"1.5rem"} className="-mr-2" />}
             name="willParticipateInHackathon"
             onChange={handleSelect}
-            placeholder="Will you participate in the Hackathon?"
+            placeholder="Interested in joining the Hackathon?"
             options={[
-              "Yes, In definetely will",
+              "Yes, I would like to",
               "No, I won't be able to",
               "Probably, not sure",
             ]}

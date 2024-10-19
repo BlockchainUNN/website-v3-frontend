@@ -14,7 +14,7 @@ import { getToken } from "../../utils/localStorage";
 import { API_ROUTES, customAxios } from "../../api.routes";
 import Swal from "sweetalert2";
 import { format } from "date-fns";
-import { MoonLoader } from "react-spinners";
+import { ClipLoader, MoonLoader } from "react-spinners";
 import { Button } from "../../Components/Buttons";
 import not_ready from "../../assets/icons/not-submission.svg";
 import close_svg from "../../assets/icons/close-svg.svg";
@@ -106,8 +106,8 @@ export const Home = () => {
   const rules = [
     "BlockchainUNN Conference 3.0 is happening in person.",
     "Hackers teams are made up of a maximum of 5 people.",
-    " All projects must be related to blockchain.",
-    " minimum of 3 members of your team will need to be at the venue to be judge. ",
+    "All projects must be related to blockchain.",
+    "Minimum of 3 members of your team will need to be at the venue to be judge. ",
     "No online submissions. ",
   ];
 
@@ -124,14 +124,16 @@ export const Home = () => {
         </h2>
       </div>
 
-      {rules.map((rule, index) => (
-        <div
-          key={index}
-          className="h-[61.56px] w-fit rounded-[11px] shadow-xl bg-white text-black font-raleway-semibold font-[700] text-[16px] flex items-center justify-center py-2 px-4"
-        >
-          {`0${index + 1}    ${rule}`}
-        </div>
-      ))}
+      <div className="flex flex-col gap-4">
+        {rules.map((rule, index) => (
+          <div
+            key={index}
+            className="h-[61.56px] w-fit rounded-[11px] shadow-xl bg-white text-black font-raleway-semibold font-[700] text-[16px] flex items-center justify-center py-2 px-4"
+          >
+            {`0${index + 1}    ${rule}`}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -140,6 +142,7 @@ export const Team = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [teamData, setTeamData] = useState(null);
   const [hasTeam, setHasTeam] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [teamActions, setteamActions] = useState("create"); // create||join
   const [inputData, setInputData] = useState("");
@@ -207,11 +210,17 @@ export const Team = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      setLoading(true);
       if (teamActions === "create") {
         await customAxios
           .protected()
           .post(API_ROUTES.teams.create + hackathon_id, { name: inputData });
-        navigate(0);
+        setLoading(false);
+
+        Swal.fire({
+          icon: "success",
+          text: "Congratulations. You have successfully created a new team.",
+        }).finally(() => navigate(0));
         return;
       }
 
@@ -219,10 +228,16 @@ export const Team = () => {
       await customAxios
         .protected()
         .post(API_ROUTES.teams.join + hackathon_id, { inviteCode: inputData });
-      navigate(0);
+      setLoading(false);
+
+      Swal.fire({
+        icon: "success",
+        text: "Congratulations. You have successfully joined a new team.",
+      }).finally(() => navigate(0));
       return;
     } catch (error) {
       console.log("Create/Join team error ==>", error);
+      setLoading(false);
       Swal.fire({
         icon: "error",
         title:
@@ -238,11 +253,11 @@ export const Team = () => {
     <div className="w-[80%] xl:w-[60%] h-[520px] mx-auto bg-white rounded-[26px] flex flex-col items-center py-[12px] px-[18px] gap-4">
       <div className="w-full flex flex-col items-center h-[70px] mb-3">
         <h2 className="text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
-          <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center">
-            TEAM OVERVIEW
+          <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center uppercase">
+            {teamData?.name ? teamData.name : "TEAM OVERVIEW"}
           </span>
-          <span className="absolute left-[1px] -top-[1px] bg-clip-text text-transparent bg-gradient-to-b from-black to-[#1B1A1A] w-full self-center">
-            TEAM OVERVIEW
+          <span className="absolute left-[1px] -top-[1px] bg-clip-text text-transparent uppercase bg-gradient-to-b from-black to-[#1B1A1A] w-full self-center">
+            {teamData?.name ? teamData.name : "TEAM OVERVIEW"}
           </span>
         </h2>
       </div>
@@ -254,15 +269,15 @@ export const Team = () => {
       ) : teamData ? (
         <>
           <div className="flex flex-col gap-2 w-full">
-            <div className="flex gap-4 w-full">
-              <h2>Team Members</h2>
+            <div className="flex gap-10 w-full text-[1.2rem] font-semibold uppercase">
+              <h2 className="w-[10rem]">Team Members</h2>
               <h3>Role</h3>
             </div>
             <div>
               {teamData?.hackers.map((hacker) => {
                 return (
-                  <div className="flex gap-4 w-full">
-                    <div>
+                  <div className="flex gap-10 w-full">
+                    <div className="w-[10rem] truncate">
                       {hacker?.user?.first_name} {hacker?.user?.last_name}
                     </div>
                     <div>{hacker?.role}</div>
@@ -271,8 +286,8 @@ export const Team = () => {
               })}
             </div>
             <div className="flex w-full justify-center">
-              <span className="flex mx-auto">
-                Team Invite Code: {teamData?.invite_code}
+              <span className="flex gap-2 mx-auto">
+                <b>Team Invite Code:</b> {teamData?.invite_code}
               </span>
             </div>
             <div className="flex w-full flex-row-reverse">
@@ -299,14 +314,24 @@ export const Team = () => {
             <button
               type="button"
               onClick={() => setteamActions("create")}
-              className="w-[23%] h-[73px] bg-white shadow-xl border border-black text-black font-raleway-medium text-[20px] rounded-[5px] "
+              className={
+                (teamActions === "create"
+                  ? "bg-white text-black border border-black "
+                  : "bg-black text-white") +
+                " w-[23%] h-[73px] shadow-xl font-raleway-medium text-[20px] rounded-[5px] "
+              }
             >
               Create Team
             </button>
             <button
               type="button"
               onClick={() => setteamActions("join")}
-              className="w-[23%] h-[73px] bg-black shadow-xl text-white font-raleway-medium text-[20px] rounded-[5px] "
+              className={
+                (teamActions !== "create"
+                  ? "bg-white text-black border border-black "
+                  : "bg-black text-white") +
+                " w-[23%] h-[73px] shadow-xl font-raleway-medium text-[20px] rounded-[5px] "
+              }
             >
               Join Team
             </button>
@@ -342,8 +367,17 @@ export const Team = () => {
                 </div>
               )}
             </div>
-            <button className="w-[33%] h-[73px] bg-black shadow-xl text-white font-raleway-medium text-[20px] rounded-[5px] mx-auto">
-              {teamActions === "create" ? "Create" : "Join"} Team
+            <button
+              disabled={loading}
+              className="w-[33%] h-[73px] bg-black shadow-xl text-white font-raleway-medium text-[20px] rounded-[5px] mx-auto"
+            >
+              {loading ? (
+                <ClipLoader color="white" />
+              ) : teamActions === "create" ? (
+                "Create Team"
+              ) : (
+                "Join Team"
+              )}
             </button>
           </form>
         </>
@@ -695,7 +729,10 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
               ? "text-blockathon-green "
               : "text-white hover:text-blockathon-green"
           }`}
-          onClick={() => setActiveTab(tab.id)}
+          onClick={() => {
+            window.location.hash = tab.id;
+            setActiveTab(tab.id);
+          }}
         >
           <img src={tab.icon} alt={tab.label} className={`w-[32px] h-[32px]`} />
           {tab.label}
@@ -748,7 +785,7 @@ const HackathonDashboard = () => {
               icon: "error",
               text: "Something Went Wrong!!!",
               confirmButtonText: "Close",
-            }).finally(() => navigate("/event"));
+            }).finally(() => navigate("/event/hackathon/login"));
           }
         }
       } else {
@@ -794,7 +831,7 @@ const HackathonDashboard = () => {
         </div>
         <div className="my-8">
           <h1 className="text-white font-raleway-black text-center text-2xl sm:text-3xl lg:text-4xl">
-            Ready to Hack{" "}
+            Ready to hack{" "}
             <span className="text-blockathon-green">{hacker?.firstName}?</span>
           </h1>
           <p className="text-white font-raleway-medium font-[400] text-center text-[28px]">

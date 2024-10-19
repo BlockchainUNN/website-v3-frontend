@@ -15,12 +15,14 @@ import {
   FaPenNib,
   FaPeopleCarry,
 } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeroHome = () => {
   const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
+
   return (
     <div className="w-full flex flex-col items-center overflow-hidden">
-
       <BlockathonHeader />
       <div
         className={`${
@@ -52,8 +54,8 @@ const HeroHome = () => {
             : "bg-blockchain-white  border border-blockchain-green"
         } absolute -left-4 top-[46%] rotate-12 w-[175px] rounded-r-full p-2 hidden md:flex`}
       >
-         <div className="relative">
-         <img
+        <div className="relative">
+          <img
             src={odoi}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] object-cover"
@@ -73,41 +75,41 @@ const HeroHome = () => {
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
           />
-         </div>
+        </div>
       </div>
 
       <div className="absolute right-0 top-[44%] overflow-hidden w-[175px] h-[120px] hidden md:block">
-          <div
-            className={`${
-              theme
-                ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green border-r-0"
-                : "bg-blockchain-white border border-blockchain-green border-r-0"
-            } absolute top-4 -right-4 -rotate-12 w-[175px] rounded-l-full p-2 flex`}
-          >
-            <div className="relative">
-              <img
-                src={adaugo}
-                alt="i"
-                className="rounded-full w-[60px] h-[60px] object-cover"
-              />
-              <img
-                src={chukwuebuka}
-                alt="i"
-                className="rounded-full w-[60px] h-[60px] absolute left-8 top-0 object-cover"
-              />
-              <img
-                src={cheta}
-                alt="i"
-                className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
-              />
-              <img
-                src={odoi}
-                alt="i"
-                className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
-              />
-            </div>
+        <div
+          className={`${
+            theme
+              ? "bg-blockchain-green bg-opacity-40 border border-blockchain-green border-r-0"
+              : "bg-blockchain-white border border-blockchain-green border-r-0"
+          } absolute top-4 -right-4 -rotate-12 w-[175px] rounded-l-full p-2 flex`}
+        >
+          <div className="relative">
+            <img
+              src={adaugo}
+              alt="i"
+              className="rounded-full w-[60px] h-[60px] object-cover"
+            />
+            <img
+              src={chukwuebuka}
+              alt="i"
+              className="rounded-full w-[60px] h-[60px] absolute left-8 top-0 object-cover"
+            />
+            <img
+              src={cheta}
+              alt="i"
+              className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
+            />
+            <img
+              src={odoi}
+              alt="i"
+              className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
+            />
           </div>
         </div>
+      </div>
 
       <div
         className={` ${
@@ -115,19 +117,27 @@ const HeroHome = () => {
         } w-[80%] md:w-[50%] text-center mt-2 md:mt-0 mb-8`}
       >
         <h2 className="text-[10px] md:text-[20px]">
-          We&apos;re a student community connected to providing members with
+          We&apos;re a student community committed to providing members with
           educational and professional opportunities in the blockchain industry.
         </h2>
       </div>
 
       <div className="flex flex-col md:flex-row items-center gap-4 mb-12 md:mb-20">
-        <button className="bg-gradient-to-r from-[#02641c] to-[#04CA39] flex items-center justify-center gap-2 w-[200px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full text-white">
+        <button
+          onClick={() => navigate("/event")}
+          className="bg-gradient-to-r from-[#02641c] to-[#04CA39] flex items-center justify-center gap-2 w-[200px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full text-white"
+        >
           Get Started <FaArrowRight size={14} />
         </button>
         <div className="flex items-center bg-gradient-to-r from-[#02641c] to-[#04CA39] w-[150px] md:w-[180px] h-[55px] md:h-[65px]  rounded-full">
-          <button className="bg-white w-[95%] h-[90%] rounded-full text-green-800">
+          {/* Linked to substack for now. Link to news letter section later */}
+          <Link
+            to={"https://blockchainunn.substack.com/"}
+            target={"_blank"}
+            className="bg-white w-[95%] h-[90%] rounded-full text-green-800 cursor-pointer"
+          >
             Newsletter
-          </button>
+          </Link>
         </div>
       </div>
 

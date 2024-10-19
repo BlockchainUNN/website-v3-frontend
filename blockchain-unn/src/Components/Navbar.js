@@ -9,7 +9,7 @@ import SocialLink from "./socialLink.js";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ["Home", "About", "Community", "Team", "Events"]; //"Blog"
+  const navItems = ["Home", "Community", "Event", "Hackathon Login"]; //"Blog"
   const { theme } = useContext(ThemeContext);
   const location = useLocation();
 
@@ -24,8 +24,10 @@ const Navbar = () => {
   const getNavItemLink = (item) => {
     if (item.toLowerCase() === "team") {
       return "/about#team";
-    } else if (item.toLowerCase() === "events") {
+    } else if (item.toLowerCase() === "event") {
       return "/event";
+    } else if (item.toLowerCase() === "hackathon login") {
+      return "/event/hackathon";
     }
     return `/${item.toLowerCase()}`;
   };
@@ -63,7 +65,7 @@ const Navbar = () => {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex max-lg:gap-8 gap-16 items-center justify-between w-full">
-        <div className="mt-2 h-8 w-36">
+        <div className="mt-2 h-12 w-52">
           {theme ? (
             <img
               src={LogoWhite}
@@ -99,7 +101,7 @@ const Navbar = () => {
             to={"https://www.linkedin.com/company/blockchainunn/"}
             type={"linkedin"}
           />
-          <SocialLink to={""} type={"telegram"} />
+          <SocialLink to={"https://t.me/BlockchainUNN/1"} type={"telegram"} />
           <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
           <SocialLink
             to={"https://www.instagram.com/blockchainunn"}
