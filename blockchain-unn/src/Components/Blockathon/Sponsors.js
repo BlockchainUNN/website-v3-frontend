@@ -9,7 +9,7 @@ import teh from "../../assets/teh-logo.png";
 const Sponsors = ({ sponsors, partners }) => {
   return (
     <div className="w-full px-6 py-8 space-y-12 bg-black text-white">
-      <h1 className="text-[64px] font-bold mb-6 text-center">Sponsors</h1>
+      <h1 className="text-[32px] md:text-[64px] font-bold mb-6 text-center">Sponsors</h1>
 
       {sponsors.map((sponsorLevel, index) => (
         <div
@@ -17,7 +17,7 @@ const Sponsors = ({ sponsors, partners }) => {
           className="space-y-4 w-full mx-auto flex flex-col items-center"
         >
           {/* Sponsor Level Title */}
-          <h2 className="text-2xl font-semibold">{sponsorLevel.level}</h2>
+          <h2 className="text-[20px] md:text-[28px] font-semibold">{sponsorLevel.level}</h2>
 
           {/* Logos Section */}
           <div className="flex overflow-x-scroll space-x-6 py-4 gap-12 px-4">
@@ -35,7 +35,7 @@ const Sponsors = ({ sponsors, partners }) => {
         </div>
       ))}
 
-      <h1 className="text-[64px] font-bold mb-6 text-center">Partners</h1>
+      <h1 className=" text-[32px] md:text-[64px] font-bold mb-6 text-center">Partners</h1>
 
       {partners.map((partnersLevel, index) => (
         <div
@@ -43,13 +43,13 @@ const Sponsors = ({ sponsors, partners }) => {
           className="space-y-4 w-full mx-auto flex flex-col items-center"
         >
           {/* Sponsor Level Title */}
-          <h2 className="text-2xl font-semibold">{partnersLevel.level}</h2>
+          <h2 className="text-[20px] md:text-[28px] font-semibold text-center">{partnersLevel.level}</h2>
 
           {/* Logos Section */}
           <div className="my-8 w-full overflow-x-hidden">
             <div className="flex p-4 gap-12 animate-scroll-right">
               {partnersLevel.logos.map((logo, idx) => (
-                <div className="box-shadow bg-black w-[272px] h-[144px] rounded-md flex flex-col items-center justify-center p-[16px]">
+                <div className="box-shadow bg-black w-[272px] md:h-[144px] h-[100px] rounded-md flex flex-col items-center justify-center p-[16px]">
                   <img
                     key={idx}
                     src={logo}
