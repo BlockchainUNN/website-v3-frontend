@@ -24,9 +24,9 @@ const Partner = ({ partnerImages }) => {
                     {partnerImages.map((image, index) => (
                         <div
                             key={index}
-                            className={`${theme ? "bg-black" : "bg-black"} h-[123px] w-[258px] rounded-2xl flex items-center justify-center flex-shrink-0`}
+                            className={`${theme ? "bg-black" : "bg-black"} h-[123px] w-[258px] rounded-2xl flex items-center justify-center flex-shrink-0 px-4 py-2`}
                         >
-                            <img src={image} alt={`partner-${index}`} className="w-[85%] h-[85%] object-contain" />
+                            <img src={image} alt={`partner-${index}`} className="w-auto h-auto object-cover" />
                         </div>
                     ))}
                 </div>

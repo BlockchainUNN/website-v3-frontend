@@ -69,42 +69,42 @@ const feedbackData = [
   {
     name: "Ransom Eze",
     username: "Frontend Dev & Upcoming Blockchain Dev",
-    message: `BlockchainUNN has impacted in me immensely. \n\nAs a student, it showed me that there’s more to the campus life than books alone. I got introduced to blockchain and have dug deeper into it since then and now pursuing a blockchain/smart contract developer career path`,
+    message: `BlockchainUNN opened my eyes to possibilities beyond academics and introduced me to blockchain technology. This exposure has shaped my career path as I now pursue becoming a blockchain and smart contract developer.`,
     image: ransom,
   },
   {
     name: "Henry Igwe",
     username: "Frontend Web Developer",
     message:
-      "I joined BlockchainUNN after the BlockchainUNN conference 1.0 held on 5th March 2022 with the theme 'Demystifying Blockchain Technology and Cryptocurrency.' I got inspired and motivated during the conference. With proper guidance, they tutored and directed my learning process. Today I am a React developer and can proudly say that I am a product of BlockchainUNN.",
+      "After attending BlockchainUNN's conference on blockchain and cryptocurrency in March 2022, I was inspired to join the organization. With their guidance and mentorship, I developed into a React developer and am proud to be a product of BlockchainUNN.",
     image: henry,
   },
   {
     name: "Fortune Atueyi",
     username: "Web3 Project Manager",
     message:
-      "Prior to the BlockchainUNN conference 2.0, I didn't know much about Blockchain Technology. The theme of the conference inspired me to come because I wanted to understand how it works. I came, and learnt so much as the speakers did justice to the topics. I also participated in tasks and won a giveaway. I got my first Web 3 job which paid me $$$.",
+      "The BlockchainUNN conference 2.0 introduced me to blockchain technology and provided valuable insights through expert speakers. This knowledge led to my first Web3 job opportunity, which provided financial rewards.",
     image: fortune,
   },
   {
     name: "Samson Damian",
     username: "Research Analyst",
     message:
-      "I could not differentiate between bitcoin and cryptocurrency nor what Blockchain meant until I attended BlockchainUNN 1.0 conference. BlockchainUNN 1.0 conference stirred the flair for web development in me. It did not end there, through Blockchain UNN weekly sessions on telegram and her cohort I grew from a Newbie into a Techie.",
+      "BlockchainUNN's conference 1.0 helped me understand blockchain technology and sparked my interest in web development. Through their weekly sessions and cohort program, I evolved from a complete beginner into a tech professional.",
     image: samson,
   },
   {
     name: "Obi Nnaemeka Simon-Peter",
     username: "Full-stack Developer",
     message:
-      "I was introduced to BlockchainUNN by a friend shortly before their second conference, and officially became a member afterward. The bootcamp they held right after the conference was a game-changer, helping me smoothly transition from being a Web2 to Web3 developer. Being part of this community has had a huge impact on my career, thanks to the events, programs, and supportive members. I'm really grateful for everything they do.",
+      "After joining BlockchainUNN through their second conference, their bootcamp helped me transition from Web2 to Web3 development. The community's events, programs, and supportive members have significantly impacted my career growth.",
     image: peter,
   },
   {
     name: "Madubueze Gloria Ifeoma",
     username: "Web Developer",
     message:
-      "BlockchainUNN holds a special place in my tech journey; they are an integral part of my story. I attended the BlockchainUNN 1.0 conference in 2022. It was my first-ever tech event, and I won a Laptop at the event. I will forever be grateful to the BlockchainUNN team for their continuous inspiration and for being a constant source of support on my tech journey.",
+      "At my first tech event, BlockchainUNN's conference 1.0 in 2022, I won a laptop which kickstarted my tech journey. The organization has remained a constant source of inspiration and support throughout my career development.",
     image: gloria,
   },
 ];
