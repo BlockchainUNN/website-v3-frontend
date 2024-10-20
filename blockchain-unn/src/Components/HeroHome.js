@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { ThemeContext } from "./Theme";
 import BlockathonHeader from "./BlockathonHeader";
 import Navbar from "./Navbar";
-import odoi from "../assets/team-pics/odoi.png";
-import cheta from "../assets/team-pics/cheta.png";
-import adaugo from "../assets/team-pics/adaugo.png";
-import dony from "../assets/team-pics/dony.png";
-import chukwuebuka from "../assets/team-pics/chukwuebuka.png";
+import community1 from "../assets/community/community1.png";
+import community2 from "../assets/community/community2.png";
+import community3 from "../assets/community/community3.png";
+import community4 from "../assets/community/community4.png";
+import community5 from "../assets/community/community5.png";
+import community6 from "../assets/community/community6.png";
+import community7 from "../assets/community/community7.png";
 import {
   FaArrowRight,
   FaCode,
@@ -56,22 +58,22 @@ const HeroHome = () => {
       >
         <div className="relative">
           <img
-            src={odoi}
+            src={community1}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] object-cover"
           />
           <img
-            src={cheta}
+            src={community2}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] absolute left-8 top-0 object-cover"
           />
           <img
-            src={chukwuebuka}
+            src={community3}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
           />
           <img
-            src={adaugo}
+            src={community4}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
           />
@@ -88,22 +90,22 @@ const HeroHome = () => {
         >
           <div className="relative">
             <img
-              src={adaugo}
+              src={community5}
               alt="i"
               className="rounded-full w-[60px] h-[60px] object-cover"
             />
             <img
-              src={chukwuebuka}
+              src={community6}
               alt="i"
               className="rounded-full w-[60px] h-[60px] absolute left-8 top-0 object-cover"
             />
             <img
-              src={cheta}
+              src={community7}
               alt="i"
               className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
             />
             <img
-              src={odoi}
+              src={community1}
               alt="i"
               className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
             />
@@ -165,17 +167,17 @@ const HeroHome = () => {
           <h3 className="font-semibold">Community STATS</h3>
           <div className="relative flex ">
             <img
-              src={dony}
+              src={community2}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] object-cover"
             />
             <img
-              src={adaugo}
+              src={community3}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-14 object-cover"
             />
             <img
-              src={chukwuebuka}
+              src={community4}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-28 object-cover"
             />

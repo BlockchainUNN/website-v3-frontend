@@ -4,6 +4,9 @@ import Gida from "../../assets/gida.png";
 import garage from "../../assets/garage.svg";
 import alphablocks from "../../assets/alphablocks.png";
 import gdsc from "../../assets/gdsc.png";
+import avalanche from "../../assets/avalanche.png";
+import cartesi from "../../assets/cartesi.png";
+import arbitrum_nexus from "../../assets/arbitrum-nexus.png";
 
 const Sponsors = ({ sponsors, partners }) => {
   return (
@@ -26,7 +29,7 @@ const Sponsors = ({ sponsors, partners }) => {
                   key={idx}
                   src={logo}
                   alt={`${sponsorLevel.level} sponsor logo ${idx}`}
-                  className="h-full w-3/4"
+                  className="h-auto w-3/4"
                 />
               </div>
             ))}
@@ -45,17 +48,19 @@ const Sponsors = ({ sponsors, partners }) => {
           <h2 className="text-2xl font-semibold">{partnersLevel.level}</h2>
 
           {/* Logos Section */}
-          <div className="flex overflow-x-scroll space-x-6 py-4 gap-12 px-4">
-            {partnersLevel.logos.map((logo, idx) => (
-              <div className="box-shadow bg-black w-[272px] h-[144px] rounded-md flex flex-col items-center justify-center p-[16px]">
-                <img
-                  key={idx}
-                  src={logo}
-                  alt={`${partnersLevel.level} sponsor logo ${idx}`}
-                  className="h-full w-3/4"
-                />
-              </div>
-            ))}
+          <div className="my-8 w-full overflow-x-hidden">
+            <div className="flex p-4 gap-12 animate-scroll-right">
+              {partnersLevel.logos.map((logo, idx) => (
+                <div className="box-shadow bg-black w-[272px] h-[144px] rounded-md flex flex-col items-center justify-center p-[16px]">
+                  <img
+                    key={idx}
+                    src={logo}
+                    alt={`${partnersLevel.level} sponsor logo ${idx}`}
+                    className="h-full w-3/4"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ))}
@@ -67,30 +72,30 @@ const Sponsors = ({ sponsors, partners }) => {
 const sponsorData = [
   {
     level: "Platinum",
-    logos: [lisk, lisk, lisk],
+    logos: [lisk],
   },
   {
     level: "Gold",
-    logos: [lisk, lisk, lisk],
+    logos: [avalanche],
   },
   {
     level: "Silver",
-    logos: [lisk, lisk, lisk],
+    logos: [arbitrum_nexus],
   },
   {
     level: "Bronze",
-    logos: [lisk, lisk, lisk],
+    logos: [cartesi],
   },
 ];
 
 const partnerData = [
   {
     level: "Community / Ecosystem Partners",
-    logos: [garage, Gida, alphablocks, gdsc],
+    logos: [Gida, alphablocks, garage, gdsc],
   },
   {
     level: "Media Partners",
-    logos: [lisk, lisk, lisk],
+    logos: [lisk],
   },
 ];
 
