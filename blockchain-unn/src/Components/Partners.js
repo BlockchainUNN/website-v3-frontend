@@ -19,8 +19,8 @@ const Partner = ({ partnerImages }) => {
                     In <span className="text-blockchain-green font-raleway text-[14px] md:text-[28px]">BlockchainUNN</span> community, we believe in the power of partnership and collaboration.
                 </p>
             </div>
-            <div className="my-8 w-full overflow-x-hidden">
-                <div className="flex gap-4 animate-scroll-right">
+            <div className="my-8 w-full overflow-x-hidden overflow-y-hidden">
+                <div className="flex gap-4 md:animate-scroll-right animate-scroll-right1">
                     {partnerImages.map((image, index) => (
                         <div
                             key={index}
@@ -43,7 +43,7 @@ const Partners = () => {
         alphablocks,
         gida,
         cartesi,
-        avalanche
+        avalanche,
     ];
 
     return (

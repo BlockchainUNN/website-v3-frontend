@@ -20,6 +20,7 @@ module.exports = {
       },
       animation: {
         "scroll-right": "scroll 20s linear infinite",
+        "scroll-right1": "scroll 5s linear infinite",
       },
       screens: {
         "sm-420": "420px",
