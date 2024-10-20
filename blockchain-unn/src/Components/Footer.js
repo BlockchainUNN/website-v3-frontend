@@ -61,14 +61,14 @@ const Footer = () => {
               theme ? "text-white" : "text-black"
             } text-[10px] md:text-[24px] font-semibold mt-4`}
           >
-            University of Nigeria, Nsukka
+            Lion Science Park, Off Sullivan Chime Drive
           </p>
           <p
             className={` ${
               theme ? "text-white" : "text-black"
             } text-[10px] md:text-[18px] font-semibold`}
           >
-            Enugu state.
+           By Green House Gate, UNN, Nsukka, Enugu state.
           </p>
         </div>
       </div>
