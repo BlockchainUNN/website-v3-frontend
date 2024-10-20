@@ -1,5 +1,5 @@
 import React from "react";
-import blockchainwhite from "../../assets/blockchain-unn-logo.png";
+import blockathonMini from "../../assets/events/blockathon-mini.svg";
 import SocialLink from "../socialLink";
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="grid grid-cols-2 gap-2 md:gap-[20%] justify-between items-center">
         <div className="flex flex-col items-start w-auto px-2 md:px-[4rem]">
           <img
-            src={blockchainwhite}
+            src={blockathonMini}
             alt=""
             className="w-[150px] md:w-auto h-[20px] md:h-[60px] object-cover"
           />

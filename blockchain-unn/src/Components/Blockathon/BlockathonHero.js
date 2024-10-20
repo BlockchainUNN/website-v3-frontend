@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../Theme";
 import Hacker from "../../assets/blockathonc.png";
-import blockathon from "../../assets/blockathonlogo.png";
+import blockathon from "../../assets/events/blockathon.svg";
 import cup from "../../assets/icons/smallcup.svg";
 import attendee from "../../assets/icons/attendee.svg";
 import speaker from "../../assets/icons/speaker.svg";
@@ -78,9 +78,9 @@ const BlockathonHero = () => {
           alt="blockathon"
           className="w-full h-full object-cover"
         />
-         <div className="flex items-center absolute top-2 w-full justify-center">
-         <Navbar />
-         </div>
+        <div className="flex items-center absolute top-2 w-full justify-center">
+          <Navbar />
+        </div>
         <div className="absolute top-1/4 md:top-1/3 md:left-auto flex flex-col gap-4 items-center justify-center">
           <div className="w-[95%] h-[50px] md:h-[190px] flex items-center justify-center px-4">
             <img

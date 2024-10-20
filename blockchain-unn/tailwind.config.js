@@ -36,6 +36,8 @@ module.exports = {
         white1: "#EDEDED",
         black1: "#0e0e0e",
         ash: "#B2B2B2",
+        "grey-2": "#898B8A",
+        "grey-3": "#D9D9D9",
       },
       dropShadow: {
         custom: "-25px 12px 5px #02641c",

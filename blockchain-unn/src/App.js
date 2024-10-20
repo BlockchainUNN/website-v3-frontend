@@ -1,6 +1,8 @@
 import "./App.css";
 import { ThemeProvider } from "./Components/Theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { lazy } from "react";
+
 import Home from "./Pages/Home";
 import EventsRegistration from "./Pages/events/EventRegistration";
 import Blockathon from "./Pages/events/Blockathon";

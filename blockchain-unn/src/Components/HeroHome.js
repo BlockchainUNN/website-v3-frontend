@@ -136,9 +136,9 @@ const HeroHome = () => {
           <Link
             to={"https://blockchainunn.substack.com/"}
             target={"_blank"}
-            className="bg-white w-[95%] h-[90%] rounded-full text-green-800 text-center flex items-center justify-center cursor-pointer"
+            className="bg-white w-[95%] h-[90%] rounded-full text-green-800 cursor-pointer flex justify-center"
           >
-            Newsletter
+            <span className="my-auto">Newsletter</span>
           </Link>
         </div>
       </div>
