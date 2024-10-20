@@ -1,12 +1,10 @@
 import React from "react";
 import lisk from "../../assets/lisk.png";
-import Gida from "../../assets/gida.png";
-import garage from "../../assets/garage.svg";
+import Gida from "../../assets/gida1.png";
 import alphablocks from "../../assets/alphablocks.png";
-import gdsc from "../../assets/gdsc.png";
-import avalanche from "../../assets/avalanche.png";
-import cartesi from "../../assets/cartesi.png";
-import arbitrum_nexus from "../../assets/arbitrum-nexus.png";
+import technext from "../../assets/technext.png";
+import arbitrum from "../../assets/arbitrum.png";
+import teh from "../../assets/teh-logo.png";
 
 const Sponsors = ({ sponsors, partners }) => {
   return (
@@ -29,7 +27,7 @@ const Sponsors = ({ sponsors, partners }) => {
                   key={idx}
                   src={logo}
                   alt={`${sponsorLevel.level} sponsor logo ${idx}`}
-                  className="h-auto w-3/4"
+                  className="h-auto w-auto object-cover"
                 />
               </div>
             ))}
@@ -56,7 +54,7 @@ const Sponsors = ({ sponsors, partners }) => {
                     key={idx}
                     src={logo}
                     alt={`${partnersLevel.level} sponsor logo ${idx}`}
-                    className="h-full w-3/4"
+                    className="h-auto w-auto object-cover"
                   />
                 </div>
               ))}
@@ -72,30 +70,30 @@ const Sponsors = ({ sponsors, partners }) => {
 const sponsorData = [
   {
     level: "Platinum",
-    logos: [lisk],
+    logos: [arbitrum],
   },
-  {
-    level: "Gold",
-    logos: [avalanche],
-  },
-  {
-    level: "Silver",
-    logos: [arbitrum_nexus],
-  },
+//   {
+//     level: "Gold",
+//     logos: [avalanche],
+//   },
+//   {
+//     level: "Silver",
+//     logos: [arbitrum_nexus],
+//   },
   {
     level: "Bronze",
-    logos: [cartesi],
+    logos: [lisk],
   },
 ];
 
 const partnerData = [
   {
     level: "Community / Ecosystem Partners",
-    logos: [Gida, alphablocks, garage, gdsc],
+    logos: [Gida, alphablocks],
   },
   {
     level: "Media Partners",
-    logos: [lisk],
+    logos: [technext, teh],
   },
 ];
 
