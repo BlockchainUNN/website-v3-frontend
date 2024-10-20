@@ -1,5 +1,5 @@
 import React from "react";
-import blockathonMini from "../../assets/events/blockathon-mini.svg";
+import blockathonMini from "../../assets/blockathonlogo2.png";
 import SocialLink from "../socialLink";
 
 const Footer = () => {
@@ -18,18 +18,18 @@ const Footer = () => {
           <p className="font-light text-[12px] md:text-[16px] mt-2 md:-mt-4 mb-2 md:mb-6">
             FOLLOW US
           </p>
-          <div className="flex items-center gap-2">
-            <SocialLink
-              to={"https://www.linkedin.com/company/blockchainunn/"}
-              type={"linkedin"}
-            />
-            <SocialLink to={"https://t.me/BlockchainUNN/1"} type={"telegram"} />
-            <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
-            <SocialLink
-              to={"https://www.instagram.com/blockchainunn"}
-              type={"instagram"}
-            />
-          </div>
+          <div className="flex items-center gap-4">
+          <SocialLink
+            to={"https://www.linkedin.com/company/blockchainunn/"}
+            type={"linkedin"}
+          />
+          <SocialLink to={"https://t.me/BlockchainUNN/1"} type={"telegram"} />
+          <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
+          <SocialLink
+            to={"https://www.instagram.com/blockchainunn"}
+            type={"instagram"}
+          />
+        </div>
         </div>
       </div>
       <p className="text-center my-8 md:my-4 font-sans font-light text-[10px] md:text-[16px] ">
