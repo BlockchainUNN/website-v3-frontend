@@ -43,11 +43,11 @@ const Sponsors = ({ sponsors, partners }) => {
           className="space-y-4 w-full mx-auto flex flex-col items-center"
         >
           {/* Sponsor Level Title */}
-          <h2 className="text-[20px] md:text-[28px] font-semibold text-center">{partnersLevel.level}</h2>
+          <h2 className="text-[20px] md:text-[28px] font-semibold text-center mb-4">{partnersLevel.level}</h2>
 
           {/* Logos Section */}
           <div className="my-8 w-full overflow-x-hidden">
-            <div className="flex p-4 gap-12 animate-scroll-right">
+            <div className="flex p-4 gap-[4rem] py-8 items-center w-full justify-center">
               {partnersLevel.logos.map((logo, idx) => (
                 <div className="box-shadow bg-black w-[272px] md:h-[144px] h-[100px] rounded-md flex flex-col items-center justify-center p-[16px]">
                   <img
