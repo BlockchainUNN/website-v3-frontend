@@ -43,7 +43,7 @@ const Skills = () => {
 
       <div className="flex flex-wrap gap-2 md:gap-8 p-4 w-full items-center justify-center md:w-[89%] mx-auto">
         <div className="flex md:flex-row flex-col items-center justify-center w-[95%] mt-12 md:mt-0 md:w-full gap-2 md:gap-8">
-          <div className="relative flex flex-col items-center md:items-start gap-4 w-[95%] md:w-[640px] h-[250px] md:h-[400px] bg-blockchain-green rounded-xl p-4 md:p-8">
+          <div className="relative flex flex-col items-center md:items-start gap-4 w-[95%] md:w-[640px] h-[270px] md:h-[400px] bg-blockchain-green rounded-xl p-4 md:p-8">
             <p className="font-bold md:font-semibold text-white md:mt-2 text-[18px] md:text-[24px]">
               Blockchain Development
             </p>
@@ -72,7 +72,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="relative flex flex-col items-center md:items-end gap-4 w-[95%] md:w-[640px] h-[250px] md:h-[400px] bg-blockchain-white rounded-xl p-4 md:p-8">
+          <div className="relative flex flex-col items-center md:items-end gap-4 w-[95%] md:w-[640px] h-[280px] md:h-[400px] bg-blockchain-white rounded-xl p-4 md:p-8">
             <div className="relative -mt-4 flex w-[186px] md:hidden md:w-[65%] h-[100px] md:h-[210px] rounded-xl">
               <img
                 src={cryptoskill}
@@ -119,7 +119,7 @@ const Skills = () => {
         </div>
 
         <div className="flex md:flex-row flex-col-reverse items-center justify-center w-[95%] mt-12 md:mt-0 md:w-full gap-2 md:gap-8">
-          <div className="relative flex flex-col items-center md:items-start gap-4 w-full md:w-[640px] h-[250px] md:h-[400px] bg-blockchain-white rounded-xl p-4 md:p-8">
+          <div className="relative flex flex-col items-center md:items-start gap-4 w-full md:w-[640px] h-[320px] md:h-[400px] bg-blockchain-white rounded-xl p-4 md:p-8">
             <div className="relative -mt-4 flex w-[186px] md:hidden md:w-[65%] h-[100px] md:h-[210px] rounded-xl">
               <img
                 src={webskill}
@@ -164,7 +164,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="relative flex flex-col items-center md:items-end gap-4 w-full md:w-[640px] h-[250px] md:h-[400px] bg-blockchain-green rounded-xl p-4 md:p-8">
+          <div className="relative flex flex-col items-center md:items-end gap-4 w-full md:w-[640px] h-[280px] md:h-[400px] bg-blockchain-green rounded-xl p-4 md:p-8">
             <p className="font-bold md:font-semibold text-white md:mt-2 text-[18px] md:text-[24px]">
               Design Stack
             </p>
