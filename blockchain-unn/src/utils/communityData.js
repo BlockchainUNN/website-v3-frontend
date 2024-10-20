@@ -1,16 +1,3 @@
-import annaelechukwu from "../assets/team-pics/annaelechukwu.png";
-import kevin from "../assets/team-pics/kevin.png";
-import alvan from "../assets/team-pics/alvan.png";
-import adaugo from "../assets/team-pics/adaugo.png";
-import cheta from "../assets/team-pics/cheta.png";
-import chukwuebuka from "../assets/team-pics/chukwuebuka.png";
-import devShezzy from "../assets/team-pics/devShezzy.png";
-import dony from "../assets/team-pics/dony.png";
-import kamto from "../assets/team-pics/kamto.png";
-import kreativeAma from "../assets/team-pics/kreativeAma.png";
-import odoi from "../assets/team-pics/odoi.png";
-import soluchi from "../assets/team-pics/soluchi.png";
-
 import linkedIn from "../assets/socials/linkedIn.svg";
 import x from "../assets/socials/x.svg";
 import newsletter from "../assets/socials/newsletter.svg";
@@ -24,20 +11,27 @@ import youtube from "../assets/socials/youtube.svg";
 import avax from "../assets/events/avax.png";
 import cartesi from "../assets/events/cartesi.png";
 import sportsFiesta from "../assets/events/sportsFiesta.png";
+import community1 from "../assets/community/community1.png";
+import community2 from "../assets/community/community2.png";
+import community3 from "../assets/community/community3.png";
+import community4 from "../assets/community/community4.png";
+import community5 from "../assets/community/community5.png";
+import community6 from "../assets/community/community6.png";
+import community7 from "../assets/community/community7.png";
 
 export const communityPics = [
-  annaelechukwu,
-  kevin,
-  alvan,
-  adaugo,
-  cheta,
-  chukwuebuka,
-  devShezzy,
-  dony,
-  kamto,
-  kreativeAma,
-  odoi,
-  soluchi,
+  community1,
+  community2,
+  community3,
+  community4,
+  community5,
+  community6,
+  community7,
+  community1,
+  community2,
+  community3,
+  community4,
+  community5,
 ];
 
 export const communitySocials = [

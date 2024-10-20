@@ -10,7 +10,7 @@ const Footer = () => {
           <img
             src={blockathonMini}
             alt=""
-            className="w-[150px] md:w-[300px] h-[60px] md:h-[120px object-fit"
+            className="w-[150px] md:w-auto h-[20px] md:h-[60px] object-cover"
           />
         </div>
 

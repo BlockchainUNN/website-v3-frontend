@@ -78,9 +78,11 @@ const BlockathonHero = () => {
           alt="blockathon"
           className="w-full h-full object-cover"
         />
-
+        <div className="flex items-center absolute top-2 w-full justify-center">
+          <Navbar />
+        </div>
         <div className="absolute top-1/4 md:top-1/3 md:left-auto flex flex-col gap-4 items-center justify-center">
-          <div className="w-[87%] h-[50px] md:h-[190px] flex items-center justify-center px-4">
+          <div className="w-[95%] h-[50px] md:h-[190px] flex items-center justify-center px-4">
             <img
               src={blockathon}
               alt="Blockchain"
