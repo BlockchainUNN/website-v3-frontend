@@ -14,24 +14,29 @@ import sportsFiesta from "../assets/events/sportsFiesta.png";
 import community1 from "../assets/community/community1.png";
 import community2 from "../assets/community/community2.png";
 import community3 from "../assets/community/community3.png";
-import community4 from "../assets/community/community4.png";
 import community5 from "../assets/community/community5.png";
 import community6 from "../assets/community/community6.png";
 import community7 from "../assets/community/community7.png";
+import community8 from "../assets/community/community8.jpeg";
+import community9 from "../assets/community/community9.jpeg";
+import community10 from "../assets/community/community10.jpeg";
+import community11 from "../assets/community/community11.jpeg";
+import community12 from "../assets/community/community12.jpeg";
 
 export const communityPics = [
   community1,
+  community12,
   community2,
   community3,
-  community4,
+  community10,
+  community11,
   community5,
+  community11,
   community6,
+  community9,
   community7,
-  community1,
-  community2,
-  community3,
-  community4,
-  community5,
+  community8,
+
 ];
 
 export const communitySocials = [

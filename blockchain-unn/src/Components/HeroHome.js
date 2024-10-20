@@ -5,7 +5,6 @@ import Navbar from "./Navbar";
 import community1 from "../assets/community/community1.png";
 import community2 from "../assets/community/community2.png";
 import community3 from "../assets/community/community3.png";
-import community4 from "../assets/community/community4.png";
 import community5 from "../assets/community/community5.png";
 import community6 from "../assets/community/community6.png";
 import community7 from "../assets/community/community7.png";
@@ -73,7 +72,7 @@ const HeroHome = () => {
             className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
           />
           <img
-            src={community4}
+            src={community7}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
           />
@@ -177,7 +176,7 @@ const HeroHome = () => {
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-14 object-cover"
             />
             <img
-              src={community4}
+              src={community5}
               alt="i"
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-28 object-cover"
             />
