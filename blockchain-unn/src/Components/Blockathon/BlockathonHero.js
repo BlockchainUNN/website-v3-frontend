@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../Theme";
 import Hacker from "../../assets/blockathonc.png";
-import blockathon from "../../assets/events/Blockathon_Okey.jpg";
+import blockathon from "../../assets/events/blockathon.svg";
 import cup from "../../assets/icons/smallcup.svg";
 import attendee from "../../assets/icons/attendee.svg";
 import speaker from "../../assets/icons/speaker.svg";
@@ -80,7 +80,7 @@ const BlockathonHero = () => {
         />
 
         <div className="absolute top-1/4 md:top-1/3 md:left-auto flex flex-col gap-4 items-center justify-center">
-          <div className="w-[87%] h-[50px] md:h-[190px] flex items-center justify-center px-4 bg-white">
+          <div className="w-[87%] h-[50px] md:h-[190px] flex items-center justify-center px-4">
             <img
               src={blockathon}
               alt="Blockchain"
