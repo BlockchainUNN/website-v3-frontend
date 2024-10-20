@@ -90,31 +90,36 @@ const PastEvents = () => {
           />
 
           <div className="w-full h-[200px] md:h-[650px] rounded-xl">
-            <a href={`${link}`}>
-              <img
-                src={imageSrc}
-                alt={title}
-                className="w-full h-full object-cover rounded-t-xl"
-              />
-            </a>
+            <img
+              src={imageSrc}
+              alt={title}
+              className="w-full h-full object-cover rounded-t-xl"
+            />
           </div>
 
-          <div className="font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-center bg-blockchain-white rounded-b-md">
+          <div className="font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 items-center justify-center bg-blockchain-white rounded-b-md">
             <div className="text-center">
               <p className="text-[16px] md:text-[20px]">{date}</p>
               <h1 className="text-[20px] md:text-[35px] text-semibold">
                 {title}
               </h1>
+            </div>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="z-50"
+            >
               <button
-                onClick={() => navigate(`${link}`)}
                 className={`${
                   theme ? "text-white" : "text-black"
-                } my-4 border border-blockchain-green rounded-sm bg-transparent px-6 py-4 text-[24px] font-mono cursor-pointer`}
+                } my-4 border border-blockchain-green rounded-sm bg-transparent px-6 py-4 text-[24px] font-mono cursor-pointer z-50`}
               >
                 Explore Event
               </button>
-            </div>
+            </a>
           </div>
+
           <img
             src={nexticon}
             alt="previous"

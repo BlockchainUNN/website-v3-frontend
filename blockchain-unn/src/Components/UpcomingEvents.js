@@ -56,8 +56,9 @@ const UpcomingEvents = () => {
           Upcoming Events
         </h1>
       </div>
+      <Link to="/event/hackathon" className="w-full flex items-center justify-center">
         <div className="w-full md:w-[85%] border-gradient">
-        <Link to="/event/hackathon">
+       
           <div className="w-full h-[200px] md:h-[620px] rounded-xl">
             <img
               src={blockathon}
@@ -95,8 +96,9 @@ const UpcomingEvents = () => {
               </span>
             </div>
           </div>
-          </Link>
+        
         </div>
+        </Link>
     </div>
   );
 };
