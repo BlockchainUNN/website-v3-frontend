@@ -11,18 +11,13 @@ import space1 from "../assets/events/spaces/1.jpg";
 const events = [
   {
     imageSrc: space1,
-    date: "SAT. 29TH || JUN, 2024",
+    date: "16TH OCT, 2024",
+    title: "ROAD TO BLOCKATHON",
+  },
+  {
+    imageSrc: sportsfiesta,
+    date: "SAT. 29TH JUN, 2024",
     title: "SPORTS FIESTA",
-  },
-  {
-    imageSrc: sportsfiesta,
-    date: "SAT. 30TH || JUN, 2024",
-    title: "SPORTS FIESTA 2",
-  },
-  {
-    imageSrc: sportsfiesta,
-    date: "SAT. 31ST || JUN, 2024",
-    title: "SPORTS FIESTA 3",
   },
 ];
 
