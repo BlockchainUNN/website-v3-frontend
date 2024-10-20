@@ -46,6 +46,10 @@ code {
   -webkit-mask-composite: xor;
 }
 
+.box-shadow{
+  box-shadow: 0px 4px 33.9px 0px #2CE85E;
+}
+
 
 .text-stroke {
   -webkit-text-stroke: 1px black; /* Stroke color and width */

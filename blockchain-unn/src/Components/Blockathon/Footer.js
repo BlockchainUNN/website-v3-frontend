@@ -1,5 +1,5 @@
 import React from "react";
-import blockchainwhite from "../../assets/blockchainunn-white.png";
+import blockchainwhite from "../../assets/blockchain-unn-logo.png";
 import SocialLink from "../socialLink";
 
 const Footer = () => {
@@ -10,11 +10,8 @@ const Footer = () => {
           <img
             src={blockchainwhite}
             alt=""
-            className="w-[150px] md:w-[300px] h-[60px] md:h-[120px] scale-150 object-cover"
+            className="w-[150px] md:w-auto h-[20px] md:h-[60px] object-cover"
           />
-          <p className="font-extrabold text-[20px] md:text-[50px] -mt-4 md:-mt-12">
-            BLOCKATHON
-          </p>
         </div>
 
         <div className="flex flex-col items-center justify-start w-auto px-2 md:px-[4rem]">

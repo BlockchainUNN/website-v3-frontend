@@ -134,7 +134,7 @@ const HeroHome = () => {
           <Link
             to={"https://blockchainunn.substack.com/"}
             target={"_blank"}
-            className="bg-white w-[95%] h-[90%] rounded-full text-green-800 cursor-pointer"
+            className="bg-white w-[95%] h-[90%] rounded-full text-green-800 text-center flex items-center justify-center cursor-pointer"
           >
             Newsletter
           </Link>
@@ -180,7 +180,7 @@ const HeroHome = () => {
               className="rounded-full border border-black w-[70px] h-[70px] absolute left-28 object-cover"
             />
             <div className="flex items-center justify-center rounded-full p-4  w-[70px] h-[70px] absolute left-[10.5rem] text-[12px] font-wallpoet bg-[#02641C] text-[#2CE85E]">
-              +4000K
+              +4000
             </div>
           </div>
           <h2 className="text-[80px] md:text-[100px] font-bold mb-0">4000+</h2>
