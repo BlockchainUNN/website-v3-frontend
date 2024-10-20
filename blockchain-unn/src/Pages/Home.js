@@ -19,7 +19,7 @@ const Home = () => {
       <HeroHome />
       <PhotoCurl />
       <Skills />
-      {/* <Feedback /> */}
+      <Feedback />
       <UpcomingEvents />
       <PastEvents />
       <Partners />
