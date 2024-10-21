@@ -70,7 +70,7 @@ export default function RecentEvents() {
                   </div>
 
                   <span className="flex w-full justify-center py-3">
-                    <Link to={event.imageLinks}>View Images</Link>
+                    <Link to={event.imageLinks}>View Content</Link>
                   </span>
                 </div>
               </div>

@@ -89,7 +89,7 @@ const PastEvents = () => {
             className="absolute -left-4 z-10 top-[40%] cursor-pointer w-12 h-12 md:w-auto md:h-auto"
           />
 
-          <div className="w-full h-[200px] md:h-[650px] rounded-xl">
+          <div className="w-full h-[400px] md:h-[950px] rounded-xl">
             <img
               src={imageSrc}
               alt={title}
