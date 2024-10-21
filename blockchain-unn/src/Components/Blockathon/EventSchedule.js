@@ -24,7 +24,7 @@ const EventSchedule = () => {
               DAY 1
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
-              <p className="text-black font-light text-[10px]">
+              <p className="text-black font-medium text-[10px]">
                 Mon 28th October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
@@ -42,7 +42,7 @@ const EventSchedule = () => {
               DAY 2
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
-              <p className="text-black font-light text-[10px]">
+              <p className="text-black font-medium text-[10px]">
                 Tue 29th October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
@@ -63,7 +63,7 @@ const EventSchedule = () => {
               DAY 3
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
-              <p className="text-black font-light text-[10px]">
+              <p className="text-black ffont-medium text-[10px]">
                 Wed 30th October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
@@ -82,7 +82,7 @@ const EventSchedule = () => {
               DAY 4
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
-              <p className="text-black font-light text-[10px]">
+              <p className="text-black font-medium text-[10px]">
                 Thur 31st October, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
@@ -103,7 +103,7 @@ const EventSchedule = () => {
               DAY 5
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
-              <p className="text-black font-light text-[10px]">
+              <p className="text-black font-medium text-[10px]">
                 Fri 1st November, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
@@ -122,7 +122,7 @@ const EventSchedule = () => {
               DAY 6
             </p>
             <div className="w-full flex flex-col items-start justify-center mt-3">
-              <p className="text-black font-light text-[10px]">
+              <p className="text-black font-medium text-[10px]">
                 Sat 2nd November, 2024
               </p>
               <h2 className="text-black font-semibold text-[18px]">
