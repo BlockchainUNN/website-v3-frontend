@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./utils/localStorage";
 
 // const BASE = "https://blockchainunn-backend.onrender.com/api/v3/";
-const BASE = "http://160.238.36.159/api/v3/";
+const BASE = "https://api.blockchainunn.org/api/v3/";
 // const BASE = "http://127.0.0.1:8000/api/v3/";
 
 // Custom axios instance based on headers needed
