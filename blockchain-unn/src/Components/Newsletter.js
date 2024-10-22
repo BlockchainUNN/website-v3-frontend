@@ -25,13 +25,13 @@ const Newsletter = () => {
           <p
             className={` ${
               theme ? "text-white" : "text-white"
-            } text-[12px] md:text-[25px] w-[85%] md:w-[75%] text-center`}
+            } text-[12px] md:text-[25px] w-[85%] md:w-[85%] text-center`}
           >
             Stay connected with the latest tech and blockchain trends and news
             and discover how we are shaping the future.
           </p>
 
-          <div className="my-2 md:my-8 w-full mx-auto md:w-full flex justify-center">
+          <div className="my-2 md:my-8 w-full mx-auto md:w-[85%] flex justify-center">
             {/* <form className="flex flex-col gap-4 items-center p-4 rounded-full relative bg-blockchain-white h-[60px] md:h-[75px]">
               <input
                 type="text"
@@ -65,11 +65,11 @@ const Newsletter = () => {
 const SubstackForm = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className="mx-auto">
+    <div className="w-full">
       {theme ? (
         <iframe
           src="https://blockchainunn.substack.com/embed"
-          width="480"
+          width="100%"
           height="150"
           style={{
             border: "1px solid #EEE",
@@ -82,7 +82,7 @@ const SubstackForm = () => {
       ) : (
         <iframe
           src="https://blockchainunn.substack.com/embed"
-          width="480"
+          width="100%"
           height="150"
           style={{
             border: "1px solid #EEE",

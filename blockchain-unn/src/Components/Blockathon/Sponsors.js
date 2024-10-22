@@ -20,14 +20,14 @@ const Sponsors = ({ sponsors, partners }) => {
           <h2 className="text-[20px] md:text-[28px] font-semibold">{sponsorLevel.level}</h2>
 
           {/* Logos Section */}
-          <div className="flex overflow-x-scroll space-x-6 py-4 gap-12 px-4">
+          <div className="flex overflow-x-hidden space-x-6 py-4 gap-12 px-4">
             {sponsorLevel.logos.map((logo, idx) => (
               <div className="box-shadow bg-black w-[272px] h-[144px] rounded-md flex flex-col items-center justify-center p-[16px]">
                 <img
                   key={idx}
                   src={logo}
                   alt={`${sponsorLevel.level} sponsor logo ${idx}`}
-                  className="h-auto w-auto object-cover"
+                  className="h-auto w-full object-cover"
                 />
               </div>
             ))}

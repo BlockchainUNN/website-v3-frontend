@@ -27,8 +27,8 @@ const Feedback = ({ feedbackData }) => {
           <div
             key={index}
             className={`${
-              theme ? "bg-dark-mode" : "bg-transparent"
-            } w-[230px] h-fit flex-shrink-0 md:w-[400px] md:h-fit border-gradient animate animate-scroll-right md:animate-none`}
+              theme ? "bg-dark-mode border-gradient" : "bg-white rounded-xl shadow-lg"
+            } w-[230px] h-fit flex-shrink-0 md:w-[400px] md:h-fit  animate animate-scroll-right md:animate-none`}
           >
             <div
               className={` ${

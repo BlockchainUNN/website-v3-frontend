@@ -59,7 +59,7 @@ const UpcomingEvents = () => {
       <Link to="/event/hackathon" className="w-full flex items-center justify-center">
         <div className="w-full md:w-[85%] border-gradient">
        
-          <div className="w-full h-[200px] md:h-[620px] rounded-xl">
+          <div className="w-full h-[400px] md:h-[950px] rounded-xl">
             <img
               src={blockathon}
               alt="blockathon"
