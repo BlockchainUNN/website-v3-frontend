@@ -2,12 +2,11 @@ import React, { useContext } from "react";
 import { ThemeContext } from "./Theme";
 import BlockathonHeader from "./BlockathonHeader";
 import Navbar from "./Navbar";
-import adaugo from "../assets/team-pics/adaugo.png";
-import alvan from "../assets/team-pics/alvan.png";
-import cheta from "../assets/team-pics/cheta.png";
-import chukwuebuka from "../assets/team-pics/chukwuebuka.png";
-import dony from "../assets/team-pics/dony.png";
-import odoi from "../assets/team-pics/odoi.png";
+import gloria from "../assets/events/feedback/gloria.jpg";
+import community5 from "../assets/community/community5.png";
+import community9 from "../assets/community/community9.png";
+import community13 from "../assets/community/community13.png";
+import community6 from "../assets/community/community6.png";
 import {
   FaArrowRight,
   FaCode,
@@ -57,22 +56,22 @@ const HeroHome = () => {
       >
         <div className="relative">
           <img
-            src={adaugo}
+            src={community5}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] object-cover"
           />
           <img
-            src={alvan}
+            src={community9}
             alt="i"
             className="rounded-full  w-[60px] h-[60px] absolute left-8 top-0 object-cover"
           />
           <img
-            src={cheta}
+            src={gloria}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
           />
           <img
-            src={odoi}
+            src={community13}
             alt="i"
             className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
           />
@@ -89,22 +88,22 @@ const HeroHome = () => {
         >
           <div className="relative">
             <img
-              src={chukwuebuka}
+              src={gloria}
               alt="i"
               className="rounded-full w-[60px] h-[60px] object-cover"
             />
             <img
-              src={dony}
+              src={community5}
               alt="i"
               className="rounded-full w-[60px] h-[60px] absolute left-8 top-0 object-cover"
             />
             <img
-              src={odoi}
+              src={community6}
               alt="i"
               className="rounded-full w-[60px] h-[60px] absolute left-16 top-0 object-cover"
             />
             <img
-              src={adaugo}
+              src={community9}
               alt="i"
               className="rounded-full w-[60px] h-[60px] absolute left-24 top-0 object-cover"
             />
@@ -152,7 +151,7 @@ const HeroHome = () => {
         <h2 className={`${theme ? "text-white" : "text-black"} font-semibold `}>
           Accelerate Your Career With
         </h2>
-        <h2 className="text-green-800 font-semibold">BlockchainUNN</h2>
+        <h2 className="text-[#02641C] font-semibold">BlockchainUNN</h2>
       </div>
 
       <div
@@ -166,19 +165,19 @@ const HeroHome = () => {
           <h3 className="font-semibold">Community STATS</h3>
           <div className="relative flex ">
             <img
-              src={alvan}
+              src={community5}
               alt="i"
-              className="rounded-full border border-white w-[70px] h-[70px] object-cover"
+              className={`rounded-full border ${theme ? 'border-white' : 'border-none'} w-[70px] h-[70px] object-cover`}
             />
             <img
-              src={cheta}
+              src={gloria}
               alt="i"
-              className="rounded-full border border-white w-[70px] h-[70px] absolute left-14 object-cover"
+              className={`rounded-full border ${theme ? 'border-white' : 'border-none'} w-[70px] h-[70px] absolute left-14 object-cover`}
             />
             <img
-              src={chukwuebuka}
+              src={community6}
               alt="i"
-              className="rounded-full border border-white w-[70px] h-[70px] absolute left-28 object-cover"
+              className={`rounded-full border ${theme ? 'border-white' : 'border-none'} w-[70px] h-[70px] absolute left-28 object-cover`}
             />
             <div className="flex items-center justify-center rounded-full p-4  w-[70px] h-[70px] absolute left-[10.5rem] text-[12px] font-wallpoet bg-[#02641C] text-[#2CE85E]">
               +4000
