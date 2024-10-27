@@ -39,7 +39,7 @@ const UpcomingEvents = () => {
 
   return (
     <div
-      className="w-full flex flex-col gap-4 items-center justify-center my-12"
+      className="w-[85%] flex flex-col gap-4 items-center justify-center my-12"
       id="events"
     >
       <div className="flex items-center justify-center gap-2 w-full">
@@ -69,7 +69,7 @@ const UpcomingEvents = () => {
             />
           </div>
 
-          <div className="font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-between bg-blockchain-white rounded-b-md">
+          <div className={`font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-between rounded-b-xl  ${theme ? "bg-transparent text-white" : 'bg-white'}`}>
             <div className="text-center md:text-start">
               {/* <p className="text-[16px] md:text-[20px]">Coming Soon</p> */}
               <h1 className="text-[20px] md:text-[35px] text-semibold">

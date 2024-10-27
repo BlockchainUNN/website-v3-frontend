@@ -27,7 +27,7 @@ const Sponsors = ({ sponsors, partners }) => {
                   key={idx}
                   src={logo}
                   alt={`${sponsorLevel.level} sponsor logo ${idx}`}
-                  className="h-auto w-full object-cover"
+                  className="h-auto w-auto object-cover scale-75"
                 />
               </div>
             ))}

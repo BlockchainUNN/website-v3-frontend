@@ -97,7 +97,7 @@ const PastEvents = () => {
             />
           </div>
 
-          <div className="font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 items-center justify-center bg-blockchain-white rounded-b-md">
+          <div className={`font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 items-center justify-center rounded-b-xl ${theme ? "bg-transparent text-white" : 'bg-white'}`}>
             <div className="text-center">
               <p className="text-[16px] md:text-[20px]">{date}</p>
               <h1 className="text-[20px] md:text-[35px] text-semibold">
@@ -112,8 +112,8 @@ const PastEvents = () => {
             >
               <button
                 className={`${
-                  theme ? "text-white" : "text-black"
-                } my-4 border border-blockchain-green rounded-sm bg-transparent px-6 py-4 text-[24px] font-mono cursor-pointer z-50`}
+                  theme ? "text-white" : "text-white"
+                } my-4 border  rounded-full bg-gradient-to-r from-[#02641c] to-[#04CA39] px-6 py-4 text-[16px] md:text-[24px] font-mono cursor-pointer z-50`}
               >
                 Explore Event
               </button>
