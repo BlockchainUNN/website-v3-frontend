@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import bg_image from "../../assets/blogathon_bg.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import previouSvg from "../../assets/icons/previousArrow.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_ROUTES, customAxios } from "../../api.routes";
-import Swal from "sweetalert2";
 import { format } from "date-fns";
 
 import Home from "../../Components/hackathon/home";
@@ -13,13 +12,19 @@ import Schedule from "../../Components/hackathon/schedule";
 import Project from "../../Components/hackathon/project";
 import Submit from "../../Components/hackathon/submit";
 import Navbar from "../../Components/hackathon/navbar";
+import { updateHackerDetails, updateTeamDetails } from "../../redux/slice";
+import Swal from "sweetalert2";
 
 const HackathonDashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const navigate = useNavigate();
   const location = useLocation();
-  const { hackerDetails, hackathon_id } = useSelector((state) => state.app);
+
+  const { teamDetails, hackerDetails, hackathon_id } = useSelector(
+    (state) => state.app
+  );
   const [hacker, setHacker] = useState(null);
+  const dispatch = useDispatch();
 
   // Get hash from url and set as activeTab
   useEffect(() => {
@@ -39,6 +44,7 @@ const HackathonDashboard = () => {
             .protected()
             .get(API_ROUTES.hackers.get + hackathon_id);
           setHacker(data?.data?.hackerDetails);
+          dispatch(updateHackerDetails(data?.data?.hackerDetails));
         } catch (error) {
           console.log("error ==> ", error?.message);
           navigate("/event/hackathon/login");
@@ -47,7 +53,33 @@ const HackathonDashboard = () => {
         setHacker(hackerDetails);
       }
     })();
-  }, [hackathon_id, hackerDetails, navigate]);
+  }, [dispatch, hackathon_id, hackerDetails, navigate]);
+
+  // Try to get team data.
+  useEffect(() => {
+    (async () => {
+      if (!teamDetails) {
+        try {
+          const { data } = await customAxios
+            .protected()
+            .get(API_ROUTES.teams.get + hackathon_id);
+
+          dispatch(updateTeamDetails(data?.data));
+        } catch (error) {
+          console.log("Team Error => ", error);
+          if (error?.response?.data?.error !== "Hacker has no team")
+            Swal.fire({
+              icon: "error",
+              title:
+                error?.response?.data?.error ||
+                error?.message ||
+                "Something went wrong.",
+              confirmButtonText: "Okay",
+            });
+        }
+      }
+    })();
+  }, [dispatch, hackathon_id, teamDetails]);
 
   const renderComponent = () => {
     switch (activeTab) {
@@ -78,7 +110,7 @@ const HackathonDashboard = () => {
         <div className="flex w-full justify-start fixed top-0 left-0 max-sm-420:py-6 max-md:py-8 py-12 max-sm-420:px-4 max-lg:px-10 px-20">
           <button
             onClick={() => {
-              navigate(-1);
+              navigate("/event");
             }}
           >
             <img src={previouSvg} alt="Go Back" className="h-6 max-sm:h-4" />
@@ -89,7 +121,7 @@ const HackathonDashboard = () => {
             Ready to hack{" "}
             <span className="text-blockathon-green">{hacker?.firstName}?</span>
           </h1>
-          <p className="text-white font-raleway-medium font-[400] text-center text-[28px]">
+          <p className="text-white font-raleway-medium font-[400] text-center max-sm-420:text-[1.2rem] text-[28px]">
             Registered{" "}
             {hacker?.registeredOn
               ? format(hacker?.registeredOn, "EEEE do MMMM, yyyy")

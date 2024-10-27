@@ -89,7 +89,7 @@ const EmailStep = ({ step, setStep, setUserDetails }) => {
       setLoading(true);
       const { data } = await customAxios
         .unprotected()
-        .get(API_ROUTES.users.getByEmail + email);
+        .get(API_ROUTES.users.getByEmail + email.trim());
 
       setUserDetails(data?.data);
       setStep(2);
@@ -124,7 +124,7 @@ const EmailStep = ({ step, setStep, setUserDetails }) => {
           <Input
             icon={emailSvg}
             type={"text"}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setEmail(event.target.value.trim())}
             placeholder="Email"
             required
           />
@@ -222,7 +222,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
 
         // Make user a community member
         await customAxios.multipartForm
-          .unprotected()
+          .protected()
           .post(API_ROUTES.users.create, formData);
       }
 
@@ -300,9 +300,13 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
   };
 
   const handleChange = (event) => {
+    let value =
+      event.target.name === "phoneNumber"
+        ? event.target.value.trim()
+        : event.target.value;
     setRegisterationDetails({
       ...registrationDetails,
-      [event.target.name]: event.target.value,
+      [event.target.name]: value,
     });
   };
 

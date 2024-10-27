@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import projectblack from "../../assets/icons/project-black.svg";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_ROUTES, customAxios } from "../../api.routes";
 import Swal from "sweetalert2";
-import { ClipLoader, MoonLoader } from "react-spinners";
+import { MoonLoader } from "react-spinners";
 import { Button } from "../../Components/Buttons";
 import { HackerButton, TeamButton } from "./button";
 import { Input } from "./submit";
+import { TbCopy, TbCopyCheck } from "react-icons/tb";
+import { updateTeamDetails } from "../../redux/slice";
 
 const Team = () => {
-  const [isFocused, setIsFocused] = useState(false);
+  // const [isFocused, setIsFocused] = useState(false);
   const [teamData, setTeamData] = useState(null);
   const [hasTeam, setHasTeam] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -18,7 +20,9 @@ const Team = () => {
   const [teamActions, setteamActions] = useState("create"); // create||join
   const [inputData, setInputData] = useState("");
   const [leaveTeam, setLeaveTeam] = useState(false);
+  const [codeCopied, setCodecopied] = useState(false);
 
+  const dispatch = useDispatch();
   const [loadingTeam, setLoadingTeam] = useState(false);
   const { hackathon_id } = useSelector((state) => state.app);
   const navigate = useNavigate();
@@ -47,7 +51,7 @@ const Team = () => {
     })();
   }, [hackathon_id, leaveTeam, navigate]);
 
-  // Try to get team data, then display Team Details and leave team btn if successful. Else show create and leave team UI.
+  // Try to get team data, then display Team Details and leave team btn if successful. Else show create and join team UI.
   useEffect(() => {
     (async () => {
       if (!teamData && hasTeam) {
@@ -57,8 +61,9 @@ const Team = () => {
             .protected()
             .get(API_ROUTES.teams.get + hackathon_id);
 
-          console.log(data);
+          console.log("team => ", data);
           setTeamData(data?.data);
+          dispatch(updateTeamDetails(data?.data));
           setLoadingTeam(false);
         } catch (error) {
           console.log("Team Error => ", error);
@@ -76,7 +81,7 @@ const Team = () => {
         }
       }
     })();
-  }, [hackathon_id, hasTeam, teamData]);
+  }, [dispatch, hackathon_id, hasTeam, teamData]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -121,9 +126,9 @@ const Team = () => {
   };
 
   return (
-    <div className="w-[80%] xl:w-[60%] max-sm:min-h-[300px] min-h-[520px] mx-auto bg-white rounded-[26px] flex flex-col items-center py-[12px] px-[18px] gap-4">
-      <div className="w-full flex flex-col items-center max-sm:h-[35px] h-[70px] mb-3">
-        <h2 className="max-sm:text-[2rem] text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
+    <div className="max-sm-420:w-full w-[80%] xl:w-[60%] max-sm-420:h-fit max-sm-420:py-4 max-sm-420:px-4 max-sm:min-h-[300px] min-h-[520px] mx-auto bg-white max-sm-420:rounded-2xl rounded-[26px] flex flex-col items-center py-[12px] max-sm-420:px-[6px] px-[18px] gap-4 max-sm-420:gap-2">
+      <div className="w-full flex flex-col items-center max-sm:h-[35px] h-[70px] mb-3 max-sm-420:mb-0">
+        <h2 className="max-sm-420:text-[1.5rem] max-sm:text-[2rem] text-[57px] font-raleway-black text-white text-center self-center relative w-full h-full justify-self-center flex items-center gap-2">
           <span className="absolute -left-[1px] top-[1px] text-stroke w-full self-center uppercase">
             {teamData?.name ? teamData.name : "TEAM OVERVIEW"}
           </span>
@@ -139,26 +144,43 @@ const Team = () => {
         </div>
       ) : teamData ? (
         <>
-          <div className="flex flex-col gap-2 w-full">
-            <div className="flex gap-10 w-full text-[1.2rem] font-semibold uppercase">
-              <h2 className="w-[10rem]">Team Members</h2>
+          <div className="flex flex-col gap-2 w-full px-2">
+            <div className="flex max-sm-420:gap-6 gap-10 w-full max-sm-420:text-[0.875rem] text-[1.2rem] font-semibold uppercase">
+              <h2 className="max-sm-420:w-[7rem] w-[10rem]">Team Members</h2>
               <h3>Role</h3>
             </div>
             <div>
               {teamData?.hackers.map((hacker) => {
                 return (
-                  <div className="flex gap-10 w-full">
-                    <div className="w-[10rem] truncate">
+                  <div className="flex max-sm-420:gap-6 gap-10 w-full max-sm-420:text-[0.75rem]">
+                    <div className="max-sm-420:w-[7rem] w-[10rem] truncate">
                       {hacker?.user?.first_name} {hacker?.user?.last_name}
                     </div>
-                    <div>{hacker?.role}</div>
+                    <div className="truncate text-nowrap">{hacker?.role}</div>
                   </div>
                 );
               })}
             </div>
             <div className="flex w-full justify-center">
               <span className="flex gap-2 mx-auto">
-                <b>Team Invite Code:</b> {teamData?.invite_code}
+                <b>Team Invite Code:</b> <span>{teamData?.invite_code}</span>{" "}
+                <button
+                  onClick={async () => {
+                    console.log("Trying to copy", teamData?.invite_code);
+
+                    if (teamData?.invite_code) {
+                      await navigator.clipboard.writeText(teamData.invite_code);
+                      setCodecopied(true);
+                      console.log("Copied: ", teamData?.invite_code);
+                    }
+                  }}
+                >
+                  {codeCopied ? (
+                    <TbCopyCheck className="text-blockathon-green" />
+                  ) : (
+                    <TbCopy />
+                  )}
+                </button>
               </span>
             </div>
             <div className="flex w-full flex-row-reverse">
@@ -181,7 +203,7 @@ const Team = () => {
         </>
       ) : (
         <>
-          <div className="flex items-center justify-center gap-6 w-full mb-[50px]">
+          <div className="flex items-center justify-center max-sm-420:gap-4 gap-6 w-full max-sm-420:mb-6 max-sm:mb-[25px] mb-[50px]">
             <TeamButton
               onclick={() => {
                 setteamActions("create");

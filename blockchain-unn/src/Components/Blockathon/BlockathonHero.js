@@ -20,7 +20,7 @@ const BlockathonHero = () => {
   const { blockathon_id, hackathon_id } = useSelector((state) => state.app);
 
   const calculateTimeLeft = () => {
-    const eventDate = new Date("2024-10-28T10:00:00");
+    const eventDate = new Date("2024-11-02T10:00:00");
     const now = new Date();
     const difference = eventDate.getTime() - now.getTime();
     const totalSeconds = Math.floor(difference / 1000);

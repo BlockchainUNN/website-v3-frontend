@@ -181,7 +181,7 @@ const EmailStep = ({
           <Input
             icon={emailSvg}
             type={"text"}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setEmail(event.target.value.trim())}
             placeholder="Email"
             required
           />
@@ -359,7 +359,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
               "Graphics Designer",
               "UI/UX Designer",
               "Product Manager",
-              "Others",
+              "Documentation/Content Writer",
             ]}
             required
             value={registrationDetails.role}
