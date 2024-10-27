@@ -10,13 +10,14 @@ import space1 from "../assets/events/spaces/1.jpg";
 import cartesievent from "../assets/events/cartesievent.png";
 import avax_pizza from "../assets/events/avax-pizza.png";
 import blockchainunn_ai from "../assets/events/blockchainunn-ai.png";
+import { Link } from "react-router-dom";
 
 const events = [
   {
     imageSrc: space1,
     date: "16TH OCT, 2024",
     title: "ROAD TO BLOCKATHON",
-    link: "",
+    link: "https://x.com/BlockchainUNN/status/1846497258289983868",
   },
   {
     imageSrc: cartesievent,
@@ -108,8 +109,8 @@ const PastEvents = () => {
                 {title}
               </h1>
             </div>
-            <a
-              href={link}
+            <Link
+              to={link}
               target="_blank"
               rel="noopener noreferrer"
               className="z-50"
@@ -121,7 +122,7 @@ const PastEvents = () => {
               >
                 Explore Event
               </button>
-            </a>
+            </Link>
           </div>
 
           <img
