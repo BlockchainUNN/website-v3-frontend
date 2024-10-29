@@ -222,7 +222,7 @@ const DetailsStep = ({ userDetails, eventId, step }) => {
 
         // Make user a community member
         await customAxios.multipartForm
-          .protected()
+          .unprotected()
           .post(API_ROUTES.users.create, formData);
       }
 

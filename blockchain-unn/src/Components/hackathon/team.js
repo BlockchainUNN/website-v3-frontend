@@ -240,6 +240,7 @@ const Team = () => {
             </div>
             <HackerButton
               loading={loading}
+              type={"submit"}
               text={teamActions === "create" ? "Create Team" : "Join Team"}
             />
           </form>
