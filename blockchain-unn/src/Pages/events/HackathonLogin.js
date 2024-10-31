@@ -118,7 +118,15 @@ const LoginForm = ({ setUserDetails, hackathon_id }) => {
         <div className="flex w-full max-sm:pt-2 pt-4 drop-shadow-2xl shadow-black shadow-2xl mx-auto">
           <Button text={"Log In"} loading={loading} inverse={true} />
         </div>
-        <div className="flex w-full">
+        <div className="flex w-full flex-col">
+          <span className="flex mx-auto text-white gap-1 max-sm:text-[0.875rem]">
+            <Link
+              to={"/event/hackathon/reset_password"}
+              className="text-blockathon-green"
+            >
+              Forgot Password?
+            </Link>
+          </span>
           <span className="flex mx-auto text-white gap-1 max-sm:text-[0.875rem]">
             Don't have an account?{" "}
             <Link

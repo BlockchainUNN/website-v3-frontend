@@ -2,8 +2,8 @@ import axios from "axios";
 import { getToken } from "./utils/localStorage";
 
 // const BASE = "https://blockchainunn-backend.onrender.com/api/v3/";
-const BASE = "https://api.blockchainunn.org/api/v3/";
-// const BASE = "http://127.0.0.1:8000/api/v3/";
+// const BASE = "https://api.blockchainunn.org/api/v3/";
+const BASE = "http://127.0.0.1:8000/api/v3/";
 
 // const MAX_RETRIES = 5;
 // const RETRY_DELAY = 1000;
@@ -108,6 +108,8 @@ export const API_ROUTES = {
     get: "hackers/",
     login: "hackers/login/",
     count: "/hackers/count/",
+    forgotpassword: "/hackers/blockathon/reset-password",
+    forgotpasswordCallback: "/hackers/blockathon/reset-password/callback",
   },
   teams: {
     create: "/hackathon/team/",
