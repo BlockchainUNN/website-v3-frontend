@@ -5,18 +5,19 @@ import timerwhite from "../assets/icons/timer-white.svg";
 import sportsfiesta from "../assets/events/sportsFiesta.png";
 import previousicon from "../assets/icons/previous-icon.svg";
 import nexticon from "../assets/icons/next-icon.svg";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import space1 from "../assets/events/spaces/1.jpg";
 import cartesievent from "../assets/events/cartesievent.png";
 import avax_pizza from "../assets/events/avax-pizza.png";
 import blockchainunn_ai from "../assets/events/blockchainunn-ai.png";
+import { Link } from "react-router-dom";
 
 const events = [
   {
     imageSrc: space1,
     date: "16TH OCT, 2024",
     title: "ROAD TO BLOCKATHON",
-    link: "",
+    link: "https://x.com/BlockchainUNN/status/1846497258289983868",
   },
   {
     imageSrc: cartesievent,
@@ -47,7 +48,7 @@ const events = [
 const PastEvents = () => {
   const { theme } = useContext(ThemeContext);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
@@ -97,15 +98,19 @@ const PastEvents = () => {
             />
           </div>
 
-          <div className={`font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 items-center justify-center rounded-b-xl ${theme ? "bg-transparent text-white" : 'bg-white'}`}>
+          <div
+            className={`font-wallpoet h-[fit-content] px-6 py-4 flex flex-col gap-4 md:gap-0 items-center justify-center rounded-b-xl ${
+              theme ? "bg-transparent text-white" : "bg-white"
+            }`}
+          >
             <div className="text-center">
               <p className="text-[16px] md:text-[20px]">{date}</p>
               <h1 className="text-[20px] md:text-[35px] text-semibold">
                 {title}
               </h1>
             </div>
-            <a
-              href={link}
+            <Link
+              to={link}
               target="_blank"
               rel="noopener noreferrer"
               className="z-50"
@@ -117,7 +122,7 @@ const PastEvents = () => {
               >
                 Explore Event
               </button>
-            </a>
+            </Link>
           </div>
 
           <img

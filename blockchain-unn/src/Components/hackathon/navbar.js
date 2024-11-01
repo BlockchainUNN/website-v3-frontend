@@ -58,10 +58,10 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         {/* Current Tab */}
         <div
           onClick={() => setOpenDropdown(!openDropdown)}
-          className="flex gap-2 bg-grey-3/30 px-2 py-1 rounded-lg cursor-pointer"
+          className="flex gap-2 bg-grey-3/30 px-2 py-1 max-sm-420:rounded-md rounded-lg cursor-pointer"
         >
           <button
-            className={`px-3 py-2 rounded-md text-[1.2rem] font-raleway-medium font-[400] flex items-center gap-2 text-white`}
+            className={`px-3 py-2 rounded-md max-sm-420:text-[1rem] text-[1.2rem] font-raleway-medium font-[400] flex items-center max-sm-420:gap-1 gap-2 text-white`}
           >
             <span>{currentTab?.icon({ size: "1.5rem" })}</span>
             {currentTab?.label}
@@ -73,7 +73,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         <div
           className={
             (openDropdown ? "flex " : "hidden ") +
-            " absolute flex-col top-[4rem] bg-white shadow-xl shadow-black gap-2 p-2 rounded-lg w-[15rem] z-50"
+            " absolute flex-col top-[4rem] bg-white shadow-xl shadow-black gap-2 p-2 max-sm-420:rounded-md rounded-lg w-[15rem] z-50"
           }
         >
           {tabs.map((tab) => {
@@ -86,7 +86,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                   setActiveTab(tab.id);
                   setOpenDropdown(false);
                 }}
-                className={`px-3 py-2 rounded-md text-[1.2rem] text-black font-raleway-medium font-[400] flex items-center gap-2 hover:bg-grey-3/30 rounded-lg`}
+                className={`px-3 py-2 rounded-md max-sm-420:text-[1rem] text-[1.2rem] text-black font-raleway-medium font-[400] flex items-center max-sm-420:gap-1 gap-2 hover:bg-grey-3/30 rounded-lg`}
               >
                 <span>
                   {tab.icon({

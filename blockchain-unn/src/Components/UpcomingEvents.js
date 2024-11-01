@@ -9,7 +9,7 @@ const UpcomingEvents = () => {
   const { theme } = useContext(ThemeContext);
 
   const calculateTimeLeft = () => {
-    const eventDate = new Date("2024-10-28T10:00:00");
+    const eventDate = new Date("2024-11-02T10:00:00");
     const now = new Date();
     const difference = eventDate.getTime() - now.getTime();
     const totalSeconds = Math.floor(difference / 1000);
@@ -56,9 +56,11 @@ const UpcomingEvents = () => {
           Upcoming Events
         </h1>
       </div>
-      <Link to="/event/hackathon" className="w-full flex items-center justify-center">
+      <Link
+        to="/event/hackathon"
+        className="w-full flex items-center justify-center"
+      >
         <div className="w-full md:w-[85%] border-gradient">
-       
           <div className="w-full h-[400px] md:h-[950px] rounded-xl">
             <img
               src={blockathon}
@@ -96,9 +98,8 @@ const UpcomingEvents = () => {
               </span>
             </div>
           </div>
-        
         </div>
-        </Link>
+      </Link>
     </div>
   );
 };
