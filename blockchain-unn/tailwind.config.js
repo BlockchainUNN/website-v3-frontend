@@ -27,6 +27,8 @@ module.exports = {
       },
       backgroundImage: {
         "dark-mode": "linear-gradient(to bottom, #000000, #0E0E0E)",
+        "dark-mode-3": "linear-gradient(to bottom, #000000 50%, #0E0E0E)",
+        "dark-mode-4": "linear-gradient(to top, #000000 50%, #0E0E0E)",
         "dark-mode-2": "linear-gradient(to bottom, #000000, #1B1A1A)",
         "footer-dark": "linear-gradient(to right, #000000, #1E1E1E 100%)",
       },

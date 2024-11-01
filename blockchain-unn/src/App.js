@@ -11,6 +11,7 @@ import About from "./Pages/About";
 import Community from "./Pages/community";
 import HackathonLogin from "./Pages/events/HackathonLogin";
 import HackathonDashboard from "./Pages/events/HackathonDashboard";
+import Bootcamp from "./Pages/bootcamp";
 import ForgotPassword from "./Pages/events/forgetPassword";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/community" element={<Community />} />
               <Route path="/event" element={<Blockathon />} />
+              <Route path="/bootcamp" element={<Bootcamp />} />
               {/* Add more routes as needed */}
               <Route
                 path="/event/registration"
