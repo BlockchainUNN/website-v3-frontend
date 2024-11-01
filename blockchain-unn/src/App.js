@@ -11,6 +11,7 @@ import About from "./Pages/About";
 import Community from "./Pages/community";
 import HackathonLogin from "./Pages/events/HackathonLogin";
 import HackathonDashboard from "./Pages/events/HackathonDashboard";
+import ForgotPassword from "./Pages/events/forgetPassword";
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
               <Route
                 path="/event/hackathon/login"
                 element={<HackathonLogin />}
+              />
+              <Route
+                path="/event/hackathon/reset_password"
+                element={<ForgotPassword />}
               />
               <Route path="/event/hackathon" element={<HackathonDashboard />} />
             </Routes>

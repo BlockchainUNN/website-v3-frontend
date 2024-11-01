@@ -24,7 +24,7 @@ const HackathonLogin = () => {
         Log <span className="text-blockathon-green">In</span>
       </span>
       <span className="text-white font-normal mx-auto max-sm-420:text-[0.875rem] max-md:text-[1rem] max-lg:text-[1.2rem] text-[1.5rem] text-nowrap font-raleway">
-        Succefully registered for the hackathon?
+        Successfully registered for the hackathon?
       </span>
       <span className="text-white font-normal mx-auto max-sm-420:text-[0.875rem] max-md:text-[1rem] max-lg:text-[1.2rem] text-[1.5rem] text-nowrap font-raleway">
         Login Below to join or form a team
@@ -41,7 +41,7 @@ const HackathonLogin = () => {
         <div className="flex w-full justify-start fixed top-0 left-0 max-sm-420:py-6 max-md:py-8 py-12 max-sm-420:px-4 max-lg:px-10 px-20">
           <button
             onClick={() => {
-              navigate(-1);
+              navigate("/event");
             }}
           >
             <img src={previouSvg} alt="Go Back" className="h-6 max-sm:h-4" />
@@ -102,7 +102,7 @@ const LoginForm = ({ setUserDetails, hackathon_id }) => {
           <Input
             icon={emailSvg}
             type={"text"}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setEmail(event.target.value.trim())}
             placeholder="Email"
             required
           />
@@ -118,7 +118,15 @@ const LoginForm = ({ setUserDetails, hackathon_id }) => {
         <div className="flex w-full max-sm:pt-2 pt-4 drop-shadow-2xl shadow-black shadow-2xl mx-auto">
           <Button text={"Log In"} loading={loading} inverse={true} />
         </div>
-        <div className="flex w-full">
+        <div className="flex w-full flex-col">
+          <span className="flex mx-auto text-white gap-1 max-sm:text-[0.875rem]">
+            <Link
+              to={"/event/hackathon/reset_password"}
+              className="text-blockathon-green"
+            >
+              Forgot Password?
+            </Link>
+          </span>
           <span className="flex mx-auto text-white gap-1 max-sm:text-[0.875rem]">
             Don't have an account?{" "}
             <Link
