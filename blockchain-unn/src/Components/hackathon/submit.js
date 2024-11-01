@@ -305,7 +305,6 @@ const ImageInput = ({ icon, placeholder, className, name, onchange }) => {
         multiple
         className="font-raleway max-sm-420:text-[1rem] text-[1.3rem] flex w-full border-none outline-none"
         placeholder={placeholder}
-        required
         onChange={onchange}
         name={name}
       />
