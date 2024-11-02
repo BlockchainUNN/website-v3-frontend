@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
 
       </div>
-      <div className="flex gap-4 items-center md:hidden ">
+      <div className="flex gap-4 items-center ">
         <div className="" onClick={toggleMobileMenu}>
           {!isMobileMenuOpen && <FaBars size={28} className="cursor-pointer text-white" />}
         </div>
