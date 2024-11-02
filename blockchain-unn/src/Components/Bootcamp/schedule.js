@@ -146,22 +146,22 @@ const web3_schedule = [
 
 const Schedule = () => {
   return (
-    <div className="w-full px-[6rem] flex flex-col items-center -mt-12">
-      <div className="top-border w-full h-[251px] rounded-xl bg-dark-mode-4 flex flex-col-reverse items-end px-8 py-6 rotate-180">
-        <p className="text-white opacity-60 font-wallpoet text-[40px] font-[400] leading-tight -rotate-180">
+    <div className="w-full px-2 md:px-[6rem] flex flex-col items-center -mt-12">
+      <div className="top-border w-full h-fit md:h-[251px] rounded-xl bg-dark-mode-4 flex flex-col-reverse items-end px-8 py-6 rotate-180">
+        <p className="text-white opacity-60 font-wallpoet text-[20px] md:text-[40px] font-[400] leading-tight -rotate-180">
           WEB2 STREAM
         </p>
-        <p className="text-white -rotate-180 mb-2">
+        <p className="text-white -rotate-180 mb-2 text-[12px] md:text-auto">
           The web2 stream is focused on students new to programming or already
           existing web2 devs looking to improve their skills. Since the goal is
           prepping the students for web3 development, we’d mostly be looking
           into the front-end side of web2 development.
         </p>
-        <p className="text-white -rotate-180 mb-4">
+        <p className="text-white -rotate-180 mb-4 text-[12px] md:text-auto">
           This stream runs for <span className="font-semibold">10 weeks</span>,
           providing <span className="font-semibold">28 contacts</span> in total.
         </p>
-        <p className="text-white -rotate-180 mb-4">
+        <p className="text-white -rotate-180 mb-4 text-[12px] md:text-auto">
           Check below for Curriculum Summary
         </p>
       </div>
@@ -170,7 +170,7 @@ const Schedule = () => {
         {web2_schedule.map((schedule, index) => (
           <div
             key={index}
-            className={`w-[32%] h-[171px] p-1 rounded-[7px] ${
+            className={`w-full md:w-[32%] h-[120px] md:h-[171px] p-1 rounded-[7px] ${
               index % 2 === 0
                 ? "bg-white text-black"
                 : "bg-dark-mode-3 text-white top-border"
@@ -190,18 +190,18 @@ const Schedule = () => {
         ))}
       </div>
 
-      <div className="top-border w-full h-[251px] rounded-xl bg-dark-mode-4 flex flex-col-reverse items-end px-8 py-6 rotate-180 mt-8">
-        <p className="text-white opacity-60 font-wallpoet text-[40px] font-[400] leading-tight -rotate-180">
+      <div className="top-border w-full h-fit md:h-[251px] rounded-xl bg-dark-mode-4 flex flex-col-reverse items-end px-8 py-6 rotate-180 mt-8">
+        <p className="text-white opacity-60 font-wallpoet text-[20px] md:text-[40px] font-[400] leading-tight -rotate-180">
           WEB3 STREAM
         </p>
-        <p className="text-white -rotate-180 mb-2">
+        <p className="text-white -rotate-180 mb-2 text-[12px] md:text-auto">
         The web3 stream is focused on already existing web2 devs looking to devle into web3 development. Knowledge of HTML, CSS, JS, and React is compulsory! We’ll be focused on building smart contracts on Ethereum Layer 2 Lisk using Solidity.
         </p>
-        <p className="text-white -rotate-180 mb-4">
+        <p className="text-white -rotate-180 mb-4 text-[12px] md:text-auto">
           This stream runs for <span className="font-semibold">10 weeks</span>,
           providing <span className="font-semibold">28 contacts</span> in total.
         </p>
-        <p className="text-white -rotate-180 mb-4">
+        <p className="text-white -rotate-180 mb-4 text-[12px] md:text-auto">
           Check below for Curriculum Summary
         </p>
       </div>
@@ -210,7 +210,7 @@ const Schedule = () => {
         {web3_schedule.map((schedule, index) => (
           <div
             key={index}
-            className={`w-[32%] h-[171px] p-1 rounded-[7px] ${
+            className={`w-full md:w-[32%] h-[120px] md:h-[171px] p-1 rounded-[7px] ${
               index % 2 === 0
                 ? "bg-white text-black"
                 : "bg-dark-mode-3 text-white top-border"
@@ -230,25 +230,25 @@ const Schedule = () => {
         ))}
       </div>
 
-      <div className="top-border w-full h-[445px] rounded-xl bg-dark-mode-4 flex flex-col-reverse items-end px-8 py-6 rotate-180 mt-8">
-        <div className="flex flex-row-reverse gap-4 items-center p-6">
-          <div className="top-border w-[550px] h-[379px] rounded-xl bg-dark-mode-3 -rotate-180 -mb-4">
+      <div className="top-border w-full h-fit md:h-[445px] rounded-xl bg-dark-mode-4 flex flex-col-reverse items-end px-2 md:px-8 py-6 rotate-180 mt-8">
+        <div className="flex flex-col-reverse md:flex-row-reverse gap-4 items-center p-0 md:p-6">
+          <div className="top-border w-[90%] md:w-[550px] h-[200px] md:h-[379px] rounded-xl bg-dark-mode-3 -rotate-180 -mb-4">
             <img src={code} alt="web2" className="h-full w-full p-6" />
           </div>
-          <div className="flex flex-col gap-8">
-          <div className="top-border w-[540px] h-[181px] rounded-xl bg-dark-mode-3 -rotate-180 -mb-4 p-6">
-            <p className="text-white opacity-60 font-wallpoet text-[40px] font-[400] leading-tight">
+          <div className="flex flex-col gap-8 w-[90%] md:w-auto">
+          <div className="top-border w-full md:w-[540px] h-[150px] md:h-[181px] rounded-xl bg-dark-mode-3 rotate-0 md:-mb-4 px-4 md:p-6 flex flex-col-reverse items-end">
+          <p className="text-white opacity-60 font-wallpoet text-[22px] md:text-[40px] font-[400] leading-tight rotate-180 my-2">
                 Twitter Spaces
             </p>
-            <p className="text-white max-w-[85%]">
+            <p className="text-white md:max-w-[85%] rotate-180 md:text-auto text-[14px]">
                 We will have 2 Twitter spaces: one at the start of the bootcamp and another at the end.
             </p>
           </div>
-          <div className="top-border w-[540px] h-[181px] rounded-xl bg-dark-mode-3 rotate-0 -mb-4 p-6 flex flex-col-reverse items-end">
-            <p className="text-white opacity-60 font-wallpoet text-[40px] font-[400] leading-tight rotate-180">
+          <div className="top-border w-full md:w-[540px] h-[150px] md:h-[181px] rounded-xl bg-dark-mode-3 rotate-0 md:-mb-4 px-4 md:p-6 flex flex-col-reverse items-end">
+            <p className="text-white opacity-60 font-wallpoet text-[22px] md:text-[40px] font-[400] leading-tight rotate-180 my-2">
                 Project Submission
             </p>
-            <p className="text-white max-w-[85%] rotate-180">
+            <p className="text-white md:max-w-[85%] rotate-180 md:text-auto text-[14px]">
                 After the bootcamp is over, participant are required 
                 to build a project using the skills acquired and 
                 submit it by the end of the bootcamp   

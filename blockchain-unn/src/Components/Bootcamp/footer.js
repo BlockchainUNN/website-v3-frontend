@@ -4,7 +4,7 @@ import SocialLink from "../socialLink";
 
 const Footer = () => {
   return (
-    <div className="bg-transparent text-white pt-12 pb-6 px-2 md:px-[4rem] w-full h-[328px] mt-8 flex flex-col justify-between">
+    <div className="bg-transparent text-white pt-6 pb-6 px-2 md:px-[4rem] w-full h-[200px] md:h-[328px] flex flex-col justify-between">
       <div className="grid grid-cols-2 gap-2 md:gap-[20%] justify-between items-center mt-8">
         <div className="flex flex-col items-start w-auto px-2 md:px-[4rem]">
           <img
