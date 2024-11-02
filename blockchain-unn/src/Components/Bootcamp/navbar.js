@@ -2,13 +2,12 @@ import React, {useState, useContext } from "react";
 import LogoWhite from "../../assets/blockathonlogo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ThemeContext } from "../Theme";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
   const navItems = ["Home", "Community", "Event"];
-  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -60,7 +59,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute flex flex-col top-2 rounded-xl left-0 w-full h-fit bg-white z-10 shadow-lg p-4 overflow-hidden ">
+        <div className="absolute flex flex-col top-2 rounded-xl left-0 w-full h-fit bg-white z-10 shadow-lg p-4 overflow-hidden ">
           <FaTimes
             size={25}
             onClick={toggleMobileMenu}
