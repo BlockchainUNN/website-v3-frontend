@@ -65,9 +65,9 @@ const Submit = () => {
       formData.append("demoVideoLink", submissionDetails.demoVideoLink);
       formData.append("documentationLink", submissionDetails.documentationLink);
 
-      for (let index = 0; index < images.length; index++) {
-        formData.append("images", images[index]);
-      }
+      // for (let index = 0; index < images.length; index++) {
+      //   formData.append("images", images[index]);
+      // }
 
       await customAxios.multipartForm
         .protected()

@@ -27,12 +27,12 @@ const aboutData = [
 
 const BootcampAbout = () => {
   return (
-    <div className="w-full px-[5rem] my-[3rem] py-6 flex flex-col items-center gap-8">
-      <div className="flex flex-row gap-4 items-center ">
+    <div className="w-full md:px-[5rem] px-2 my-[3rem] py-6 flex flex-col items-center gap-8">
+      <div className="flex flex-wrap md:flex-row gap-4 items-center ">
         {aboutData.map((about, index) => (
           <div
             key={index}
-            className={`bg-dark-mode-3 w-[288px] h-[153px] p-1 rounded-xl top-border`}
+            className={`bg-dark-mode-3 w-full md:w-[288px] h-[100px] md:h-[153px] p-1 rounded-xl top-border`}
           >
             <div
               className={`
@@ -50,14 +50,14 @@ const BootcampAbout = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-row gap-4 items-center ">
-        <div className="bottom-border w-[594px] h-[251px] rounded-xl bg-dark-mode-3 flex flex-row-reverse items-center px-6 py-2 rotate-180">
-          <p className="text-white opacity-60 font-wallpoet text-[40px] font-[400] leading-tight -rotate-180">
+      <div className="flex flex-col md:flex-row gap-4 items-center ">
+        <div className="bottom-border w-full md:w-[594px] h-[251px] rounded-xl bg-dark-mode-3 flex flex-col-reverse md:flex-row-reverse gap-8 items-center px-6 py-2 rotate-180">
+          <p className="text-white opacity-60 font-wallpoet text-[24px] md:text-[40px] font-[400] leading-tight -rotate-180">
             Who is this Bootcamp for
           </p>
           <img src={question} alt="question mark" className="-rotate-180" />
         </div>
-        <div className="w-[288px] h-[251px] bottom-border bg-dark-mode-3 flex flex-col-reverse px-5 py-4 text-white rotate-180 items-end">
+        <div className="w-full md:w-[288px] h-[210px] md:h-[251px] bottom-border bg-dark-mode-3 flex flex-col-reverse px-5 py-4 text-white rotate-180 items-end">
           <img
             src={code}
             alt="web2"
@@ -70,7 +70,7 @@ const BootcampAbout = () => {
             is for total programming beginners
           </p>
         </div>
-        <div className="w-[288px] h-[251px] bottom-border bg-dark-mode-3 flex flex-col-reverse px-5 py-4 text-white rotate-180 items-end ">
+        <div className="w-full md:w-[288px] h-[210px] md:h-[251px] bottom-border bg-dark-mode-3 flex flex-col-reverse px-5 py-4 text-white rotate-180 items-end ">
           <img
             src={code}
             alt="web2"
@@ -85,21 +85,21 @@ const BootcampAbout = () => {
         </div>
       </div>
 
-      <div className="w-full h-fit px-6 py-4 flex flex-col gap-[6rem] items-center relative">
+      <div className="w-full h-fit px-0 md:px-6 py-4 flex flex-col gap-[6rem] items-center relative">
         <div
-          className="bottom-border h-[216px] w-full bg-dark-mode-3 rounded-xl border-b-[#202020] flex items-center px-[12rem] py-4 gap-[8%]"
+          className="bottom-border h-fit md:h-[216px] w-full bg-dark-mode-3 rounded-xl border-b-[#202020] flex flex-col md:flex-row items-center px-4 md:px-[12rem] py-4 gap-4 md:gap-[8%]"
           style={{
             clipPath: "polygon(0% 0%, 100% 0%, 93% 100%, 7% 100%)",
           }}
         >
-          <div className="w-[370px] h-fit">
+          <div className=" w-full md:w-[370px] h-fit">
             <div className="flex gap-2 items-center ">
               <img src={clock} alt="clock" />
-              <p className="text-white font-inter font-bold text-[22px]">
+              <p className="text-white font-inter font-bold text-[14px] md:text-[22px]">
                 Time
               </p>
             </div>
-            <p className="text-white text-[16px] pl-8">
+            <p className="text-white text-[14px] md:text-[16px] pl-3 md:pl-8 mt-4 md:mt-0">
               Both programs will run concurrently on the same day and time,
               three times a wek. The proposed date and time are{" "}
               <span className="font-bold"> 7:30-9:30pm WAT </span>
@@ -110,14 +110,14 @@ const BootcampAbout = () => {
             </p>
           </div>
 
-          <div className="w-[370px] h-fit">
+          <div className="w-full md:w-[370px] h-fit">
             <div className="flex gap-2 items-center">
               <img src={location} alt="clock" />
-              <p className="text-white font-inter font-bold text-[22px]">
+              <p className="text-white font-inter font-bold text-[14px] md:text-[22px]">
                 Location
               </p>
             </div>
-            <p className="text-white text-[16px] pl-8">
+            <p className="text-white text-[14px] md:text-[16px] pl-3 md:pl-8 mt-4 md:mt-0">
               The classes on <span className="font-bold"> Sundays </span>
               and <span className="font-bold"> Tuesdays </span> will be held{" "}
               <span className="font-bold">virtually</span>, while classes will
@@ -131,10 +131,10 @@ const BootcampAbout = () => {
         <img
           src={arrowup}
           alt="arrow up"
-          className="h-[192.07px] w-[192.07px] absolute top-[32%] z-50"
+          className="h-[192.07px] w-[192.07px] absolute top-[34%] md:top-[32%] z-50"
         />
         <div
-          className="border-b-[4px] rounded-xl  border-[#2CE85E] h-[216px] w-full bg-dark-mode-4 flex items-center px-[12rem] py-4 gap-4"
+          className="border-b-[4px] rounded-xl  border-[#2CE85E] h-fit md:h-[216px] w-full bg-dark-mode-4 flex items-center px-4 md:px-[12rem] py-4 gap-4"
           style={{
             clipPath: "polygon(100% 100%, 0% 100%, 7% 0%, 93% 0%)",
           }}
@@ -142,22 +142,22 @@ const BootcampAbout = () => {
           <div className="w-full h-fit">
             <div className="flex gap-2 items-center">
               <img src={clock} alt="clock" />
-              <p className="text-white font-inter font-bold text-[22px]">
+              <p className="text-white font-inter font-bold text-[16px] md:text-[22px]">
                 Instructor preparations
               </p>
             </div>
-            <div className="flex flex-row items-center gap-8 mt-2">
-              <p className="text-white text-[16px] pl-8">
+            <div className="flex flex-col md:flex-row items-center gap-8 mt-2">
+              <p className="text-white text-[14px] md:text-[16px] pl-3 md:pl-8">
                 All instructions are expected to start working on their slides
                 fo the classes and are mandated to create a list of resources
                 the students should review.
               </p>
-              <p className="text-white text-[16px]">
+              <p className="text-white text-[14px] md:text-[16px] pl-3 md:pl-0">
                 If for any reason an instructor an instructor won’t be available
                 for a class, it’s expected that you inform your cohort lead a
                 week before hand.
               </p>
-              <p className="text-white text-[16px]">
+              <p className="text-white text-[14px] md:text-[16px] pl-3 md:pl-0">
                 If as an instructor, you run into any issues, amd you think we
                 could help with it (electricity, data, etc), reach out to the
                 bootcamp lead (Obi Nnaemeka).
