@@ -40,6 +40,45 @@ export function Input({
   );
 }
 
+export function TextInput({
+  name,
+  text,
+  placeholder,
+  onChange,
+  required,
+  icon,
+  value,
+  disabled,
+  error,
+}) {
+  return (
+    <div
+      className={
+        (error ? " border-red-500 " : "border-white ") +
+        "flex gap-2 max-sm:p-2 p-4 w-full h-fit border rounded-md max-sm:text-[0.875rem] max-md:text-[1rem] max-lg:text-[0.875rem] text-[1.2rem] text-white"
+      }
+    >
+      <div className="flex my-auto">
+        <img
+          className="max-sm-420:w-4 max-sm-420:h-4 w-5 h-5 my-auto"
+          src={icon}
+          alt={name}
+        />
+      </div>
+      <textarea
+        className={" flex w-full bg-transparent border-none outline-none"}
+        name={name}
+        text={text}
+        placeholder={placeholder}
+        onChange={onChange}
+        required={required}
+        value={value}
+        disabled={disabled}
+      />
+    </div>
+  );
+}
+
 export function SelectInput({
   name,
   placeholder,

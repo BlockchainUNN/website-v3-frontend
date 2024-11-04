@@ -1,9 +1,10 @@
 import axios from "axios";
 import { getToken } from "./utils/localStorage";
+import { register } from "swiper/element";
 
 // const BASE = "https://blockchainunn-backend.onrender.com/api/v3/";
-const BASE = "https://api.blockchainunn.org/api/v3/";
-// const BASE = "http://127.0.0.1:8000/api/v3/";
+// const BASE = "https://api.blockchainunn.org/api/v3/";
+const BASE = "http://127.0.0.1:8000/api/v3/";
 
 // const MAX_RETRIES = 5;
 // const RETRY_DELAY = 1000;
@@ -124,5 +125,8 @@ export const API_ROUTES = {
   submissions: {
     create: "/submissions/",
     get: "/submissions/",
+  },
+  bootcamp: {
+    register: "/bootcamp/registerations",
   },
 };

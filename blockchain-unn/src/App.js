@@ -13,6 +13,7 @@ import HackathonLogin from "./Pages/events/HackathonLogin";
 import HackathonDashboard from "./Pages/events/HackathonDashboard";
 import Bootcamp from "./Pages/bootcamp";
 import ForgotPassword from "./Pages/events/forgetPassword";
+import DevBootcampRegistration from "./Pages/bootcamps/devRegisteration";
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
               <Route path="/community" element={<Community />} />
               <Route path="/event" element={<Blockathon />} />
               <Route path="/bootcamp" element={<Bootcamp />} />
+              <Route
+                path="/bootcamp/dev/registeration"
+                element={<DevBootcampRegistration />}
+              />
               {/* Add more routes as needed */}
               <Route
                 path="/event/registration"
