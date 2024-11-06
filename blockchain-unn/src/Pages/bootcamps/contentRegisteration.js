@@ -9,10 +9,12 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
-import { MdEmail, MdTrackChanges } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { MdEmail, MdEventAvailable } from "react-icons/md";
 import { FaQuestionCircle, FaUser } from "react-icons/fa";
 
-const DevBootcampRegistration = () => {
+const ContentBootcampRegisteration = () => {
+  const { blockathon_id } = useSelector((state) => state.app);
   const navigate = useNavigate();
 
   return (
@@ -39,17 +41,17 @@ const DevBootcampRegistration = () => {
               </span>
             </span>
             <span className="mx-auto max-sm-420:text-[0.875rem] max-sm:text-[1rem] max-md:text-[1.2rem] max-lg:text-[1.5rem] text-[2.5rem]">
-              Developer's Bootcamp
+              Content Bootcamp
             </span>
           </h1>
-          <Details />
+          <Details eventId={blockathon_id} />
         </div>
       </div>
     </section>
   );
 };
 
-const Details = () => {
+const Details = ({ eventId, step }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -58,11 +60,13 @@ const Details = () => {
     lastName: "",
     phoneNumber: "",
     email: "",
-    track: "",
+    track: "content",
     levelOfExperience: "",
     reasonForJoining: "",
     goals: "",
+    availability: "",
   });
+  console.table({ registrationDetails });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -203,8 +207,8 @@ const Details = () => {
             value={registrationDetails.email}
           />
           <Input
-            iconComponent={<FaPhone size={"1.5rem"} className="-mr-1" />}
             name="phoneNumber"
+            iconComponent={<FaPhone size={"1.5rem"} className="-mr-1" />}
             onChange={handleChange}
             placeholder="Phone Number"
             required
@@ -213,21 +217,12 @@ const Details = () => {
         </div>
         <div className="flex w-full gap-4 max-md:flex-col">
           <SelectInput
-            iconComponent={<MdTrackChanges size={"1.5rem"} className="-mr-1" />}
-            name="track"
-            onChange={handleSelect}
-            placeholder="Select a Track"
-            options={["Web 2", "Web 3"]}
-            required
-            value={registrationDetails.track}
-          />
-          <SelectInput
             iconComponent={
               <FaPersonWalking size={"1.5rem"} className="-mr-2" />
             }
             name="levelOfExperience"
             onChange={handleSelect}
-            placeholder="Experience level in track"
+            placeholder="Experience level in content writing"
             options={[
               "Newbie",
               "Beginner",
@@ -238,6 +233,20 @@ const Details = () => {
             ]}
             required
             value={registrationDetails.levelOfExperience}
+          />
+          <SelectInput
+            iconComponent={
+              <MdEventAvailable size={"1.5rem"} className="-mr-1" />
+            }
+            name="availability"
+            onChange={handleSelect}
+            placeholder="Can you attend in-person classes?"
+            options={[
+              "Yes, I can attend regularly",
+              "No, I am uncertain about my availability",
+            ]}
+            required
+            value={registrationDetails.availability}
           />
         </div>
         <div className="flex w-full gap-4 max-md:flex-col">
@@ -279,4 +288,4 @@ const Details = () => {
   );
 };
 
-export default DevBootcampRegistration;
+export default ContentBootcampRegisteration;

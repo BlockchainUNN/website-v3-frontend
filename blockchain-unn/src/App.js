@@ -14,6 +14,7 @@ import HackathonDashboard from "./Pages/events/HackathonDashboard";
 import Bootcamp from "./Pages/bootcamp";
 import ForgotPassword from "./Pages/events/forgetPassword";
 import DevBootcampRegistration from "./Pages/bootcamps/devRegisteration";
+import ContentBootcampRegisteration from "./Pages/bootcamps/contentRegisteration";
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
               <Route
                 path="/bootcamp/dev/registeration"
                 element={<DevBootcampRegistration />}
+              />
+              <Route
+                path="/bootcamp/content/registeration"
+                element={<ContentBootcampRegisteration />}
               />
               {/* Add more routes as needed */}
               <Route
