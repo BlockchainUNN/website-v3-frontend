@@ -2,12 +2,23 @@ import React, {useState, useContext } from "react";
 import LogoWhite from "../../assets/blockathonlogo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ThemeContext } from "../Theme";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
-  const navItems = ["Home", "Community", "Event"];
+  const navItems = ["Register"];
+  const location = useLocation();
+
+
+  // Determine register link based on current URL path
+  const registerLink =
+    location.pathname === "/bootcamp/dev"
+      ? "/bootcamp/dev/registeration"
+      : location.pathname === "/bootcamp/content"
+      ? "/bootcamp/content/registeration"
+      : null;
+
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -51,8 +62,20 @@ const Navbar = () => {
         </div>
 
       </div>
-      <div className="flex gap-4 items-center ">
-        <div className="" onClick={toggleMobileMenu}>
+
+
+      <div className=" flex gap-4 items-center ">
+      {registerLink && (
+              <p
+                className="cursor-pointer font-raleway-semibold text-[18px]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Link to={registerLink} className="text-white">
+                  REGISTER
+                </Link>
+              </p>
+            )}
+        <div className="hidden" onClick={toggleMobileMenu}>
           {!isMobileMenuOpen && <FaBars size={28} className="cursor-pointer text-white" />}
         </div>
       </div>
@@ -76,7 +99,18 @@ const Navbar = () => {
                   <span>{item}</span>
                 </Link>
               </li>
+              
             ))}
+            {registerLink && (
+              <li
+                className="cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Link to={registerLink} className="block text-green-600">
+                  Register
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       )}

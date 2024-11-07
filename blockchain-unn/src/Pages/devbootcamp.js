@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../Components/Bootcamp/navbar";
-import BootcampHero from "../Components/Bootcamp/bootcampHero";
-import BootcampAbout from "../Components/Bootcamp/about";
-import Schedule from "../Components/Bootcamp/schedule";
-import Footer from "../Components/Bootcamp/footer";
-import DetailCardContainer from "../Components/Bootcamp/detail-card";
+import Navbar from "../Components/devBootcamp/navbar";
+import BootcampHero from "../Components/devBootcamp/bootcampHero";
+import BootcampAbout from "../Components/devBootcamp/about";
+import Schedule from "../Components/devBootcamp/schedule";
+import Footer from "../Components/devBootcamp/footer";
+import DetailCardContainer from "../Components/devBootcamp/detail-card";
 
 const Bootcamp = () => {
     return (
