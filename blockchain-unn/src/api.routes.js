@@ -125,4 +125,7 @@ export const API_ROUTES = {
     create: "/submissions/",
     get: "/submissions/",
   },
+  bootcamp: {
+    register: "/bootcamp/registerations",
+  },
 };
