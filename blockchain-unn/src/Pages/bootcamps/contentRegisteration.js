@@ -226,26 +226,6 @@ const Details = ({ eventId, step }) => {
         </div>
         <div className="flex w-full gap-4 max-md:flex-col">
           <SelectInput
-            iconComponent={<FaGenderless size={"1.5rem"} className="-mr-1" />}
-            name="gender"
-            onChange={handleSelect}
-            placeholder="Gender"
-            options={["Male", "Female"]}
-            required
-            value={registrationDetails.gender}
-          />
-          <SelectInput
-            iconComponent={<PiStudent size={"1.5rem"} className="-mr-1" />}
-            name="student"
-            onChange={handleSelect}
-            placeholder="Are you a student?"
-            options={["No", "Yes"]}
-            required
-            value={registrationDetails.student}
-          />
-        </div>
-        <div className="flex w-full gap-4 max-md:flex-col">
-          <SelectInput
             iconComponent={
               <FaPersonWalking size={"1.5rem"} className="-mr-2" />
             }
@@ -276,6 +256,26 @@ const Details = ({ eventId, step }) => {
             ]}
             required
             value={registrationDetails.availability}
+          />
+        </div>
+        <div className="flex w-full gap-4 max-md:flex-col">
+          <SelectInput
+            iconComponent={<FaGenderless size={"1.5rem"} className="-mr-1" />}
+            name="gender"
+            onChange={handleSelect}
+            placeholder="Gender"
+            options={["Male", "Female"]}
+            required
+            value={registrationDetails.gender}
+          />
+          <SelectInput
+            iconComponent={<PiStudent size={"1.5rem"} className="-mr-1" />}
+            name="student"
+            onChange={handleSelect}
+            placeholder="Are you a student?"
+            options={["No", "Yes"]}
+            required
+            value={registrationDetails.student}
           />
         </div>
         <div className="flex w-full gap-4 max-md:flex-col">

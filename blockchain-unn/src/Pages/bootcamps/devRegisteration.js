@@ -175,6 +175,15 @@ const Details = () => {
           });
         }
       });
+      return;
+    }
+
+    if (name === "track") {
+      setRegisterationDetails({
+        ...registrationDetails,
+        [name]: userValue.toLowerCase().includes("web2") ? "web2" : "web3",
+      });
+      return;
     }
 
     setRegisterationDetails({
@@ -233,6 +242,7 @@ const Details = () => {
               "Web3 track (Solidity, EthersJS & Web3js) - For existing web developers only",
             ]}
             required
+            wrapPlaceholder
             value={registrationDetails.track}
           />
           <SelectInput
