@@ -98,6 +98,7 @@ export function SelectInput({
   iconComponent,
   options,
   extraClasses,
+  wrapPlaceholder,
 }) {
   const [showOptions, setShowOptions] = useState(false);
 
@@ -119,7 +120,11 @@ export function SelectInput({
           )}
         </div>
         <div className="flex w-full h-full bg-transparent justify-between border-none outline-none cursor-pointer">
-          <span className="my-auto text-nowrap">
+          <span
+            className={
+              wrapPlaceholder ? "my-auto text-wrap" : "my-auto text-nowrap"
+            }
+          >
             {showOptions ? placeholder : value ? value : placeholder}
           </span>
           {showOptions ? (
@@ -153,7 +158,15 @@ export function SelectInput({
               event.currentTarget.classList.remove("text-blockathon-green")
             }
           >
-            <span className="text-nowrap">{option}</span>
+            <span
+              className={
+                wrapPlaceholder
+                  ? "my-auto text-left text-wrap"
+                  : "my-auto text-nowrap"
+              }
+            >
+              {option}
+            </span>
           </button>
         ))}
       </div>

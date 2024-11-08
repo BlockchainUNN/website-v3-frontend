@@ -4,13 +4,20 @@ import previouSvg from "../../assets/icons/previousArrow.svg";
 import bg_image from "../../assets/blogathon_bg.png";
 import { Input, SelectInput, TextInput } from "../../Components/Input";
 import { Button } from "../../Components/Buttons";
-import { FaGraduationCap, FaPersonWalking, FaPhone } from "react-icons/fa6";
+import {
+  FaGenderless,
+  FaGraduationCap,
+  FaPersonWalking,
+  FaPhone,
+} from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
 import { ReactSwal } from "../../utils/swal";
-import { MdEmail, MdTrackChanges } from "react-icons/md";
+import { MdEmail, MdEventAvailable, MdTrackChanges } from "react-icons/md";
 import { FaQuestionCircle, FaUser } from "react-icons/fa";
+import { PiStudent } from "react-icons/pi";
+import { LuSchool } from "react-icons/lu";
 
 const DevBootcampRegistration = () => {
   const navigate = useNavigate();
@@ -60,8 +67,11 @@ const Details = () => {
     email: "",
     track: "",
     levelOfExperience: "",
-    reasonForJoining: "",
     goals: "",
+    gender: "",
+    student: "",
+    location: "",
+    availability: "",
   });
 
   const handleSubmit = async (event) => {
@@ -151,16 +161,17 @@ const Details = () => {
   // For the custom select inputs
   const handleSelect = async (name, value) => {
     let userValue = value;
-    if (value.toLowerCase() === "others") {
+    if (value.toLowerCase() === "yes") {
       Swal.fire({
-        text: "Please fill in your answer here...",
+        text: "Please, what's the name of your university, level of study and your department/faculty?",
         input: "text",
       }).then((result) => {
         if (result.isConfirmed) {
           userValue = result.value;
           setRegisterationDetails({
             ...registrationDetails,
-            [name]: userValue,
+            location: userValue,
+            student: "Yes",
           });
         }
       });
@@ -217,7 +228,10 @@ const Details = () => {
             name="track"
             onChange={handleSelect}
             placeholder="Select a Track"
-            options={["Web 2", "Web 3"]}
+            options={[
+              "Web2 track (HTML, CSS, JavaScript & React) - For newbies & intermediates only",
+              "Web3 track (Solidity, EthersJS & Web3js) - For existing web developers only",
+            ]}
             required
             value={registrationDetails.track}
           />
@@ -241,15 +255,40 @@ const Details = () => {
           />
         </div>
         <div className="flex w-full gap-4 max-md:flex-col">
-          <TextInput
-            iconComponent={
-              <FaQuestionCircle size={"1.5rem"} className="-mr-1" />
-            }
-            name="reasonForJoining"
-            onChange={handleChange}
-            placeholder="Why will you like to join this Bootcamp?"
+          <SelectInput
+            iconComponent={<FaGenderless size={"1.5rem"} className="-mr-1" />}
+            name="gender"
+            onChange={handleSelect}
+            placeholder="Gender"
+            options={["Male", "Female"]}
             required
-            value={registrationDetails.reasonForJoining}
+            value={registrationDetails.gender}
+          />
+          <SelectInput
+            iconComponent={<PiStudent size={"1.5rem"} className="-mr-1" />}
+            name="student"
+            onChange={handleSelect}
+            placeholder="Are you a student?"
+            options={["No", "Yes"]}
+            required
+            value={registrationDetails.student}
+          />
+        </div>
+        <div className="flex w-full gap-4 max-md:flex-col">
+          <SelectInput
+            iconComponent={
+              <MdEventAvailable size={"1.5rem"} className="-mr-1" />
+            }
+            name="availability"
+            onChange={handleSelect}
+            placeholder="Can you attend in-person classes?"
+            options={[
+              "Yes, I can attend regularly",
+              "No, I am uncertain about my availability",
+            ]}
+            required
+            wrapPlaceholder={true}
+            value={registrationDetails.availability}
           />
           <TextInput
             iconComponent={
