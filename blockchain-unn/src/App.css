@@ -1,0 +1,20 @@
+.App {
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.App-dark {
+  background-color: #0e0e0e;
+}
+
+.App-light {
+  background-color: #d8d8d8;
+}
+
+.font-outline-2 {
+  -webkit-text-stroke: 1px #a4d8bd;
+}
