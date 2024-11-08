@@ -4,7 +4,12 @@ import previouSvg from "../../assets/icons/previousArrow.svg";
 import bg_image from "../../assets/blogathon_bg.png";
 import { Input, SelectInput, TextInput } from "../../Components/Input";
 import { Button } from "../../Components/Buttons";
-import { FaGraduationCap, FaPersonWalking, FaPhone } from "react-icons/fa6";
+import {
+  FaGenderless,
+  FaGraduationCap,
+  FaPersonWalking,
+  FaPhone,
+} from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import mailSent from "../../assets/mail_sent.png";
@@ -12,6 +17,8 @@ import { ReactSwal } from "../../utils/swal";
 import { useSelector } from "react-redux";
 import { MdEmail, MdEventAvailable } from "react-icons/md";
 import { FaQuestionCircle, FaUser } from "react-icons/fa";
+import { LuSchool } from "react-icons/lu";
+import { PiStudent } from "react-icons/pi";
 
 const ContentBootcampRegisteration = () => {
   const { blockathon_id } = useSelector((state) => state.app);
@@ -62,8 +69,10 @@ const Details = ({ eventId, step }) => {
     email: "",
     track: "content",
     levelOfExperience: "",
-    reasonForJoining: "",
     goals: "",
+    gender: "",
+    student: "",
+    location: "",
     availability: "",
   });
   console.table({ registrationDetails });
@@ -217,6 +226,26 @@ const Details = ({ eventId, step }) => {
         </div>
         <div className="flex w-full gap-4 max-md:flex-col">
           <SelectInput
+            iconComponent={<FaGenderless size={"1.5rem"} className="-mr-1" />}
+            name="gender"
+            onChange={handleSelect}
+            placeholder="Gender"
+            options={["Male", "Female"]}
+            required
+            value={registrationDetails.gender}
+          />
+          <SelectInput
+            iconComponent={<PiStudent size={"1.5rem"} className="-mr-1" />}
+            name="student"
+            onChange={handleSelect}
+            placeholder="Are you a student?"
+            options={["No", "Yes"]}
+            required
+            value={registrationDetails.student}
+          />
+        </div>
+        <div className="flex w-full gap-4 max-md:flex-col">
+          <SelectInput
             iconComponent={
               <FaPersonWalking size={"1.5rem"} className="-mr-2" />
             }
@@ -251,14 +280,12 @@ const Details = ({ eventId, step }) => {
         </div>
         <div className="flex w-full gap-4 max-md:flex-col">
           <TextInput
-            iconComponent={
-              <FaQuestionCircle size={"1.5rem"} className="-mr-1" />
-            }
-            name="reasonForJoining"
+            iconComponent={<LuSchool size={"1.5rem"} className="-mr-1" />}
+            name="location"
             onChange={handleChange}
-            placeholder="Why will you like to join this Bootcamp?"
+            placeholder="If yes, what's the name of your university, level of study and your department/faculty?"
             required
-            value={registrationDetails.reasonForJoining}
+            value={registrationDetails.location}
           />
           <TextInput
             iconComponent={

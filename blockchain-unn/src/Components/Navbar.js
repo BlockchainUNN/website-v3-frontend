@@ -9,7 +9,14 @@ import SocialLink from "./socialLink.js";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ["Home", "Community", "Event", "Hackathon Login", "Dev Bootcamp", "Content Bootcamp"]; //"Blog"
+  const navItems = [
+    "Home",
+    "Community",
+    "Event",
+    "Hackathon Login",
+    "Dev Bootcamp",
+    "Content Bootcamp",
+  ]; //"Blog"
   const { theme } = useContext(ThemeContext);
   const location = useLocation();
 
@@ -30,7 +37,7 @@ const Navbar = () => {
       return "/event/hackathon";
     } else if (item.toLowerCase() === "content bootcamp") {
       return "/bootcamp/content";
-    }  else if (item.toLowerCase() === "dev bootcamp") {
+    } else if (item.toLowerCase() === "dev bootcamp") {
       return "/bootcamp/dev";
     }
     return `/${item.toLowerCase()}`;
