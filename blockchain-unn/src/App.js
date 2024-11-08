@@ -11,7 +11,8 @@ import About from "./Pages/About";
 import Community from "./Pages/community";
 import HackathonLogin from "./Pages/events/HackathonLogin";
 import HackathonDashboard from "./Pages/events/HackathonDashboard";
-import Bootcamp from "./Pages/bootcamp";
+import DevBootcamp from "./Pages/devbootcamp";
+import ContentBootcamp from "./Pages/contentbootcamp";
 import ForgotPassword from "./Pages/events/forgetPassword";
 import DevBootcampRegistration from "./Pages/bootcamps/devRegisteration";
 import ContentBootcampRegisteration from "./Pages/bootcamps/contentRegisteration";
@@ -28,7 +29,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/community" element={<Community />} />
               <Route path="/event" element={<Blockathon />} />
-              <Route path="/bootcamp" element={<Bootcamp />} />
+              <Route path="/bootcamp/dev" element={<DevBootcamp />} />
+              <Route path="/bootcamp/content" element={<ContentBootcamp />} />
               <Route
                 path="/bootcamp/dev/registeration"
                 element={<DevBootcampRegistration />}
