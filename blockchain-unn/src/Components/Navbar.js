@@ -13,7 +13,7 @@ const Navbar = () => {
     "Home",
     "Community",
     "Event",
-    "Hackathon Login",
+    // "Hackathon Login",
     "Dev Bootcamp",
     "Content Bootcamp",
   ]; //"Blog"
