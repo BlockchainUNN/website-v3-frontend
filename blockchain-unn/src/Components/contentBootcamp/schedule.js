@@ -78,7 +78,7 @@ const Schedule = () => {
           CONTENT CURRICULUM
         </p>
         <p className="text-white -rotate-180 mb-2 text-base max-md:text-[0.875rem] md:text-auto">
-          The bootcam will have focus on 3 stacks in Content and Marketing,{" "}
+          The bootcamp will have focus on 3 stacks in Content and Marketing,{" "}
           <span className="font-semibold">
             (Content, Social media Management and Community Management)
           </span>
@@ -96,7 +96,7 @@ const Schedule = () => {
         {web2_schedule.map((schedule, index) => (
           <div
             key={index}
-            className={`w-full md:w-[32%] h-[120px] md:h-[171px] p-1 rounded-[7px] ${
+            className={`w-full md:w-[32%] h-fit md:h-[171px] p-1 rounded-[7px] ${
               index % 2 === 0
                 ? "bg-white text-black"
                 : "bg-dark-mode-3 text-white top-border"
