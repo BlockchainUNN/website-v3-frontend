@@ -96,7 +96,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <li key={item} className="relative cursor-pointer">
               <Link to={getNavItemLink(item)} className="block">
-                <span>{item}</span>
+                <span className="text-nowrap">{item}</span>
                 {/* Show the green bar if this is the active page */}
                 {currentPage === item.toLowerCase() && (
                   <div className="absolute left-1/4 transform -translate-x-1/2 bottom-[-4px] w-1/2 border-b-2 border-green-600 rounded-sm"></div>

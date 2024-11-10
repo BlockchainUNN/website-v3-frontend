@@ -1,6 +1,7 @@
 import React from "react";
 import question from "../../assets/icons/question.svg";
 import code from "../../assets/skill.jpeg";
+import code3 from "../../assets/blogathon_bg.png";
 import arrowup from "../../assets/icons/arrow-up.svg";
 import clock from "../../assets/icons/clock.svg";
 import location from "../../assets/icons/location.svg";
@@ -8,26 +9,21 @@ import location from "../../assets/icons/location.svg";
 const aboutData = [
   {
     name: "Registration opens",
-    message: "Registration will open on Saturday, November 2nd, 2024.",
+    message: "Registration will open on Sunday, November 10th, 2024.",
   },
   {
     name: "Registration closes",
-    message: "Registration will close on Saturday, November 9th, 2024.",
-  },
-  {
-    name: "X space",
-    message:
-      "We will have an X space to kick off the bootcamp by 8pm WAT of the same day.",
+    message: "Registration will close on Sunday, November 17th, 2024.",
   },
   {
     name: "Classes starts",
-    message: "Officially on Sunday, 10th November 2024, from 7:30-9:30 pm WAT.",
+    message: "Officially on Sunday, 17th November 2024, from 7:30-9:30 pm WAT.",
   },
 ];
 
 const BootcampAbout = () => {
   return (
-    <div className="w-full md:px-[5rem] px-2 my-[3rem] py-6 flex flex-col items-center gap-8">
+    <div className="w-full md:px-[5rem] px-2 mb-[3rem] py-6 flex flex-col items-center gap-8">
       <div className="flex flex-wrap md:flex-row gap-4 items-center ">
         {aboutData.map((about, index) => (
           <div
@@ -43,7 +39,7 @@ const BootcampAbout = () => {
                   {about.name}
                 </h3>
               </div>
-              <p className="text-[9px] md:text-[16px] font-[300] w-full overflow-hidden break-words">
+              <p className="text-base max-md:text-[0.875rem] font-[300] w-full overflow-hidden break-words">
                 {about.message}
               </p>
             </div>
@@ -67,12 +63,13 @@ const BootcampAbout = () => {
             The web2 stream
           </h3>
           <p className="text-[9px] md:text-[16px] font-[300] w-full overflow-hidden break-words max-w-[80%] -rotate-180">
-            is for total programming beginners
+            is for total programming beginners (we will be covering topics like
+            HTML, CSS, JavaScript & React)
           </p>
         </div>
         <div className="w-full md:w-[288px] h-[210px] md:h-[251px] bottom-border bg-dark-mode-3 flex flex-col-reverse px-5 py-4 text-white rotate-180 items-end ">
           <img
-            src={code}
+            src={code3}
             alt="web2"
             className="h-[112px] w-full rounded-xl object-cover -rotate-180"
           />
@@ -80,7 +77,8 @@ const BootcampAbout = () => {
             The web3 stream
           </h3>
           <p className="text-[9px] md:text-[16px] font-[300] w-full overflow-hidden break-words max-w-[95%] -rotate-180 text-left">
-            For web2 developers intending to delve into web3
+            For web2 developers intending to delve into web3 (We will be
+            covering topics like Solidity, EthersJS, Web3js etc)
           </p>
         </div>
       </div>
@@ -128,7 +126,7 @@ const BootcampAbout = () => {
             </p>
           </div>
         </div>
-        <img
+        {/* <img
           src={arrowup}
           alt="arrow up"
           className="h-[192.07px] w-[192.07px] absolute top-[34%] md:top-[32%] z-50"
@@ -164,7 +162,7 @@ const BootcampAbout = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

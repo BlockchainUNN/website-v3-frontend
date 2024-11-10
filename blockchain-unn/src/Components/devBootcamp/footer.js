@@ -1,17 +1,13 @@
 import React from "react";
-import blockathonMini from "../../assets/blockchain-unn-logo.png";
-import SocialLink from "../socialLink";
+import blockathonMini from "../../assets/blockchainunn-white.png";
+import SocialLink from "../socialLink copy";
 
 const Footer = () => {
   return (
-    <div className="bg-transparent text-white pt-6 pb-6 px-2 md:px-[4rem] w-full h-[200px] md:h-[328px] flex flex-col justify-between">
+    <div className="bg-black/20 text-white pt-6 pb-6 px-2 md:px-[4rem] w-full h-[200px] md:h-[328px] flex flex-col justify-between">
       <div className="grid grid-cols-2 gap-2 md:gap-[20%] justify-between items-center mt-8">
         <div className="flex flex-col items-start w-auto px-2 md:px-[4rem]">
-          <img
-            src={blockathonMini}
-            alt=""
-            className="w-auto md:w-auto h-auto md:h-[60px] object-cover"
-          />
+          <img src={blockathonMini} alt="" className="w-[20rem] object-cover" />
         </div>
 
         <div className="flex flex-col items-center justify-start w-auto px-2 md:px-[4rem]">
@@ -19,17 +15,17 @@ const Footer = () => {
             FOLLOW US
           </p>
           <div className="flex items-center gap-4">
-          <SocialLink
-            to={"https://www.linkedin.com/company/blockchainunn/"}
-            type={"linkedin"}
-          />
-          <SocialLink to={"https://t.me/BlockchainUNN/1"} type={"telegram"} />
-          <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
-          <SocialLink
-            to={"https://www.instagram.com/blockchainunn"}
-            type={"instagram"}
-          />
-        </div>
+            <SocialLink
+              to={"https://www.linkedin.com/company/blockchainunn/"}
+              type={"linkedin"}
+            />
+            <SocialLink to={"https://t.me/BlockchainUNN/1"} type={"telegram"} />
+            <SocialLink to={"https://x.com/BlockchainUNN"} type={"x"} />
+            <SocialLink
+              to={"https://www.instagram.com/blockchainunn"}
+              type={"instagram"}
+            />
+          </div>
         </div>
       </div>
       <p className="text-center font-sans font-light text-[10px] md:text-[16px] ">

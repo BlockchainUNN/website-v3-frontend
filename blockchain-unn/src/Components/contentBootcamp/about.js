@@ -8,30 +8,25 @@ import location from "../../assets/icons/location.svg";
 const aboutData = [
   {
     name: "Registration opens",
-    message: "Registration will open on Saturday, November 2nd, 2024.",
+    message: "Registration will open on Sunday, November 10th, 2024.",
   },
   {
     name: "Registration closes",
-    message: "Registration will close on Saturday, November 9th, 2024.",
-  },
-  {
-    name: "X space",
-    message:
-      "We will have an X space to kick off the bootcamp by 8pm WAT of the same day.",
+    message: "Registration will close on Sunday, November 17th, 2024.",
   },
   {
     name: "Classes starts",
-    message: "Officially on Sunday, 10th November 2024, from 7:30-9:30 pm WAT.",
+    message: "Officially on Sunday, 17th November 2024, from 7:30-9:30 pm WAT.",
   },
 ];
 
 const BootcampAbout = () => {
   return (
-    <div className="w-full md:px-[5rem] px-2 my-[3rem] py-6 flex flex-col items-center gap-8">
+    <div className="w-full md:px-[5rem] px-2 mb-[3rem] py-6 flex flex-col items-center gap-8">
       <div className="flex flex-col md:flex-row gap-4 items-center w-[98%] px-4 ">
-        <div className="bottom-border w-full md:w-full h-[181px] rounded-xl bg-dark-mode-3 flex flex-col-reverse md:flex-row-reverse gap-32 items-center px-16 py-2 rotate-180">
+        <div className="bottom-border w-full md:w-full h-[181px] max-sm:h-fit rounded-xl bg-dark-mode-3 flex flex-col-reverse md:flex-row-reverse gap-32 max-sm:gap-10 items-center px-16 py-2 rotate-180">
           <p className="text-white opacity-60 font-wallpoet text-[24px] md:text-[40px] font-[400] leading-tight -rotate-180">
-            Who is this Bootcamp for
+            Who is this Bootcamp for?
           </p>
           <img src={question} alt="question mark" className="-rotate-180" />
         </div>
@@ -43,10 +38,13 @@ const BootcampAbout = () => {
             <img src={code} alt="web2" className="h-full w-full p-2" />
           </div>
           <div className="flex flex-col gap-8 w-[90%] md:w-1/2">
-          <p className="text-gray-300 font-raleway-semibold text-[22px] md:text-[40px] font-[400] leading-tight rotate-180">
-          This bootcamp is for <span className=" font-semibold text-white"> content enthusiasts & marketing enthusiasts </span> in the content community.
+            <p className="text-gray-300 font-raleway-semibold text-[22px] md:text-[40px] font-[400] leading-tight rotate-180">
+              This bootcamp is for{" "}
+              <span className=" font-semibold text-white">
+                {" "}
+                content enthusiasts & marketing enthusiasts{" "}
+              </span>
             </p>
-           
           </div>
         </div>
       </div>
@@ -66,7 +64,7 @@ const BootcampAbout = () => {
                   {about.name}
                 </h3>
               </div>
-              <p className="text-[9px] md:text-[16px] font-[300] w-full overflow-hidden break-words">
+              <p className="text-[1rem] max-md:text-[0.875rem] font-[300] w-full overflow-hidden break-words">
                 {about.message}
               </p>
             </div>
@@ -89,8 +87,7 @@ const BootcampAbout = () => {
               </p>
             </div>
             <p className="text-white text-[14px] md:text-[16px] pl-3 md:pl-8 mt-4 md:mt-0 px-4">
-              Both programs will run concurrently on the same day and time,
-              three times a week. The proposed date and time are{" "}
+              The proposed date and time for the bootcamp is{" "}
               <span className="font-bold"> 7:30-9:30pm WAT </span>
               on <span className="font-bold"> Mondays </span> and{" "}
               <span className="font-bold">Thursdays</span>, and{" "}
@@ -117,7 +114,7 @@ const BootcampAbout = () => {
             </p>
           </div>
         </div>
-        <img
+        {/* <img
           src={arrowup}
           alt="arrow up"
           className="h-[192.07px] w-[192.07px] absolute top-[34%] md:top-[32%] z-50"
@@ -153,7 +150,7 @@ const BootcampAbout = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
