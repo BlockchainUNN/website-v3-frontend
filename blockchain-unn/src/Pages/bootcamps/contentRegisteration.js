@@ -19,6 +19,7 @@ import { MdEmail, MdEventAvailable } from "react-icons/md";
 import { FaQuestionCircle, FaUser } from "react-icons/fa";
 import { LuSchool } from "react-icons/lu";
 import { PiStudent } from "react-icons/pi";
+import { BiLogoWhatsapp } from "react-icons/bi";
 
 const ContentBootcampRegisteration = () => {
   const { blockathon_id } = useSelector((state) => state.app);
@@ -124,6 +125,19 @@ const Details = ({ eventId, step }) => {
             </div>
             <div className="flex mx-auto pt-4">
               <img src={mailSent} className="w-36 h-36" alt="Success" />
+            </div>
+            <div className="flex flex-col gap-4 w-full justify-center pt-4">
+              <a
+                href="https://chat.whatsapp.com/LDgnFzCGYX7DAWFlk7ruW3"
+                target={"_blank"}
+                rel="noreferrer"
+                className="flex gap-2 justify-center mx-auto p-2 rounded-md bg-green-400 cusor-pointer text-white"
+              >
+                <BiLogoWhatsapp className="my-auto" color="white" />
+                <span className="text-[0.875rem] my-auto">
+                  Join Us on Whatsapp
+                </span>
+              </a>
             </div>
             <button
               className="rounded-md mx-auto text-[0.875rem] px-4 py-2 bg-purple-400 text-white font-medium"
@@ -293,7 +307,7 @@ const Details = ({ eventId, step }) => {
             }
             name="goals"
             onChange={handleChange}
-            placeholder="Why do you hope to gain by the end of this Bootcamp?"
+            placeholder="What do you hope to gain by the end of this Bootcamp?"
             required
             value={registrationDetails.goals}
           />

@@ -18,6 +18,7 @@ import { MdEmail, MdEventAvailable, MdTrackChanges } from "react-icons/md";
 import { FaQuestionCircle, FaUser } from "react-icons/fa";
 import { PiStudent } from "react-icons/pi";
 import { LuSchool } from "react-icons/lu";
+import { BiLogoWhatsapp } from "react-icons/bi";
 
 const DevBootcampRegistration = () => {
   const navigate = useNavigate();
@@ -89,19 +90,20 @@ const Details = () => {
     });
 
     if (emptyFields?.length > 0) {
-      Swal.fire({
-        icon: "error",
-        text: "Please answer all questions",
-      });
-      setLoading(false);
-      return;
+      if (!(emptyFields.includes("location") && emptyFields.length === 1)) {
+        Swal.fire({
+          icon: "error",
+          text: "Please answer all questions",
+        });
+        setLoading(false);
+        return;
+      }
     }
 
     try {
       const { data } = await customAxios
         .unprotected()
         .post(API_ROUTES.bootcamp.register, registrationDetails);
-      console.log(data);
 
       ReactSwal.fire({
         showConfirmButton: false,
@@ -121,6 +123,23 @@ const Details = () => {
             </div>
             <div className="flex mx-auto pt-4">
               <img src={mailSent} className="w-36 h-36" alt="Success" />
+            </div>
+            <div className="flex flex-col gap-4 w-full justify-center pt-4">
+              <a
+                href={
+                  registrationDetails.track.includes("2")
+                    ? "https://chat.whatsapp.com/FuLO5uSJg9H0IcNt754GsO"
+                    : "https://chat.whatsapp.com/IO850f4zkHTFoszE93wLni"
+                }
+                target={"_blank"}
+                rel="noreferrer"
+                className="flex gap-2 justify-center mx-auto p-2 rounded-md bg-green-400 cusor-pointer text-white"
+              >
+                <BiLogoWhatsapp className="my-auto" color="white" />
+                <span className="text-[0.875rem] my-auto">
+                  Join Us on Whatsapp
+                </span>
+              </a>
             </div>
             <button
               className="rounded-md mx-auto text-[0.875rem] px-4 py-2 bg-purple-400 text-white font-medium"
@@ -306,7 +325,7 @@ const Details = () => {
             }
             name="goals"
             onChange={handleChange}
-            placeholder="Why do you hope to gain by the end of this Bootcamp?"
+            placeholder="What do you hope to gain by the end of this Bootcamp?"
             required
             value={registrationDetails.goals}
           />
